@@ -43,9 +43,9 @@
 ## 6. A pleasure craft can tow up to _______ water skiers.
 - Occurs 3 times: Test Set 2 Q28, Test Set 3 Q14, Test Set 4 Q29
 - Answers:
-  1. 1 (correct)
+  1. 1
   2. 2
-  3. 3
+  3. 3 (correct)
   4. 4
 
 ## 7. A vessel shall so far as practicable avoid crossing traffic lane, but if obliged to do so shall

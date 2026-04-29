@@ -27,7 +27,7 @@
     "sourceQuestion": 3,
     "question": "Along the coast of Singapore, where can you beach your pleasure craft?",
     "answers": [
-      "No where along the coast line",
+      "Nowhere along the coastline",
       "Only with the Port Master's permission",
       "Where it is stated on the chart"
     ],
@@ -59,7 +59,7 @@
   {
     "sourceSet": "Test Set 1",
     "sourceQuestion": 6,
-    "question": "A Life saving appliance that is required to be kept on board is",
+    "question": "A Life-saving appliance that is required to be kept on board is",
     "answers": [
       "first aid kit",
       "red hand-flare",
@@ -274,8 +274,8 @@
     "answers": [
       "7.2m in height",
       "7.2m of water depth below chart datum",
-      "7.2of water depth",
-      "7.2m frothe shore line"
+      "7.2m of water depth",
+      "7.2m from the shoreline"
     ],
     "correctIndex": 1
   },
@@ -284,8 +284,8 @@
     "sourceQuestion": 26,
     "question": "At night you see a vessel crossing and displaying two red lights in a vertical line. What action should you take?",
     "answers": [
-      "If she is approaching frothe port bow, stand-on",
-      "If she is approaching frothe starboard bow, give way",
+      "If she is approaching from the port bow, stand-on",
+      "If she is approaching from the starboard bow, give way",
       "Give way regardless of her relative position"
     ],
     "correctIndex": 2
@@ -335,19 +335,19 @@
       "9",
       "12"
     ],
-    "correctIndex": 0
+    "correctIndex": 1
   },
   {
     "sourceSet": "Test Set 2",
     "sourceQuestion": 1,
-    "question": "An open pleasure craft licensed to carry 8 persons must be equipped with a minimuof how many life buoys",
+    "question": "An open pleasure craft licensed to carry 8 persons must be equipped with a minimum of how many life buoys",
     "answers": [
       "1",
       "2",
       "3",
       "4"
     ],
-    "correctIndex": 0
+    "correctIndex": 1
   },
   {
     "sourceSet": "Test Set 2",
@@ -381,7 +381,7 @@
       "Report to the police immediately",
       "Determine the risk of sinking, if not immediate, attend to any injuries",
       "If hulls are locked together, separate them",
-      "Wear life jackts and abandon the craft immediately"
+      "Wear life jackets and abandon the craft immediately"
     ],
     "correctIndex": 1
   },
@@ -390,7 +390,7 @@
     "sourceQuestion": 5,
     "question": "According to the regulations for preventing collisions at sea, a vessel proceeding through a narrow channel during restricted visibility, what appropriate sound signal should a vessel underway make?",
     "answers": [
-      "One shoft blast at intervals of more than 2 minutes",
+      "One short blast at intervals of more than 2 minutes",
       "One prolonged blast at intervals of more than 2 minutes",
       "One prolonged blast at intervals of not more than 2 minutes",
       "2 prolonged blasts at intervals of not more than 2 minutes"
@@ -474,7 +474,7 @@
       "C",
       "D"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "imageBase64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA40AAACICAIAAADME5lAAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAem0lEQVR4nO3dCZwT9d3HcZ6qz9Pr9djDaj1rq7ZWOaSYx6MWwRW0Wpta73oUMHg8VitgPIpU6kO8rdV40FqVeLFCAxaPdtGtCNFyNkXlyAqubXRhWbI3k2w2yT7/3dHZIZmZzW4mmZnk8379Xn3F5D+Tybygfv3P/xjWAwAAANjPMKsvAAAAANBATgUAAIAdkVMBAABgR+RUAAAA2BE5FQAAAHZETgUAAIAdkVMBAABgR+RUAAAA2BE5FQAAAHZETgUAAIAdkVMBAABgR+RUAABsQUpKoa2hWGfM6gsB7IKcCgCALbir3cN+P8yz2GP1hQB2QU4FAMB6NZtqREiVy+prAeyCvwwAAFhMSkqueS45pIoXVl8OYBfkVAAALBZYE1A6U72veq2+HMAuyKkAAFgp2hJVQio5FVAjpwIAYCURTMmpgCZyKgAAlglHw+qQSk4F1MipAABYRl6LipwKaCKnAgBgjeD6YFZIJacCauRUoBx8+GH9xg0bNKulpVlplsmk1R81Nm638JqBshRtiebZUr0WFTkV0EROBcrBBeec/Y0D9tOs+c89qzSLx+Pqj+6cc7uF1wyUH3mwqbvanc/ep/6QPzekigqsCZTgUgFHIKcC5YCcCtiBr9YnZ02RQY1bZq1Fpa7g+mBprhawP3IqUA7IqYAdqCdFGXepZq1FRU4FNJFTgXJATgUsJyUlddz01fr0WuauRUVOhekkSYpEIsFg0O/3e71ej8czrE+wj3jh7RMIBGpqakRLq69XGzkVsK/ly5bdesvNmnXf7wOLtsSVOuUMt15OvfF3TynNXtjQov7ojImnqs9Zvb5RaflkbVjvq/0PPmD1jQHsKNIYyUqc4p3cZiLO5q5FRU6F6Vwu1zAtIqSKeKr5kcisVl91NnIqYF+PPvyQXvr8/tmX3bCiXaljTz1Lr+U5v/mj0mxa7Q69ZqKu+XOd0vKi+/+k12ziKSdbfWMAO8pdZEpz5r7mWlTkVJjO5/ORUwEUETkVcBBlEpVBl2qsM6a5FhU5FaarqakZbE4Nh8NWX3U2cipgX+RUwEE8iz0DLoaqtxaVukJbQ8ZfJJ/EYPwrKocIoz6f9p+EaDQ62Jyq9y3iVEX7BQMgpwL2RU4FHGTA3Jk7gFWzNEe1KtRJtyQ/CzYlsqMyNSoU0v5vG7fbnX9O1cu74XBY/lSSpGL+IG38KQcsdrN3xmGHHCjXt484/MZQu1Jn3XBvnjl1xpstM5Y1a9fytjxz6qEHHXDowQd+UgftT05FBQpHw8H1QfG/gz3QIIO6q91yG4O1qPLMqeqQyrZVlSzrmb7Io5rN/H5//jlVM+yKbKqEXZfLVfplAcipgMVunDFNiYDf+uah6vT5o7xzap5lnFPzLHIqypgyE3/Ah+9ZajbVGD/KF5VPSDXIqVljBgZ7hSgPIjhqTpASyTW3sYieSgPvp8SbgUBAvMjqbY3FNFb8lVewGvCLiqd8curW+ujmuvpdUly8TnQlO3fF5erqSipt0um0eGeXlJD/UbQX1d2dEq+leJf4qDuVsuTiUcnIqYB9qLs8B7V/qfHAUxF/jdeiGjCn5p5fSlrwEBbWEiFVedafxeVy5T6XF9FTpFJ1AJUbq9tEo1ERPTVn+osDNb/L7x9guzUTkVPJqbAYORWwj6w5+wNuf6rQnEQ1tMrNqbkhNf8LQzkRmVJvVdRhfQ/0jQ9XN87n6/RWtiplVHVwTs1keuLxLlHTZtxw7XXXf/+kH4w51vW3ZSt2NreLN1PptFwilYp32jsk+RDxjviH3z/+hCjPFVeLem9D5F/Rhta2DpFTpXhCHEtaRVG1tDS/MP95pc49+8d6OfXih14ad/E1mnX2rMf0wuh1f4mec/uTSl25YL3y0fQ3YnonzCrXxJ+os+lxZ5yvfPTTq7zq688qq+8uUJDcxU1FIsyn59KskJqbUzV7aocwghblwTiqGh87qJwaiUT0vmWY/swt0zk6p2bkHtPTfnjm+KoJn//CF/7jM58JvvhyQ2OzFO9SmnVKCfFOc2uH8k5bW9vMWbNFiaNErVwd3lxX39zSrnTBJrvJqSiiDRve0+uqzMqpQ6upz61Rn1M93z//yprvf9ncpf3nf36tQW+r1XcXKIjmjqaexR7jqJrnRP48K9rSvwaQZkh1zXMV/07AvjQXnPJ6vQOuHjXYnKq5XEApQ2qPQ3PqLklas3bd8hVvXXDhRaIOOPCgr+9/wJ577SVy6i0zfx14Zn6kbkuiK5lKpUXj7lRKfqbf0tYZa2lv2LbjnXc3Dh85SpQ4StTpPzzzLPfZ/kcee756wYZNdU2xNnXMBUxHTgVsSy9xGkdV40lUgy3ltHpjXgc1cBZlST1Baljec5sGlVN7dOZslTKk9jg0p7a2tS16cUngmedEMM2qS38+eeas2atWr+vtFk12K4fEE8mGxuZoQ9Pmuvo3V/w998DJl08VB4beXiOadX46gBUoBnIqYGd68dFd7Vb3dKrls3r/YHOqwTn1LgMVRY6qLpcr/0X4B5tTZeo1sEocUntsnlO7U6muZLfcLSpratq59LXa6hcWnHve+T92/yQ3bo4YOer7Pxj7wsLgx9uaOjp3qU/V0Rnf8sGHd9/7wMxbb8s9cNQxo8WBl02a8stpM95cvsKKn4tKQU4F7MxgYr5rnkszI+a5MGr+OdUgpCqrsQLhcFhzMSk9Q8up8heJQFz6kNpj85wqT9tXd4tGInUzZ82eeuXVuUFTXffd/+DmuvpYc2vWCTdu3DS+asKJJ401PvyhEi64gAr071jnlCdXKHXCWRflmVOP/9GFo0+eKNdpV/+68Jx63h3PKCcUde0r9cpH1/0lqr7IXy5tIKeiQhiHThFVc+fjmxhSh/XN3DL4tGZTSVevhLX8fv+gkqixIefUnr4xAGZdxqDYNKemUunu7t7OVGWYqWzbtu0Lg4vvu/8B46B53vkX/t+cO99+e6VyYHNzy5q16+ZXLzjyu0cddsS39Q781mGHjx5z7Pz51Vb8aFSKjzvT6rA47uJf5JlTjzx6pNLSYF2q/HPqWd771S3V+6Ya9deSU1HWAmsCA0ZJ9Rr70ZaouTnVuGKdpqUW2JzywH3ABafyVEhONSAibCAQyH/4waDYNKfGE32rmebMuxeZVby/ctVq45wq1z333KMc+N6GjTNnzZ48ZarxIeeed6Fo9vbfV5X256KykFMBO8tzUpQSVfPfaKrwYq/UyiHCn3r9KY/HU3gQLEZODYVC8nV6vUX5w+mAnJrOZEQ8lSvZnRIfvfvuhmNGf2/4yJHGofPGm25+f8uWxh07xIErV6762SWXnXb6GXqN9/7Sl76yzz7XT5vxxyfnrX/nvUTvwNh07oXJl1Hy+4GyQk4F7Cz/Rabkeff59L+aVeyVWjlyNyyVO1YLef5ubk4VuVlkU/U5IxHtLX8L4YCcKhKjsrKpeL/HcL6/uqpOnThz1uzFf35JHPjc89XGjce4jhtfNWHp638TjXc2tzc0NstbA6ilP12x1YI7Aof7sL5+44b35Hpz7TueZ1crVTXFO+qEk+UaffJp9s+pVy18V7ng3LL6TgOFkpJS/sHRH/KbO4nKuNgrtUJkdaaqFbIRlFk5VX7Qn3ttxehStWlOTXQlJSkh7wuV7O4Wr+VK9G2C2t7RsfT12uCiFz//xS+K0oueJ5x40tXXXPv7x5+oe3/rw488apxTJ5x2+gUXXbJ8xVsihja3duzY2daRk0fJqRiy885263VAnnP7E/mkQ/vkVOOy+k4DJihZ7hxUsVdq5VAvBZWlkKf/ZuXUrNVb1Uyc9SWzaU7NR1tbm7yh1B577mkQQA8+5BuizfCRo4xz6oI/vbi5rr5pZ4vBflTkVAwZORVwkFJ2keZf7JVaOTwej+mdqT2mPvfX26oqEDB5Ewpn59QJp/1QlHFOPejgQ8aNrzp6hO5g1s/ssYc4w8LgnyPvf9gUa83NqZnMJy/knLqLnIrBI6cCDmLuuv1mlUjPWeWr9QXXBzVLhNpIY0Qu9gVwFs1tUU3prTQxp+p1qYr8WuCZs9g6p8rrp8olP/GX5/tL8YT8enNdvajPfu5z+Uz/16sTTxo7vmrCxk2bNK9Binc1NDbvbObfvigIORVwEJHzLE+l5hZbrTqLiKqBQCCrz7LAztQes+dR6Y2gNXeBKnIqORWlkGdOnf5G7JRJ0/XqsG8eqhx11GiXXrOTzp2iPv+xE36s1/J7405Xtxx70VUG367UmdPuUgfT8+96Tv2p1XcaMEE4GrY8WZJT0bN7YA2HCx34YW5OzZpKJWKrSNKhUMjcHQFsmlMTieQuKbHkpVfvvPu+a3857ZzzLrjqf39x1z33ixLviJJfz7njHlF7/ed/FpJTr77mWu9Nv5pzx93yObNKfNcdd937+BOBLR/8u/5fH4urEmX17YHz5JlTp73eaLDkk01q5HE/UOfU8Zdep/7U6jsNmKDES/cXuzyLPTz6dzpTOinNzany+ASPxyMCazFWpJLZNKfK61It+NOimbNmXzZpyviqCRf+7BLxWrMKzKnXXT9D78xKPfTw3M119SKqMo8KQ0NOBZzF8nBpVvlqfaxmBZm5OVUwfXZ/Llvn1OunTT/4kEP23e/re3/5y1/bd1/xWrM+s8ceheTUAw48UO/MSlWdOvEvNa8vWx4ip2JoyKmAs3gWeyyPmIVXcL05+22iPJieU0vAphcq59SfT5pcSAA1sYaPGLnoxSV/Xfo6ORVDQ04FnMWeS1PlX655rkhjsR7FwqHIqaZJpdLdqdSUyy+3PKGqc2rNa6+Lq5J3HwAGRZ1TR51w8oxlLf21vE0d+3b7aPc68ugRyklO/Mmles08T69UB8ef3vYHvZY/mnGvuuXVizYZfHt/vdlCTkVZkpKSyHahraHg+qCj+1PFxcc6i/5AFo5DTjXZ5R6P5Ql195xaa/UtgVPtnlPHDW3JJ3uuS0VOhROpI6mv1uf03lN1+UN+BqQ6l7mT5bOQU01GTkXZIKcC1gpHw+UXSXOrZlON1XcaBdFckdQRinVDinReU5BTUTbIqYCFRHqzPEEWuxiQWh6sTpsFUbZ79Xq9pt0Qs05klt4BoN2peLxrl5SYNNle86h6x6d2p9Rl9d2CYzz2sN87/Xq5fum95Zzbn9Ss83wBx+XUc+cExl18jVJW32lAQ9nnVAaklg1rg6ZZyjmnSvFE5674jp1tDY3NP7vkUssTqjqnKvP9lbL6bsGRNmx4T28q/be+eajjcmpWWX13AQ1SUnJXuy1Pk0UqBqSWk6LGPvU5TTlhT5EvuMe2ObWlrTPW0vGrmbNGf29MnjWE3VMPO/wIUaNGjx7w5OdfcGHo7b+vXfePeKJLXVbfLTgSORUovUhjxPJAWYxiQGqZcblcZZBTAwHT9um1aU5NpdLi9brwPxe9uCTP2v+AAwebU+W9pl5YGBzw5MtDb1l9Y1A+yKmAJXy1PstjpYnFgNSyJCJpbuxzu92mnNz0nCpvnZorGDRtgwnb5dR4oktE1VS6N6du2Lhp6et/G7Dmv7Dw+eoFX99//8Hm1Ok33CTqpZdfVU5V81qtqKWidv+KNev+IV9eOp1Rl6W3Ck5FTgUsISUlke0sz5emlGexh2f9ZUkzp5oVK00/YSQSqbicOgS3/WbOzFmzv/LVfQabU8dXTRDV1NSknCqRSHbuiid1JkilMxnGp6JwQ86pnqdXTnlqhVxXLXin8Jz6iyVblBOKmv5GTK/lKZOmjx47MZ+y+u4CRspjQpU/5Lf6RqJYAoGA0ocqMqsIfOFwOBqNmnJy03OquDzNnCryqynn73FKTs1kPq3d30/3ufXXs2+65davfPWrg82pJ4+vErVt2/bu7u5Mpvfcn+TUZLfmZZBTYYoh59Q8K/+cmn+5Juju+5pVVt9dYABOXz81sMa0kX+woVgsJkJekVb7Nz2n9vQ9+g+FQn6/X1mUShC/wqzz2zSnxhNdIgXKCz+1d0oNjc1yxVo6lDZdXV3y4NH/+uxnC5nLf931M2bOmh2NftTzaU5VV6IradldQJkipwIWirZELc+ahZS72pyhiqhAxcipaiJei5Bt4kP/HnIqORWlR04FrBVcH7Q8bhZSoa0hq28hHKnYObUYbHqhmT7K67Qi0//kv629/cyz3KL22HNPgxh6wIEHff8HJx951NEGT/9P++GZb69cu72pNZ5IZrJZdAtQvrZu2XL6qacodcLYcaNO+KRGj53geXaVXk1f1lzUnHrF/H/offVJ505RLnL4scerz3/8mNHqn2P13QUG5vTlVOlSxdCQU0uqra1NnghlnFMPPuQbos3wkaP0Gpx40ljRYMVbqxsam0VOtfpnoeIsqIsrSXHa640GXZXXLHm/qDn1yOGj9L76srlL+8///Fr1R88/+4zVtxAYNKcvp0qXKoaAnFoQKd4lSu4x7epKitfyKqpqqXRavP9xw/a5f/jjbx94cO8vfVmUXgA99n+OmzTFc9MtMx+d+4crrrpar9l/7723OMmNN8/0PzJ346Y6cf7uVP98f3EN4h356X8mkxGv43GW94eZyKmAJRy9nCpdqhVFkqRgMOhyuQqcR29iTjVxppQxG+VUeTyovCipenyqmkiN4v0P6v81c9bs6TfcZDzwtOrUiaLZg/5HF7245MabbzFuPPnyqaLxun+sz1qXSlyDeEfOpsp8/1LeFpQ9cipgiVhnzNHLqdKlWglEHAwEAsomVQVuTGVWThW5WVySuBgT15/SY9Ocmkqnu0UmVQ0OFf+USCRFXhRtwv985+jhI4787lF6ofOggw85esRI3x13vvPOu5G696MfffTyK6+efc5548ZX6R3yrcMOF+ecX73w39Ft7R27lO9V51RxOeKq1L2tQOHIqYBVHL2cKl2q5S0ajfr9/tylScPh8JDPaVZOVV9YsdOqTXNqLjkvyrVy1WrjztGjho8YXzVhfvULyuHvbdg4c9bsyVOmGh/of2Tu5rr65pa2rO/lWT+KZ0tr6q2GpFxvfNCaZ071PLPylEnTNWvC1JvPnvWYUqdfM1uv5UW/DeaZUx9fsqz/Iut2PD3vKaXqiv/f00DxeBZ7LE+cdKkil9vtzg2pgsvlGvLqqqbkVM09qIqXVm2UU5PJblF6E+zT6bT4dOvW+kcenfurmbOM4+Zlk6Y86H9s7bre/+ZIpdNdye6PG7a9VvuG/+FHjQ+85LJJd91z/9pPd0nt+96M+N7cEQhAMUjSrjxz6oX3LdRrNvL4ser0Oe6Sa/VaTrzq1jxz6ttv8a9DlCdHL6dKl2oZC4VCmjlV8Pl8Qztn4TlVRGS9AD3M1OX9FTbKqflYuXLV+KoJruNOMI6b993/4Oa6+lhzqzgkqeqIXfbmcuMDh48cJc6/aNFiq38oKhQ5FSi9wJqA5YlzaOWa57L65qGI1Ds8ZRna0//Cc6qIyHqXFAgUZac0h+XUD+rrf/u7B3992+wxx7pGHTM6N2h++8jvio+ee/6F6MeN8jDT3oGtXUl5YtbqNevEpyNGHZN74Nf22+/Agw6e4rlyzp33iGZW/1BUKHIqUHrhaNjyxDm08of8Vt88FJHmE3YhFBri/yEXmFNjsZgyoytLIaMRjDksp8q2bduuN9//0p9PFh+tWr2ud9p+sls5pDvV26ta9/5W8el110/PPXCM67jxVRP+/PJfGxqbO6WEhb8OlYycCpSMlJRCW0POXfC/ZlON1bcQRZfVfyniYDQaHfLZCu9PFVFVs5e3kNldxhyWU9PpTKIruW37jieeevrRuX8Ye/J4Ufvsu+9X9/nannvtJeLmLb+6dd7Tz26OvB9PdCUSSdH4k0r0dql+9PE28ekDv3tInVBHjBz1vTHHXnHl1Td4bwq9vXrHzjaJWVOwTkpfOpNJZ3rkeuXllwvPqXfMuV05oajjxhyjfDR1yiT1V7MzG8pJrDMWXB907qJUIltHW4YeVuAg6vGgIiAW2GdZeE6VL8nr9apPNeTxsvlwWE4VibOhsbmxqbVzV7y9Y9fmunpRE08/Y3zVhM9/4QsidC5btkxp3N4hicZyNbd2KO9HP/pInVP/+MRTi15c8nHDdmUYa5JZU7C9V18xIafeOed29TmPV+XUKy6fbNVPA4on0hjxh/yWB81CSly/lCzKA1bYk/z03+83YYyHKTlVpixNJWJ0kZ74yxyWU7uS3Tt2tjU1t4sM2tre+cGHH4m6fOqVP598+YhRxxzxne+sWrW659PlV0Ub0ViulrbO7r4OqXQ609DQcNjhR4j67lFHiVoYXPRa7d8ad+yU4gm5mN0P+yOnAoMS2hpy9BJUw/pmTYWjxXq6Cjsznkfv8/m8Xm8+c+0Hm1NFRDYYZiBvkVXIOIR8OCynypLdqYbG5u1NLeo3G3e2ije7+sakilQqXneoNo6KJ/o6Ynf2dsS2tXfKHbElvmzARORUIB9SUgquDzp3EKq6eNaPXDU1NcrQVREcjRvnn1MlSZJ7TI27S0uwe6ojc2p3d2rbjpbGplb1mztibeJNJaeK152751Txzo5PcuquyPsfiso9cybTwzg8OMI769d7p1+vWbf57l5QF1fqnsef02v5yktL1Oecc/ts5aPAU09a9dMAU4hU5/RH/FklArfVNxX2Eo1Gs+YziVhpsBpAPjlVRE+5o7Q0w08H5MicmuWTjax08qW8fmoikcznVM2tHcz3BwCni3XGnDtNyqDE77L61sIuDJbc1+tYHTCnigM1T1i86fwDIqfuhpwKAGXA0btMGZSv1sqeLdiKwZL7uY/jY30GzKnKKIIsLperBI/4NTksp6ZS6V1SIt63blQmkxGvRWX6yA3iiS7xTneqfyKUQU6VD5erKda2valVinf1zrTi0T8AOFyZPfRXKtJYlF3U4Sx6gVLvMb1mR2kkkv1nSZIkvdN6vd6S/LJszsupInRK8d7+TpEm5Z5UdQMRYcU76gn7BjlVWYhKlDwNK55ftysAwP7KMqp6X7UmLsBWotGo3q6qms/os1Y8lWkODzDoprXk6T85lZwKAGWrLKNqaCv7w6G37zO3l9Ttdms21gy1mjlVhNHcli6Xy6ohqg7LqQAADEr5RVV3tZul/iGLxWLqvtKaGu3ddDX7R/X2DlBP9pfjbFFX8jdGTgUAlLnyi6qsUQW1SCQiP6/XDJRZM6gUekNOA4GA3IcqgqxV06cU5FQAQPkrs6jqmueiSxVZ9Ho95Z1Xc3k8Hs32IpuGQiEL+1DVyKkAgIpQZlFV/Byr7yicwWBxAKsvbWAOuEQAAExRZlGVnVSRj2g0Guzj9/u9nwoEAgPus2oH5FQAQAUpp6jKGlUoe+RUAEBlsXlU9dX6ROXZOBy1bENLoATIqQCAimPnqCrP5Y91xsQLd7XbuLFoYPW9BIqInAoAqES2japZT/PD0bB4x6B9zSbtJTOBMkBOBQBUKHtGVc1Rp7HOWGBNwDXPldueNapQxsipAIAKFVwftDyV5plTFaGtodzuVbpUUa7IqQCAShTrjFkeSTUrnyGnWd2rbE+FckVOBQBUIuNBn9ZW/r8itDUUjoZ57o9yRU4FAFQcEe8sD6Om5FSgvPGXAQBQWaSkpDkhyT5F/yggI6cCACqLtdP83dXuAZfxjzRGrL5JgC2QUwEAFUREQGv7SuXp/OFo2KBPl5wKyMipAIAKMuAOT8WuwJqAfCWxzpjeXC5yKiAjpwIAKoUdFkzNWkOqZlNNbscq60wBMnIqAKAixDpjdpg+ldtXGm2JehZ7yKlALnIqAKAi2GTBVJFKNS9P3ddLTgVk5FQAQPkLR8OWJ1S5DC5SRFgRpj2LPbHOWMnuDGBn5FQAQPmzwxN/USKDWn0nACchpwIAyl8pw6i72q23qoC8KBWAPJFTAQDlL9oS9Yf8IiaWoGO1ZlON+DrNL2LgKTAo5FQAQGWRklKkMRLaGhKpUSRX01dUlUeXakZVEWGt/vWAk5BTAQDojZXhaFgk1wJjq6/Wp5xTROGsT1nAHxgUcioAAP1E0BwwjBoMHhDZVH22rKjKRH5gUMipAAD0y2fPKpE+NVdjFflVSkpZJwysCSgNLPlFgHPxdwYAgH4D5lR5zn60JZr7kT/k1zyniKoiwjI4FRgscioAAP0GzKnKGFORShl+ChQVORUAgH7GOVU9TSrWGVMPVHVXuy28bKAskVMBAOhnnFOzJkKpG7M2KmA6cioAAP0McmpuEpWSktKlylx+wHTkVAAA+unlVM25/D19E6p8tb5wNFz6SwXKHjkVAIB+ejk1a2FUACVATgUAoJ9mTmWOFGAJcioAAP1qNtUYrEUFoJTIqQAA9BORVHNhfwClR04FAKBfbk5lIj9gFXIqAAD9snKq3laoAEqAnAoAQD91TtVbiwpAaZBTAQDop86pbDEFWIucCgBAPyWnshYVYDlyKgAAu/Es9oiQylpUgOXIqQAAALAjcioAAADsiJwKAAAAO/p/cIOOlfQvRfsAAAAASUVORK5CYII="
   },
   {
@@ -609,15 +609,14 @@
   {
     "sourceSet": "Test Set 2",
     "sourceQuestion": 24,
-    "question": "What is your action when approaching a West Cardinal Buoy right ahead of you, when heading south steering a course of 180 True?",
+    "question": "What is your action when approaching a West Cardinal Buoy right ahead of you, when heading south steering a course of 180 degrees True?",
     "answers": [
       "Alter course either side (port or starboard)",
       "I shall slow my engine and pass the buoy with extreme caution",
       "Alter my course to starboard and pass at a safe distance",
       "Ask Port Operations for assistance"
     ],
-    "correctIndex": 2,
-    "imageBase64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAFCAAAAAAm3jBFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAADElEQVR4nGNgGIEAAAD1AAGYcwY0AAAAAElFTkSuQmCC"
+    "correctIndex": 2
   },
   {
     "sourceSet": "Test Set 2",
@@ -637,7 +636,7 @@
     "answers": [
       "compass rose",
       "latitude scale of the chart",
-      "longtitude scale of the chart",
+      "longitude scale of the chart",
       "slide distance ruler"
     ],
     "correctIndex": 1
@@ -647,7 +646,7 @@
     "sourceQuestion": 27,
     "question": "To ensure safety of navigation",
     "answers": [
-      "Laminate the charts so it won\"t get wet",
+      "Laminate the charts so it won't get wet",
       "Update the chart using the latest notice to mariners",
       "Use the smallest scale chart"
     ],
@@ -663,7 +662,7 @@
       "3",
       "4"
     ],
-    "correctIndex": 0
+    "correctIndex": 2
   },
   {
     "sourceSet": "Test Set 2",
@@ -692,7 +691,7 @@
   {
     "sourceSet": "Test Set 3",
     "sourceQuestion": 1,
-    "question": "The weight of the boat\"s anchor in kilograms should be about",
+    "question": "The weight of the boat's anchor in kilograms should be about",
     "answers": [
       "twice the boat's length in metres",
       "one and a half times the length of the boat in metres",
@@ -706,7 +705,7 @@
     "question": "The purpose of the AIS is to",
     "answers": [
       "Improve safety on board",
-      "To further enhance the security of Singapore\"s port waters",
+      "To further enhance the security of Singapore's port waters",
       "To enable the security agencies to identify and track the movements of all powered harbour and pleasure craft"
     ],
     "correctIndex": 1
@@ -725,7 +724,7 @@
   {
     "sourceSet": "Test Set 3",
     "sourceQuestion": 4,
-    "question": "The Port Master\"s written permission is required to enter, transit or moor in",
+    "question": "The Port Master's written permission is required to enter, transit or moor in",
     "answers": [
       "Keppel Harbour",
       "East Johore Strait",
@@ -800,7 +799,7 @@
     "answers": [
       "Depth of water is the same along the contour lines",
       "Nature of seabed",
-      "Bottoof the seabed"
+      "Bottom of the seabed"
     ],
     "correctIndex": 0
   },
@@ -959,7 +958,7 @@
     "question": "A Beacon is a _____",
     "answers": [
       "floating marker",
-      "flxed structure",
+      "fixed structure",
       "Light house",
       "Buoy"
     ],
@@ -979,7 +978,7 @@
   {
     "sourceSet": "Test Set 3",
     "sourceQuestion": 28,
-    "question": "You hear the fog signals of a vessel making way forward of your beam in an area ofrestricted visibility. She sounds close and possibly there is a risk of collision. You should",
+    "question": "You hear the fog signals of a vessel making way forward of your beam in an area of restricted visibility. She sounds close and possibly there is a risk of collision. You should",
     "answers": [
       "Slow down and assess the situation, and if it is safe alter course to starboard",
       "Slow down and alter course to port",
@@ -994,7 +993,7 @@
     "answers": [
       "the sheltered side",
       "the side exposed to the wind",
-      "the side away frothe wind"
+      "the side away from the wind"
     ],
     "correctIndex": 1
   },
@@ -1005,7 +1004,7 @@
     "answers": [
       "At Changi General Purpose Anchorage",
       "At Changi Point",
-      "Ofi Changi Naval Base"
+      "Off Changi Naval Base"
     ],
     "correctIndex": 2
   },
@@ -1057,10 +1056,10 @@
   {
     "sourceSet": "Test Set 4",
     "sourceQuestion": 5,
-    "question": "When negotiating a blind bend in a channel, you hear a prolong blast ahead of you. What action should you take?",
+    "question": "When negotiating a blind bend in a channel, you hear a prolonged blast ahead of you. What action should you take?",
     "answers": [
       "Sound 5 short blast and maintain course",
-      "Sound 1 prolong blast and move closer to the starboard side of the channel",
+      "Sound 1 prolonged blast and move closer to the starboard side of the channel",
       "Sound 2 prolong blasts and keep to the centre of the channel",
       "Stop Engine"
     ],
@@ -1082,7 +1081,7 @@
     "sourceQuestion": 7,
     "question": "When in doubt of the intention of the “Give-way” vessel, what sound signal shall the “Stand-on” vessel sound",
     "answers": [
-      "one prolong blast",
+      "one prolonged blast",
       "5 or more short blasts",
       "3 short blasts"
     ],
@@ -1213,7 +1212,7 @@
   {
     "sourceSet": "Test Set 4",
     "sourceQuestion": 19,
-    "question": "According to the regulations for preventing collisions at sea, a vessel proceeding through a narrow channel durinng restricted visibility, what sound signal should a vessel not making way give",
+    "question": "According to the regulations for preventing collisions at sea, a vessel proceeding through a narrow channel during restricted visibility, what sound signal should a vessel not making way give",
     "answers": [
       "One short blast at intervals of more than 2 minutes",
       "One prolonged blast at intervals of more than 2 minutes",
@@ -1240,7 +1239,7 @@
     "answers": [
       "The front of the vessel",
       "The stern of the vessel",
-      "The beaof the vessel"
+      "The beam of the vessel"
     ],
     "correctIndex": 1
   },
@@ -1269,11 +1268,11 @@
   {
     "sourceSet": "Test Set 4",
     "sourceQuestion": 24,
-    "question": "Tidal heights and tidal stream information can be obtained from m",
+    "question": "Tidal heights and tidal stream information can be obtained from",
     "answers": [
       "Changi Meteorological station",
       "Singapore Tide Tables",
-      "MPA, Port Master's ofice"
+      "MPA, Port Master's office"
     ],
     "correctIndex": 1
   },
@@ -1374,7 +1373,7 @@
     "sourceQuestion": 5,
     "question": "The lighthouse marked X is",
     "answers": [
-      "Rafi fies Lighthouse",
+      "Raffles Lighthouse",
       "Sultan Shoal Lighthouse",
       "Bedok Lighthouse",
       "Horsburgh Lighthouse"
@@ -1477,7 +1476,7 @@
     "sourceQuestion": 14,
     "question": "No pleasure craft shall be permitted to",
     "answers": [
-      "berth at any public jetty longer than necessary to embark or dismbark passengers.",
+      "berth at any public jetty longer than necessary to embark or disembark passengers.",
       "tow a parachute or hang-glider in the port",
       "exceed the speed limit in rivers and East Johor Strait",
       "all of the above"
@@ -1489,9 +1488,9 @@
     "sourceQuestion": 15,
     "question": "A power driven vessel over 50m in length underway, shall exhibit the following lights",
     "answers": [
-      "One mast headlights + side lights + stern lights",
-      "2 mast headlights + side lights + stern lights",
-      "3 mast headlights + side lights + stern lights"
+      "One masthead light + sidelights + stern light",
+      "2 masthead lights + sidelights + stern light",
+      "3 masthead lights + sidelights + stern light"
     ],
     "correctIndex": 1
   },
@@ -1521,7 +1520,7 @@
   {
     "sourceSet": "Test Set 5",
     "sourceQuestion": 18,
-    "question": "Selat Sengkir is a prohibited area ofi",
+    "question": "Selat Sengkir is a prohibited area off",
     "answers": [
       "Pulau Serangoon",
       "Pulau Brani",
@@ -1536,7 +1535,7 @@
     "question": "Some of the considerations to be given when determining safe speed are",
     "answers": [
       "Tonnage of boat, engine horsepower and number of personnel in the boat",
-      "Trafl flc density, state of sea and visibility",
+      "Traffic density, state of sea and visibility",
       "Time of the day, location and fuel capacity",
       "Length of boat and distance from shore"
     ],
@@ -1602,7 +1601,7 @@
   {
     "sourceSet": "Test Set 5",
     "sourceQuestion": 25,
-    "question": "In a power driven vessel less than 12 metres in length, what does the combine lights consist of?",
+    "question": "In a power driven vessel less than 12 metres in length, what do the combined lights consist of?",
     "answers": [
       "port and starboard sidelights",
       "port, starboard and stern lights",
@@ -1634,30 +1633,6 @@
     "correctIndex": 3
   },
   {
-    "sourceSet": "Test Set 5",
-    "sourceQuestion": 29,
-    "question": "In Singapore, where is windsurfing prohibited?",
-    "answers": [
-      "Nanas Channel",
-      "East Johor Straits (Serangoon Harbour)",
-      "West Johor Straits",
-      "Southern Islands"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "sourceSet": "Test Set 6",
-    "sourceQuestion": 5,
-    "question": "While at sea you notice a vessel displaying 2 red lights (in a vertical line) and one white light off your starboard bow. Which of the following statements is correct?",
-    "answers": [
-      "A risk of collision does not exist as the vessel is not aground",
-      "A risk of collision does not exist as the vessel is aground",
-      "A risk of collision does exist as the vessel is not aground",
-      "A risk of collision does exist as the vessel is aground"
-    ],
-    "correctIndex": 1
-  },
-  {
     "sourceSet": "Test Set 6",
     "sourceQuestion": 8,
     "question": "During daylight, a sailing vessel under sail and power, shall display",
@@ -1684,7 +1659,7 @@
   {
     "sourceSet": "Test Set 6",
     "sourceQuestion": 10,
-    "question": "At what distance should any vessel keep away from a vessel displaying the quarantine,customs or immigration signals",
+    "question": "At what distance should any vessel keep away from a vessel displaying the quarantine, customs or immigration signals",
     "answers": [
       "200 metres",
       "300 metres",
@@ -1697,9 +1672,9 @@
     "sourceQuestion": 11,
     "question": "At the Tuas Dangerous Goods Jetty, as per the MPA (Port) regulations you are required to comply with the following, except",
     "answers": [
-      "shall not enter within 200 metres away frothe main jetty",
-      "shall not anchor within 400 metres frothe main jetty head",
-      "shall not anchor or enter within keep 60 metres frothe jetty ramp",
+      "shall not enter within 200 metres away from the main jetty",
+      "shall not anchor within 400 metres from the main jetty head",
+      "shall not anchor or enter within 60 metres from the jetty ramp",
       "shall not enter within 400 metres from the main jetty head when a red flag is flown"
     ],
     "correctIndex": 3
@@ -1709,9 +1684,9 @@
     "sourceQuestion": 12,
     "question": "A power driven vessel making way shows the following lights",
     "answers": [
-      "Mast head lights + side lights and stern lights",
-      "Mast headlights and side lights",
-      "Mast headlights and stern lights"
+      "Masthead lights + sidelights and stern light",
+      "Masthead lights and sidelights",
+      "Masthead lights and stern light"
     ],
     "correctIndex": 0
   },
@@ -1730,7 +1705,7 @@
   {
     "sourceSet": "Test Set 6",
     "sourceQuestion": 14,
-    "question": "A pleasurecraft towing a person on water ski shall",
+    "question": "A pleasure craft towing a person on water ski shall",
     "answers": [
       "Be specially licensed",
       "Have a driver and lookout",
@@ -1742,7 +1717,7 @@
   {
     "sourceSet": "Test Set 6",
     "sourceQuestion": 15,
-    "question": "A life saving appliance that must be present onboard is",
+    "question": "A life-saving appliance that must be present onboard is",
     "answers": [
       "1st aid kit",
       "bilge pump",
@@ -1804,7 +1779,7 @@
     "question": "A vessel displays three black balls. What type of vessel is that",
     "answers": [
       "constrained by her draught",
-      "restricted in her ability to manoevure",
+      "restricted in her ability to manoeuvre",
       "aground",
       "Not under Command"
     ],
@@ -1837,7 +1812,7 @@
     "sourceQuestion": 3,
     "question": "A tug boat less than 50 metres in length towing a long barge more than 200 metres in length shall display",
     "answers": [
-      "1 mast head light",
+      "1 masthead light",
       "2 masthead lights",
       "3 masthead lights"
     ],
@@ -1889,28 +1864,6 @@
     ],
     "correctIndex": 2,
     "imageBase64": "data:image/png;base64,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"
-  },
-  {
-    "sourceSet": "Test Set 7",
-    "sourceQuestion": 9,
-    "question": "A Life saving appliance that is required to be kept on board is",
-    "answers": [
-      "flrst aid kit",
-      "red hand-flare",
-      "an electric torch"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "sourceSet": "Test Set 7",
-    "sourceQuestion": 17,
-    "question": "A vessel shall so far as practicable avoid crossing traffic lane, but if obliged to do so shall",
-    "answers": [
-      "cross at a small angle to the general direction of traffic fiow as is safe and practicable",
-      "cross as nearly as practicable at right angles to the general direction of the trafl flc fiow",
-      "use high powered engines"
-    ],
-    "correctIndex": 1
   },
   {
     "sourceSet": "Test Set 7",
@@ -1978,7 +1931,7 @@
       "Wreck",
       "Underwater rock"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "imageBase64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAABRCAAAAACydnSMAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAC1klEQVR4nO2Yu+GtIAzGWYo5XMIVGIEJmMABGMDe3prampb2XPUQJDHxcbW4jz/NefjxM4QkBtXnzaF+aD+0f5WWRm9Nq1Qw2hg/TM9oKo9gvp/aP6G1hKb6J7QOaICN92nJu/xtBFr+bEHCUzlaaJTK/k6E1mWJV126RltXZ/KPFtNCtkzPZjIbvKOlFs1b0MaYyZhm2dIssuv+Dqe0SWMPTePiIbXKgs8LBUt3G0xpIFSquvPysxY1oOnI7N1KB4WNY2g9d0eeBjhbxQChDVqAcXu64PSIRGSl0fAwNt46uvuU9vk4FsbnQk8ic0+bF8DAKlpyXHRLND61NlXHhaNMY60oqrjmk5DMBzSvq6grKrduk2brl0wLDSpToIoQkBxOokVLUgJULsM0W2gE2m4SqCC82bov0RJNiqwajkyT/ebzNEtsG50WTZNpxdsJ0zLwboR8y6Yb97R5BH6OTBtU66ucvtQ5yLSE/fyQRoV/PE2sRb9FU4/GuzRlIOxfoSmWJrV6yzXh0iTTnDDlgBZkmhGmXKD1FS03Fs19GtSkUNHmTWmsH6WW+4AG5XeqaJNQPM5pn9Dbplx+JbPSOLxI24R/Cy16zTcrEo3WnkoVnZQOEi0oh+9eVHCS4mJOoi1TEK+oSGd/hZa76YpXVJAiXCHhaeVooTchfCk9BfOEZmlw6Kkb4E2V7dZMkrG0wPimUq334s5iJyutbq/wVXunR4ot9TM6o0ilXIqQZEgMINW2yhYZSWlj2SiHGz4+Yzp8+sS0+Vy0GSTkArr3t64XXk1b8090CfNf3LWzGw1X7is0CMvsk5gYWsNv/v4veAcCxwBUDiZy8ZRWgjwiU3OQllM4Vwm5labvcuBZjZ2YE7Bhn3J8hKzFLh+foYv31U/p5ZTYERh48NPXNHZmSd2j/PQAv8AbBlh4kE6xhzQYntCOxjkteG+NMd3xm7ertDvj/6H9Ah1qHWrkKrVaAAAAAElFTkSuQmCC"
   },
   {
@@ -2101,43 +2054,19 @@
   },
   {
     "sourceSet": "Test Set 8",
-    "sourceQuestion": 19,
-    "question": "A vessel in distress and need of assistance may display any of these signals, except",
-    "answers": [
-      "slowly and repeatedly raising and lowering arms outstretched to each side",
-      "put up the red flag \"B\"",
-      "sound continuously any fog-signaling apparatus; and",
-      "fire a hand held flare showing red light"
-    ],
-    "correctIndex": 1
-  },
-  {
-    "sourceSet": "Test Set 8",
     "sourceQuestion": 29,
     "question": "If there is a mechanical breakdown at a narrow channel or fairway",
     "answers": [
       "Anchor the vessel immediately",
       "Signal for help",
       "Shout and call for help",
-      "Attem mpt to move the vessel to one side of the channel, out of the way of traffic and anchor the vessel"
+      "Attempt to move the vessel to one side of the channel, out of the way of traffic and anchor the vessel"
     ],
     "correctIndex": 3
   },
   {
     "sourceSet": "Test Set 8",
     "sourceQuestion": 30,
-    "question": "What is the flashing sequence of a South Cardinal Mark?",
-    "answers": [
-      "Q or VQ",
-      "Q(3) or VQ(3)",
-      "Q(6) or VQ(6)",
-      "None of the above"
-    ],
-    "correctIndex": 3
-  },
-  {
-    "sourceSet": "Test Set 9",
-    "sourceQuestion": 24,
     "question": "What is the flashing sequence of a South Cardinal Mark?",
     "answers": [
       "Q or VQ",
@@ -2157,18 +2086,6 @@
       "Three short blasts"
     ],
     "correctIndex": 0
-  },
-  {
-    "sourceSet": "Test Set 9",
-    "sourceQuestion": 26,
-    "question": "What is the minimum age of a lookout on a ski boat during water skiing?",
-    "answers": [
-      "18",
-      "17",
-      "16",
-      "15"
-    ],
-    "correctIndex": 3
   },
   {
     "sourceSet": "Test Set 9",
