@@ -8,6 +8,7 @@ export type McqCard = {
   answers: string[];
   correctIndex: number;
   imageBase64?: string;
+  note?: string;
   due: string;
   difficulty: number;
   stability: number;
