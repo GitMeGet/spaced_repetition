@@ -40,6 +40,28 @@ export async function seedDefaultCards(): Promise<number> {
   return missing.length;
 }
 
+export async function reseedDefaultCards(): Promise<number> {
+  const defaultQuestions = await fetchDefaultQuestions();
+  const defaultKeys = new Set(defaultQuestions.map(sourceKey).filter(Boolean));
+
+  await db.transaction('rw', db.cards, async () => {
+    if (defaultKeys.size > 0) {
+      const storedCards = await db.cards.toArray();
+      const defaultIds = storedCards
+        .filter((card) => defaultKeys.has(sourceKey(card)))
+        .map((card) => card.id)
+        .filter((id): id is number => id !== undefined);
+      if (defaultIds.length > 0) await db.cards.bulkDelete(defaultIds);
+    }
+
+    await db.cards.bulkAdd(defaultQuestions.map((card) => createNewCard(normalizeImportCard(card))));
+  });
+
+  localStorage.setItem('mcq-fsrs-defaults-seeded', 'yes');
+  localStorage.setItem('mcq-fsrs-defaults-version', defaultDeckVersion);
+  return defaultQuestions.length;
+}
+
 export async function getDueCards(): Promise<McqCard[]> {
   const cards = await getDeck();
   return cards.filter((card) => isDue(card));
@@ -119,6 +141,10 @@ function normalizeStoredCard(card: McqCard): McqCard {
 
 function cardSignature(card: Pick<ImportCard, 'question' | 'answers'>): string {
   return `${card.question.trim()}|${card.answers.map((answer) => String(answer ?? '').trim()).join('|')}`;
+}
+
+function sourceKey(card: Pick<ImportCard, 'sourceSet' | 'sourceQuestion'>): string {
+  return card.sourceSet && card.sourceQuestion ? `${card.sourceSet}|${card.sourceQuestion}` : '';
 }
 
 async function fetchDefaultQuestions(): Promise<ImportCard[]> {
