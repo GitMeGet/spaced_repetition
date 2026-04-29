@@ -3,11 +3,14 @@
   import { BarChart3, Check, Download, ImagePlus, Library, RotateCcw, Trash2, Upload } from 'lucide-svelte';
   import { addCard, deleteCard, exportBackup, getDeck, getDueCards, gradeCard, importCards, restoreBackup, seedDefaultCards } from './lib/db';
   import { downloadText, downscaleImage, normalizeImageBase64 } from './lib/images';
+  import { isDue } from './lib/scheduler';
   import type { ImportCard, McqCard } from './lib/types';
 
   type View = 'study' | 'add' | 'deck';
+  type StudyMode = 'new' | 'due' | 'review';
 
   let view: View = 'study';
+  let studyMode: StudyMode = 'new';
   let cards: McqCard[] = [];
   let dueCards: McqCard[] = [];
   let active: McqCard | undefined;
@@ -21,11 +24,13 @@
   let busy = false;
 
   $: total = cards.length;
-  $: dueCount = dueCards.length;
-  $: mastered = cards.filter((card) => card.state === 'review' && card.reps >= 3).length;
+  $: newCount = cards.filter((card) => card.state === 'new').length;
+  $: dueCount = dueCards.filter((card) => card.state !== 'new').length;
+  $: reviewReady = cards.filter((card) => card.state === 'review' && isDue(card)).length;
   $: accuracy = total ? Math.round((cards.reduce((sum, card) => sum + card.reps - card.lapses, 0) / Math.max(1, cards.reduce((sum, card) => sum + card.reps, 0))) * 100) : 0;
   $: hasAnswer = selectedIndex !== undefined;
   $: isCorrect = hasAnswer && active ? selectedIndex === active.correctIndex : false;
+  $: activeQueue = getStudyQueue(studyMode);
 
   onMount(load);
 
@@ -33,9 +38,33 @@
     await seedDefaultCards();
     cards = await getDeck();
     dueCards = await getDueCards();
-    active = dueCards[0];
+    active = pickRandom(getStudyQueue(studyMode));
     selectedIndex = undefined;
     submitted = false;
+  }
+
+  function getStudyQueue(mode: StudyMode): McqCard[] {
+    if (mode === 'new') return cards.filter((card) => card.state === 'new');
+    if (mode === 'review') return cards.filter((card) => card.state === 'review' && isDue(card));
+    return dueCards.filter((card) => card.state !== 'new');
+  }
+
+  function selectStudyMode(mode: StudyMode) {
+    studyMode = mode;
+    active = pickRandom(getStudyQueue(mode));
+    selectedIndex = undefined;
+    submitted = false;
+  }
+
+  function pickRandom(queue: McqCard[]): McqCard | undefined {
+    if (queue.length === 0) return undefined;
+    return queue[Math.floor(Math.random() * queue.length)];
+  }
+
+  function queueLabel(mode: StudyMode): string {
+    if (mode === 'new') return 'New card';
+    if (mode === 'review') return 'Review card';
+    return 'Due card';
   }
 
   async function submitCard() {
@@ -137,19 +166,19 @@
     </nav>
   </header>
 
-  <section class="metrics" aria-label="Deck metrics">
-    <div>
+  <section class="metrics" aria-label="Study queues">
+    <button class:active={studyMode === 'new'} on:click={() => selectStudyMode('new')} title="Study new cards">
+      <span>{newCount}</span>
+      <p>New</p>
+    </button>
+    <button class:active={studyMode === 'due'} on:click={() => selectStudyMode('due')} title="Study due cards">
       <span>{dueCount}</span>
       <p>Due now</p>
-    </div>
-    <div>
-      <span>{total}</span>
-      <p>Total cards</p>
-    </div>
-    <div>
-      <span>{mastered}</span>
-      <p>Review ready</p>
-    </div>
+    </button>
+    <button class:active={studyMode === 'review'} on:click={() => selectStudyMode('review')} title="Study review cards">
+      <span>{reviewReady}</span>
+      <p>Review</p>
+    </button>
     <div>
       <span>{accuracy}%</span>
       <p>Accuracy</p>
@@ -167,7 +196,7 @@
           {#if active.imageBase64}
             <img src={active.imageBase64} alt="" />
           {/if}
-          <p class="eyebrow">Due card</p>
+          <p class="eyebrow">{queueLabel(studyMode)} · {activeQueue.length} in queue</p>
           <h2>{active.question}</h2>
           <div class="answers">
             {#each active.answers as option, index}
@@ -206,8 +235,8 @@
       {:else}
         <section class="empty">
           <BarChart3 size={36} />
-          <h2>No cards due right now</h2>
-          <p>Add or import cards, then this view becomes the fast MCQ loop.</p>
+          <h2>No {studyMode === 'new' ? 'new' : studyMode === 'review' ? 'review' : 'due'} cards right now</h2>
+          <p>Switch queues or add more cards when you are ready.</p>
         </section>
       {/if}
     </section>

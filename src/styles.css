@@ -119,12 +119,14 @@ nav button.active,
   margin-bottom: 16px;
 }
 
-.metrics div {
+.metrics div,
+.metrics button {
   min-height: 86px;
   padding: 16px;
   border: 1px solid #dfe5ee;
   border-radius: 8px;
   background: #ffffff;
+  text-align: left;
 }
 
 .metrics span {
@@ -139,6 +141,21 @@ nav button.active,
 .empty p {
   margin-bottom: 0;
   color: #667085;
+}
+
+.metrics button {
+  cursor: pointer;
+}
+
+.metrics button.active {
+  border-color: #185a9d;
+  background: #eaf2fb;
+  box-shadow: inset 0 0 0 1px #185a9d;
+}
+
+.metrics button.active p {
+  color: #185a9d;
+  font-weight: 800;
 }
 
 .status {
@@ -159,7 +176,9 @@ nav button.active,
 
 .study {
   display: grid;
-  place-items: center;
+  gap: 16px;
+  justify-items: center;
+  align-content: start;
 }
 
 .question-panel {
@@ -418,4 +437,5 @@ textarea {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
 }
