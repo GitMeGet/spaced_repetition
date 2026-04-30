@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "npm run validate:data && vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "validate:data": "node scripts/validate_default_questions.mjs"
   },
   "dependencies": {
     "dexie": "^4.0.11",

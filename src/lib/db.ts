@@ -3,7 +3,11 @@ import { normalizeImageBase64 } from './images';
 import { createNewCard, isDue, reviewCard } from './scheduler';
 import type { ImportCard, McqCard, StudyGrade } from './types';
 
-const defaultDeckVersion = 'ppcdl-test-sets-1-9-deduped';
+export type DefaultSyncSummary = {
+  added: number;
+  updated: number;
+  deleted: number;
+};
 
 class StudyDatabase extends Dexie {
   cards!: Table<McqCard, number>;
@@ -12,6 +16,9 @@ class StudyDatabase extends Dexie {
     super('mcq-fsrs-study');
     this.version(1).stores({
       cards: '++id, due, difficulty, stability, reps, state'
+    });
+    this.version(2).stores({
+      cards: '++id, due, difficulty, stability, reps, state, sourceSet, sourceQuestion, [sourceSet+sourceQuestion]'
     });
   }
 }
@@ -22,44 +29,79 @@ export async function getDeck(): Promise<McqCard[]> {
   return db.cards.orderBy('due').toArray();
 }
 
-export async function seedDefaultCards(): Promise<number> {
-  const currentCards = await getDeck();
-  if (
-    currentCards.length > 0 &&
-    localStorage.getItem('mcq-fsrs-defaults-version') === defaultDeckVersion
-  ) {
-    return 0;
+export async function syncDefaultCards(): Promise<DefaultSyncSummary> {
+  const defaultQuestions = (await fetchDefaultQuestions()).map(normalizeImportCard);
+  const defaultKeys = new Set<string>();
+  for (const card of defaultQuestions) {
+    const key = sourceKey(card);
+    if (!key) throw new Error('Bundled default questions must include sourceSet and sourceQuestion.');
+    if (defaultKeys.has(key)) throw new Error(`Duplicate bundled source key: ${key}`);
+    defaultKeys.add(key);
   }
 
-  const defaultQuestions = await fetchDefaultQuestions();
-  const existing = new Set(currentCards.map(cardSignature));
-  const missing = defaultQuestions.filter((card) => !existing.has(cardSignature(card)));
-  if (missing.length > 0) await importCards(missing);
-  localStorage.setItem('mcq-fsrs-defaults-seeded', 'yes');
-  localStorage.setItem('mcq-fsrs-defaults-version', defaultDeckVersion);
-  return missing.length;
-}
-
-export async function reseedDefaultCards(): Promise<number> {
-  const defaultQuestions = await fetchDefaultQuestions();
-  const defaultKeys = new Set(defaultQuestions.map(sourceKey).filter(Boolean));
+  const summary: DefaultSyncSummary = { added: 0, updated: 0, deleted: 0 };
 
   await db.transaction('rw', db.cards, async () => {
-    if (defaultKeys.size > 0) {
-      const storedCards = await db.cards.toArray();
-      const defaultIds = storedCards
-        .filter((card) => defaultKeys.has(sourceKey(card)))
-        .map((card) => card.id)
-        .filter((id): id is number => id !== undefined);
-      if (defaultIds.length > 0) await db.cards.bulkDelete(defaultIds);
+    const storedCards = await db.cards.toArray();
+    const storedBySource = new Map<string, McqCard>();
+    const sourceIdsToDelete: number[] = [];
+    const legacyBySignature = new Map<string, McqCard>();
+
+    for (const card of storedCards) {
+      const key = sourceKey(card);
+      if (key) {
+        if (!storedBySource.has(key)) storedBySource.set(key, card);
+        else if (card.id !== undefined) sourceIdsToDelete.push(card.id);
+        continue;
+      }
+
+      if (!legacyBySignature.has(cardSignature(card))) {
+        legacyBySignature.set(cardSignature(card), card);
+      }
     }
 
-    await db.cards.bulkAdd(defaultQuestions.map((card) => createNewCard(normalizeImportCard(card))));
+    for (const card of storedCards) {
+      const key = sourceKey(card);
+      if (key && !defaultKeys.has(key) && card.id !== undefined) {
+        sourceIdsToDelete.push(card.id);
+      }
+    }
+
+    const cardsToAdd: McqCard[] = [];
+    const cardsToPut: McqCard[] = [];
+    const handledIds = new Set<number>();
+
+    for (const defaultCard of defaultQuestions) {
+      const key = sourceKey(defaultCard);
+      let storedCard = storedBySource.get(key);
+
+      if (!storedCard) {
+        storedCard = legacyBySignature.get(cardSignature(defaultCard));
+      }
+
+      if (!storedCard) {
+        cardsToAdd.push(createNewCard(defaultCard));
+        continue;
+      }
+
+      if (storedCard.id !== undefined) handledIds.add(storedCard.id);
+      const updated = mergeDefaultContent(storedCard, defaultCard);
+      if (updated) cardsToPut.push(updated);
+    }
+
+    const deleteIds = [...new Set(sourceIdsToDelete.filter((id) => !handledIds.has(id)))];
+    if (deleteIds.length > 0) await db.cards.bulkDelete(deleteIds);
+    if (cardsToPut.length > 0) await db.cards.bulkPut(cardsToPut);
+    if (cardsToAdd.length > 0) await db.cards.bulkAdd(cardsToAdd);
+
+    summary.added = cardsToAdd.length;
+    summary.updated = cardsToPut.length;
+    summary.deleted = deleteIds.length;
   });
 
-  localStorage.setItem('mcq-fsrs-defaults-seeded', 'yes');
-  localStorage.setItem('mcq-fsrs-defaults-version', defaultDeckVersion);
-  return defaultQuestions.length;
+  localStorage.removeItem('mcq-fsrs-defaults-seeded');
+  localStorage.removeItem('mcq-fsrs-defaults-version');
+  return summary;
 }
 
 export async function getDueCards(): Promise<McqCard[]> {
@@ -152,8 +194,32 @@ function sourceKey(card: Pick<ImportCard, 'sourceSet' | 'sourceQuestion'>): stri
   return card.sourceSet && card.sourceQuestion ? `${card.sourceSet}|${card.sourceQuestion}` : '';
 }
 
+function mergeDefaultContent(stored: McqCard, bundled: ReturnType<typeof normalizeImportCard>): McqCard | undefined {
+  const next: McqCard = {
+    ...stored,
+    sourceSet: bundled.sourceSet,
+    sourceQuestion: bundled.sourceQuestion,
+    question: bundled.question,
+    answers: bundled.answers,
+    correctIndex: bundled.correctIndex,
+    imageBase64: bundled.imageBase64
+  };
+
+  const changed =
+    stored.sourceSet !== next.sourceSet ||
+    stored.sourceQuestion !== next.sourceQuestion ||
+    stored.question !== next.question ||
+    stored.correctIndex !== next.correctIndex ||
+    stored.imageBase64 !== next.imageBase64 ||
+    stored.answers.length !== next.answers.length ||
+    stored.answers.some((answer, index) => answer !== next.answers[index]);
+
+  if (!changed) return undefined;
+  return { ...next, updatedAt: new Date().toISOString() };
+}
+
 async function fetchDefaultQuestions(): Promise<ImportCard[]> {
-  const response = await fetch(`${import.meta.env.BASE_URL}data/default-questions.json`);
+  const response = await fetch(`${import.meta.env.BASE_URL}data/default-questions.json`, { cache: 'no-cache' });
   if (!response.ok) throw new Error('Could not load bundled default questions.');
   const cards = await response.json();
   if (!Array.isArray(cards)) throw new Error('Bundled default questions must be an array.');

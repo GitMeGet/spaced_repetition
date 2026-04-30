@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { BarChart3, Check, Download, ImagePlus, Library, RotateCcw, Trash2, Upload } from 'lucide-svelte';
-  import { addCard, deleteCard, exportBackup, getDeck, getDueCards, gradeCard, importCards, reseedDefaultCards, restoreBackup, seedDefaultCards, updateCardNote } from './lib/db';
+  import { addCard, deleteCard, exportBackup, getDeck, getDueCards, gradeCard, importCards, restoreBackup, syncDefaultCards, updateCardNote } from './lib/db';
   import { downloadText, downscaleImage, normalizeImageBase64 } from './lib/images';
   import { isDue } from './lib/scheduler';
   import type { ImportCard, McqCard } from './lib/types';
@@ -33,10 +33,17 @@
   $: isCorrect = hasAnswer && active ? selectedIndex === active.correctIndex : false;
   $: activeQueue = getStudyQueue(studyMode);
 
-  onMount(load);
+  onMount(() => {
+    void load(true);
+  });
 
-  async function load() {
-    await seedDefaultCards();
+  async function load(syncDefaults = false) {
+    if (syncDefaults) {
+      const sync = await syncDefaultCards();
+      if (sync.added || sync.updated || sync.deleted) {
+        status = `Synced bundled questions: ${sync.added} added, ${sync.updated} updated, ${sync.deleted} deleted.`;
+      }
+    }
     cards = await getDeck();
     dueCards = await getDueCards();
     setActive(pickRandom(getStudyQueue(studyMode)));
@@ -142,7 +149,7 @@
     try {
       const count = await restoreBackup(await file.text());
       status = `Restored ${count} cards.`;
-      await load();
+      await load(true);
     } catch (error) {
       status = error instanceof Error ? error.message : 'Restore failed.';
     } finally {
@@ -152,22 +159,6 @@
 
   async function backup() {
     downloadText(`mcq-fsrs-backup-${new Date().toISOString().slice(0, 10)}.json`, await exportBackup());
-  }
-
-  async function reseedDefaults() {
-    const confirmed = window.confirm(
-      'Re-seed the bundled question set? This will replace bundled default cards with the latest bundled data. Manually added cards will stay in your deck.'
-    );
-    if (!confirmed) return;
-
-    status = '';
-    try {
-      const count = await reseedDefaultCards();
-      status = `Re-seeded ${count} bundled cards.`;
-      await load();
-    } catch (error) {
-      status = error instanceof Error ? error.message : 'Re-seed failed.';
-    }
   }
 
   async function removeCard(id: number | undefined) {
@@ -329,9 +320,6 @@
         </label>
         <button class="tool-button" on:click={backup}>
           <Download size={18} /> Master backup
-        </button>
-        <button class="tool-button danger" on:click={reseedDefaults}>
-          <RotateCcw size={18} /> Re-seed defaults
         </button>
       </aside>
     </section>
