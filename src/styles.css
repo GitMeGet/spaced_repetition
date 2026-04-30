@@ -262,6 +262,15 @@ nav button.active,
   color: #8f1f2a;
 }
 
+.question-note {
+  margin-top: 14px;
+}
+
+.question-note textarea {
+  min-height: 112px;
+  background: #fbfcfe;
+}
+
 .actions {
   display: flex;
   justify-content: flex-end;

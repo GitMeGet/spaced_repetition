@@ -82,6 +82,10 @@ export async function gradeCard(card: McqCard, grade: StudyGrade): Promise<void>
   await db.cards.put(reviewCard(card, grade));
 }
 
+export async function updateCardNote(id: number, note: string): Promise<void> {
+  await db.cards.update(id, { note: note.trim(), updatedAt: new Date().toISOString() });
+}
+
 export async function deleteCard(id: number): Promise<void> {
   await db.cards.delete(id);
 }
@@ -134,6 +138,7 @@ function normalizeStoredCard(card: McqCard): McqCard {
     reps: Number(card.reps ?? 0),
     lapses: Number(card.lapses ?? 0),
     state: card.state || 'new',
+    note: String(card.note ?? '').trim() || undefined,
     createdAt: card.createdAt || now,
     updatedAt: card.updatedAt || now
   };

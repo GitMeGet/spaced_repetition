@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { BarChart3, Check, Download, ImagePlus, Library, RotateCcw, Trash2, Upload } from 'lucide-svelte';
-  import { addCard, deleteCard, exportBackup, getDeck, getDueCards, gradeCard, importCards, reseedDefaultCards, restoreBackup, seedDefaultCards } from './lib/db';
+  import { addCard, deleteCard, exportBackup, getDeck, getDueCards, gradeCard, importCards, reseedDefaultCards, restoreBackup, seedDefaultCards, updateCardNote } from './lib/db';
   import { downloadText, downscaleImage, normalizeImageBase64 } from './lib/images';
   import { isDue } from './lib/scheduler';
   import type { ImportCard, McqCard } from './lib/types';
@@ -16,6 +16,7 @@
   let active: McqCard | undefined;
   let selectedIndex: number | undefined;
   let submitted = false;
+  let noteDraft = '';
   let status = '';
   let question = '';
   let answers = ['', '', '', ''];
@@ -38,9 +39,7 @@
     await seedDefaultCards();
     cards = await getDeck();
     dueCards = await getDueCards();
-    active = pickRandom(getStudyQueue(studyMode));
-    selectedIndex = undefined;
-    submitted = false;
+    setActive(pickRandom(getStudyQueue(studyMode)));
   }
 
   function getStudyQueue(mode: StudyMode): McqCard[] {
@@ -51,9 +50,14 @@
 
   function selectStudyMode(mode: StudyMode) {
     studyMode = mode;
-    active = pickRandom(getStudyQueue(mode));
+    setActive(pickRandom(getStudyQueue(mode)));
+  }
+
+  function setActive(card: McqCard | undefined) {
+    active = card;
     selectedIndex = undefined;
     submitted = false;
+    noteDraft = card?.note ?? '';
   }
 
   function pickRandom(queue: McqCard[]): McqCard | undefined {
@@ -84,8 +88,18 @@
 
   async function nextCard() {
     if (!active) return;
-    await gradeCard(active, isCorrect ? 'good' : 'again');
+    const reviewedCard = { ...active, note: noteDraft.trim() || undefined };
+    await saveNote();
+    await gradeCard(reviewedCard, isCorrect ? 'good' : 'again');
     await load();
+  }
+
+  async function saveNote() {
+    if (!active?.id) return;
+    const note = noteDraft.trim();
+    await updateCardNote(active.id, note);
+    active = { ...active, note: note || undefined };
+    cards = cards.map((card) => (card.id === active?.id ? { ...card, note: note || undefined } : card));
   }
 
   async function handleImage(event: Event) {
@@ -235,6 +249,10 @@
                 <span>Answer: {active.answers[active.correctIndex]}</span>
               {/if}
             </div>
+            <label class="question-note">
+              Notes
+              <textarea bind:value={noteDraft} on:blur={saveNote} rows="4" placeholder="Add anything you want to remember about this question"></textarea>
+            </label>
           {/if}
           <div class="actions">
             {#if submitted}
