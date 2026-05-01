@@ -171,7 +171,9 @@ export function normalizeImportCard(card: ImportCard): Omit<McqCard, 'id' | 'due
     question: card.question.trim(),
     answers,
     correctIndex: card.correctIndex,
-    imageBase64: normalizeImageBase64(card.imageBase64 ?? card.questionImageBase64 ?? card.image)
+    imageBase64: normalizeImageBase64(card.imageBase64 ?? card.questionImageBase64 ?? card.image),
+    imageSrc: normalizeImageSrc(card.imageSrc),
+    answerImageSrc: normalizeImageSrc(card.answerImageSrc)
   };
 }
 
@@ -183,6 +185,8 @@ function normalizeStoredCard(card: McqCard): McqCard {
     id: card.id,
     sourceSet: card.sourceSet,
     sourceQuestion: card.sourceQuestion,
+    imageSrc: normalized.imageSrc,
+    answerImageSrc: normalized.answerImageSrc,
     due: card.due || now,
     difficulty: Number(card.difficulty ?? 5),
     stability: Number(card.stability ?? 0),
@@ -205,6 +209,11 @@ function normalizeCardType(card: Pick<ImportCard, 'cardType'>): CardType {
   throw new Error('cardType must be mcq or reveal.');
 }
 
+function normalizeImageSrc(value?: string): string | undefined {
+  const trimmed = String(value ?? '').trim();
+  return trimmed || undefined;
+}
+
 function sourceKey(card: Pick<ImportCard, 'sourceSet' | 'sourceQuestion'>): string {
   return card.sourceSet && card.sourceQuestion ? `${card.sourceSet}|${card.sourceQuestion}` : '';
 }
@@ -218,7 +227,9 @@ function mergeDefaultContent(stored: McqCard, bundled: ReturnType<typeof normali
     question: bundled.question,
     answers: bundled.answers,
     correctIndex: bundled.correctIndex,
-    imageBase64: bundled.imageBase64
+    imageBase64: bundled.imageBase64,
+    imageSrc: bundled.imageSrc,
+    answerImageSrc: bundled.answerImageSrc
   };
 
   const changed =
@@ -228,6 +239,8 @@ function mergeDefaultContent(stored: McqCard, bundled: ReturnType<typeof normali
     stored.question !== next.question ||
     stored.correctIndex !== next.correctIndex ||
     stored.imageBase64 !== next.imageBase64 ||
+    stored.imageSrc !== next.imageSrc ||
+    stored.answerImageSrc !== next.answerImageSrc ||
     stored.answers.length !== next.answers.length ||
     stored.answers.some((answer, index) => answer !== next.answers[index]);
 

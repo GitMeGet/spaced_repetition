@@ -8,6 +8,8 @@ export function createNewCard(card: {
   answers: string[];
   correctIndex: number;
   imageBase64?: string;
+  imageSrc?: string;
+  answerImageSrc?: string;
 }): McqCard {
   const now = new Date().toISOString();
 

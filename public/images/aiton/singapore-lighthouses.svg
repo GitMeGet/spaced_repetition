@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" role="img" aria-labelledby="title desc">
+  <title id="title">Singapore lighthouse reference</title>
+  <desc id="desc">Simple Singapore-area lighthouse reference showing Raffles, Sultan Shoal, Bedok and Horsburgh lighthouses.</desc>
+  <rect width="900" height="460" fill="#f8fafc"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#102033">Singapore Lighthouses</text>
+  <path d="M96 176 C210 98 366 112 450 162 C548 220 684 176 804 104 L836 144 C728 230 548 280 420 212 C324 162 206 154 112 220 Z" fill="#d1fae5" stroke="#059669" stroke-width="4"/>
+  <text x="444" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#065f46">Singapore</text>
+  <g font-family="Arial, sans-serif" font-size="15" font-weight="700">
+    <g transform="translate(224 306)">
+      <circle r="9" fill="#d71920"/>
+      <text x="0" y="32" text-anchor="middle" fill="#102033">Raffles</text>
+      <text x="0" y="52" text-anchor="middle" fill="#475467">4409A / Fl(3) 20s</text>
+    </g>
+    <g transform="translate(326 262)">
+      <circle r="9" fill="#d71920"/>
+      <text x="0" y="32" text-anchor="middle" fill="#102033">Sultan Shoal</text>
+      <text x="0" y="52" text-anchor="middle" fill="#475467">3814D / Fl(2) 15s</text>
+    </g>
+    <g transform="translate(520 204)">
+      <circle r="9" fill="#d71920"/>
+      <text x="0" y="32" text-anchor="middle" fill="#102033">Bedok</text>
+      <text x="0" y="52" text-anchor="middle" fill="#475467">5518B / on building</text>
+    </g>
+    <g transform="translate(742 146)">
+      <circle r="9" fill="#d71920"/>
+      <text x="0" y="32" text-anchor="middle" fill="#102033">Horsburgh</text>
+      <text x="0" y="52" text-anchor="middle" fill="#475467">2419A / on rocks</text>
+    </g>
+  </g>
+  <g transform="translate(80 382)" font-family="Arial, sans-serif" fill="#102033">
+    <text x="0" y="0" font-size="18" font-weight="700">Ranges and heights from notes</text>
+    <text x="0" y="28" font-size="15">Raffles 32m 20M; Sultan Shoal 20m 20M; Bedok 76m 23M; Horsburgh 31m 20M.</text>
+  </g>
+</svg>

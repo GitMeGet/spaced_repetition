@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">Emergency wreck marking buoy</title>
+  <desc id="desc">Blue and yellow emergency wreck marking buoy with yellow cross topmark and alternating blue yellow light sequence.</desc>
+  <rect width="900" height="420" fill="#f8fafc"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#102033">Emergency Wreck Marking Buoy</text>
+  <g transform="translate(268 94)">
+    <rect x="-48" y="132" width="96" height="136" rx="12" fill="#facc15" stroke="#ca8a04" stroke-width="4"/>
+    <rect x="-48" y="132" width="48" height="136" fill="#1d4ed8"/>
+    <rect x="-68" y="268" width="136" height="16" rx="8" fill="#64748b"/>
+    <line x1="-40" y1="54" x2="40" y2="110" stroke="#facc15" stroke-width="18" stroke-linecap="round"/>
+    <line x1="40" y1="54" x2="-40" y2="110" stroke="#facc15" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="0" cy="24" r="18" fill="#facc15"/>
+  </g>
+  <g transform="translate(520 110)" font-family="Arial, sans-serif" fill="#102033">
+    <text x="0" y="22" font-size="22" font-weight="700">Use</text>
+    <text x="0" y="58" font-size="18">Marks a new danger or wreck immediately.</text>
+    <text x="0" y="110" font-size="22" font-weight="700">Features</text>
+    <text x="0" y="146" font-size="18">Colour: blue and yellow stripes</text>
+    <text x="0" y="172" font-size="18">Shape: pillar or spar</text>
+    <text x="0" y="198" font-size="18">Topmark: yellow cross</text>
+    <text x="0" y="224" font-size="18">Light: alternating blue/yellow</text>
+  </g>
+  <g transform="translate(520 350)">
+    <rect x="0" y="0" width="44" height="20" fill="#1d4ed8"/>
+    <rect x="44" y="0" width="22" height="20" fill="#111827"/>
+    <rect x="66" y="0" width="44" height="20" fill="#facc15"/>
+    <rect x="110" y="0" width="22" height="20" fill="#111827"/>
+    <text x="150" y="16" font-family="Arial, sans-serif" font-size="16" fill="#102033">1s blue / 0.5s dark / 1s yellow</text>
+  </g>
+</svg>

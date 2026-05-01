@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">Mark recognition features</title>
+  <desc id="desc">A buoy annotated with shape, colour, topmark, and light characteristics.</desc>
+  <rect width="900" height="360" fill="#f8fafc"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#102033">Recognise Marks By Four Features</text>
+  <g transform="translate(450 185)">
+    <rect x="-28" y="-24" width="56" height="112" rx="10" fill="#0a8f45"/>
+    <polygon points="0,-118 -34,-64 34,-64" fill="#0a8f45"/>
+    <circle cx="0" cy="-148" r="15" fill="#16a34a"/>
+    <rect x="-58" y="88" width="116" height="16" rx="8" fill="#64748b"/>
+    <line x1="-150" y1="-88" x2="-36" y2="-78" stroke="#334155" stroke-width="3"/>
+    <line x1="150" y1="-88" x2="38" y2="-78" stroke="#334155" stroke-width="3"/>
+    <line x1="-150" y1="28" x2="-34" y2="28" stroke="#334155" stroke-width="3"/>
+    <line x1="150" y1="28" x2="34" y2="28" stroke="#334155" stroke-width="3"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#102033">
+    <text x="178" y="92">Topmark</text>
+    <text x="638" y="92">Light</text>
+    <text x="180" y="220">Shape</text>
+    <text x="632" y="220">Colour</text>
+  </g>
+</svg>

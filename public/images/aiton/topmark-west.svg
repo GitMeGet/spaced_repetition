@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-labelledby="title desc">
+  <title id="title">Two black cones point to point</title>
+  <desc id="desc">Unlabelled cardinal topmark with two black cones point to point.</desc>
+  <rect width="420" height="320" fill="#f8fafc"/>
+  <g transform="translate(210 66)" fill="#111827">
+    <polygon points="0,92 -56,0 56,0"/>
+    <polygon points="0,96 -56,188 56,188"/>
+  </g>
+</svg>

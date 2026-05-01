@@ -52,6 +52,11 @@ function validateCards(cards, label) {
     } else if (!Number.isInteger(card.correctIndex) || card.correctIndex < 0 || card.correctIndex >= card.answers.length) {
       throw new Error(`${row} must include a valid correctIndex.`);
     }
+    for (const imageField of ['imageSrc', 'answerImageSrc']) {
+      if (imageField in card && (typeof card[imageField] !== 'string' || card[imageField].trim() === '')) {
+        throw new Error(`${row} ${imageField} must be a non-empty string when present.`);
+      }
+    }
 
     const key = `${card.sourceSet}|${card.sourceQuestion}`;
     if (keys.has(key)) throw new Error(`${label} contains duplicate source key ${key}.`);

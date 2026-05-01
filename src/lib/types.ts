@@ -10,6 +10,8 @@ export type McqCard = {
   answers: string[];
   correctIndex: number;
   imageBase64?: string;
+  imageSrc?: string;
+  answerImageSrc?: string;
   note?: string;
   due: string;
   difficulty: number;
@@ -29,6 +31,8 @@ export type ImportCard = {
   answers: string[];
   correctIndex: number;
   imageBase64?: string;
+  imageSrc?: string;
+  answerImageSrc?: string;
   questionImageBase64?: string;
   image?: string;
 };

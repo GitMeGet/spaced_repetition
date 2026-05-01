@@ -1,18 +1,33 @@
 [
   {
     "question": "Which scheduler model is this app built around?",
-    "answers": ["Leitner boxes only", "DSR / FSRS", "Random rotation", "Calendar reminders"],
+    "answers": [
+      "Leitner boxes only",
+      "DSR / FSRS",
+      "Random rotation",
+      "Calendar reminders"
+    ],
     "correctIndex": 1
   },
   {
     "question": "Where are cards stored?",
-    "answers": ["A remote database", "IndexedDB in this browser", "Cookies only", "A spreadsheet"],
+    "answers": [
+      "A remote database",
+      "IndexedDB in this browser",
+      "Cookies only",
+      "A spreadsheet"
+    ],
     "correctIndex": 1
   },
   {
     "question": "This sample shows a Base64 image attached to a question.",
-    "answers": ["Image is stored remotely", "Image is stored as Base64", "Image is ignored", "Image requires internet"],
+    "answers": [
+      "Image is stored remotely",
+      "Image is stored as Base64",
+      "Image is ignored",
+      "Image requires internet"
+    ],
     "correctIndex": 1,
-    "imageBase64": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQwIiBoZWlnaHQ9IjMyMCIgdmlld0JveD0iMCAwIDY0MCAzMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjY0MCIgaGVpZ2h0PSIzMjAiIGZpbGw9IiNlOGYzZjIiLz48Y2lyY2xlIGN4PSIyMzAiIGN5PSIxNjAiIHI9IjYyIiBmaWxsPSIjMTk3Mjc4Ii8+PHJlY3QgeD0iMzEwIiB5PSIxMTQiIHdpZHRoPSIxMzAiIGhlaWdodD0iOTIiIHJ4PSIxMiIgZmlsbD0iIzE4NWE5ZCIvPjx0ZXh0IHg9IjMyMCIgeT0iMjYyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjgiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxNDIwMzMiPkJhc2U2NCBRdWVzdGlvbiBJbWFnZTwvdGV4dD48L3N2Zz4="
+    "imageSrc": "images/questions/f8b4248574db7913.svg"
   }
 ]

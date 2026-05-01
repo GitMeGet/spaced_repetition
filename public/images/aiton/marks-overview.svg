@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" role="img" aria-labelledby="title desc">
+  <title id="title">IALA mark categories overview</title>
+  <desc id="desc">Clean diagrams showing lateral, isolated danger, cardinal, safe water, special, and emergency wreck marks.</desc>
+  <rect width="900" height="420" fill="#f8fafc"/>
+  <text x="450" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#102033">IALA Maritime Buoyage Marks</text>
+  <g font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#102033" text-anchor="middle">
+    <g transform="translate(95 96)">
+      <rect x="-28" y="130" width="56" height="66" rx="12" fill="#d71920"/>
+      <polygon points="-34,122 34,122 22,84 -22,84" fill="#d71920"/>
+      <rect x="58" y="130" width="56" height="66" rx="12" fill="#0a8f45"/>
+      <polygon points="86,84 120,122 52,122" fill="#0a8f45"/>
+      <text x="43" y="228">Lateral</text>
+    </g>
+    <g transform="translate(245 92)">
+      <rect x="-16" y="72" width="32" height="118" fill="#111827"/>
+      <rect x="-16" y="112" width="32" height="36" fill="#ef233c"/>
+      <circle cx="0" cy="34" r="16" fill="#111827"/>
+      <circle cx="0" cy="0" r="16" fill="#111827"/>
+      <polygon points="-52,190 52,190 25,148 -25,148" fill="#ef233c"/>
+      <text x="0" y="232">Isolated danger</text>
+    </g>
+    <g transform="translate(390 78)">
+      <rect x="-16" y="92" width="32" height="112" fill="#facc15"/>
+      <rect x="-16" y="92" width="32" height="52" fill="#111827"/>
+      <polygon points="0,10 -18,48 18,48" fill="#111827"/>
+      <polygon points="0,50 -18,88 18,88" fill="#111827"/>
+      <text x="0" y="246">Cardinal</text>
+    </g>
+    <g transform="translate(535 98)">
+      <circle cx="0" cy="126" r="44" fill="#fff" stroke="#d71920" stroke-width="16"/>
+      <rect x="-20" y="72" width="40" height="98" fill="#fff" stroke="#d71920" stroke-width="14"/>
+      <circle cx="0" cy="38" r="16" fill="#d71920"/>
+      <text x="0" y="228">Safe water</text>
+    </g>
+    <g transform="translate(675 92)">
+      <rect x="-22" y="94" width="44" height="104" rx="8" fill="#facc15"/>
+      <line x1="-34" y1="42" x2="34" y2="86" stroke="#facc15" stroke-width="16" stroke-linecap="round"/>
+      <line x1="34" y1="42" x2="-34" y2="86" stroke="#facc15" stroke-width="16" stroke-linecap="round"/>
+      <text x="0" y="232">Special</text>
+    </g>
+    <g transform="translate(815 92)">
+      <rect x="-22" y="94" width="44" height="104" rx="8" fill="#facc15"/>
+      <rect x="-22" y="94" width="22" height="104" fill="#1d4ed8"/>
+      <line x1="-34" y1="42" x2="34" y2="86" stroke="#facc15" stroke-width="16" stroke-linecap="round"/>
+      <line x1="34" y1="42" x2="-34" y2="86" stroke="#facc15" stroke-width="16" stroke-linecap="round"/>
+      <text x="0" y="232">Emergency wreck</text>
+    </g>
+  </g>
+</svg>

@@ -121,6 +121,22 @@
     return card.cardType === 'reveal' ? 'reveal' : 'mcq';
   }
 
+  function questionImageFor(card: Pick<McqCard, 'imageBase64' | 'imageSrc'>): string | undefined {
+    return card.imageBase64 || resolveAssetSrc(card.imageSrc);
+  }
+
+  function answerImageFor(card: Pick<McqCard, 'answerImageSrc'>): string | undefined {
+    return resolveAssetSrc(card.answerImageSrc);
+  }
+
+  function resolveAssetSrc(src?: string): string | undefined {
+    const trimmed = String(src ?? '').trim();
+    if (!trimmed) return undefined;
+    if (/^(data:|https?:|blob:)/i.test(trimmed)) return trimmed;
+    const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+    return `${base}${trimmed.replace(/^\/+/, '')}`;
+  }
+
   function selectCardType(nextType: CardType) {
     cardType = nextType;
     correctIndex = 0;
@@ -280,16 +296,19 @@
     <section class="workspace study">
       {#if active}
         <article class="question-panel">
-          {#if active.imageBase64}
-            <img src={active.imageBase64} alt="" />
-          {/if}
           <p class="eyebrow">{queueLabel(studyMode)} - {sourceFilterLabel(sourceFilter)} - {activeQueue.length} in queue</p>
           <h2>{active.question}</h2>
+          {#if questionImageFor(active)}
+            <img src={questionImageFor(active)} alt="" />
+          {/if}
           {#if getCardType(active) === 'reveal'}
             {#if submitted}
               <div class="reveal-answer" role="status" aria-live="polite">
                 <strong>Answer</strong>
                 <p>{active.answers[0]}</p>
+                {#if answerImageFor(active)}
+                  <img src={answerImageFor(active)} alt="" />
+                {/if}
               </div>
             {/if}
           {:else}
@@ -434,8 +453,10 @@
       {#each filteredCards as card}
         <article class="deck-row">
           <div>
-            {#if card.imageBase64}
-              <img class="thumb" src={card.imageBase64} alt="" />
+            {#if questionImageFor(card)}
+              <img class="thumb" src={questionImageFor(card)} alt="" />
+            {:else if answerImageFor(card)}
+              <img class="thumb" src={answerImageFor(card)} alt="" />
             {/if}
             <p>{card.question}</p>
             <span>{card.sourceSet ?? 'Custom'} - {getCardType(card) === 'reveal' ? 'Reveal' : 'MCQ'} - {card.state} - due {new Date(card.due).toLocaleString()} - reps {card.reps}</span>

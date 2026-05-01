@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" role="img" aria-labelledby="title desc">
+  <title id="title">Unlabelled cardinal mark with cones point to point</title>
+  <desc id="desc">A yellow black yellow cardinal mark with two cones point to point, without labels.</desc>
+  <rect width="420" height="340" fill="#f8fafc"/>
+  <g transform="translate(210 42)">
+    <polygon points="0,56 -30,0 30,0" fill="#111827"/>
+    <polygon points="0,58 -30,114 30,114" fill="#111827"/>
+    <rect x="-28" y="128" width="56" height="132" fill="#facc15"/>
+    <rect x="-28" y="164" width="56" height="44" fill="#111827"/>
+    <rect x="-44" y="260" width="88" height="14" rx="7" fill="#64748b"/>
+  </g>
+</svg>
