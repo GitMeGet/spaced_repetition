@@ -317,12 +317,8 @@
                 {/if}
               </div>
             {/if}
-            <label class="question-note">
-              Notes
-              <textarea bind:value={noteDraft} on:blur={saveNote} rows="4" placeholder="Add anything you want to remember about this question"></textarea>
-            </label>
           {/if}
-          <div class="actions">
+          <div class:submitted={submitted} class="actions">
             {#if getCardType(active) === 'reveal'}
               {#if submitted}
                 <button on:click={() => gradeActive('again')}>
@@ -348,6 +344,12 @@
               {/if}
             {/if}
           </div>
+          {#if submitted}
+            <label class="question-note">
+              Notes
+              <textarea bind:value={noteDraft} on:blur={saveNote} rows="4" placeholder="Add anything you want to remember about this question"></textarea>
+            </label>
+          {/if}
         </article>
       {:else}
         <section class="empty">

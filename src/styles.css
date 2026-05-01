@@ -15,6 +15,9 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overscroll-behavior-y: contain;
 }
 
 button,
@@ -468,7 +471,12 @@ textarea {
 @media (max-width: 760px) {
   .shell {
     width: min(100% - 20px, 1120px);
-    padding-top: 14px;
+    padding: 14px 0 calc(88px + env(safe-area-inset-bottom));
+  }
+
+  .workspace {
+    min-height: auto;
+    padding: 14px;
   }
 
   .topbar,
@@ -507,7 +515,23 @@ textarea {
 
   .actions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    position: sticky;
+    z-index: 2;
+    bottom: 0;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    margin: 16px -14px -14px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    border-top: 1px solid #dfe5ee;
+    background: #ffffff;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+
+  .actions.submitted {
+    position: static;
+    margin-bottom: 0;
   }
 
 }
