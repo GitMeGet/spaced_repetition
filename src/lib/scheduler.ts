@@ -1,8 +1,9 @@
-import type { CardState, McqCard, StudyGrade } from './types';
+import type { CardState, CardType, McqCard, StudyGrade } from './types';
 
 const dayMs = 24 * 60 * 60 * 1000;
 
 export function createNewCard(card: {
+  cardType?: CardType;
   question: string;
   answers: string[];
   correctIndex: number;

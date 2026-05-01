@@ -2098,5 +2098,645 @@
       "Craft is moving through water"
     ],
     "correctIndex": 2
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 5,
+    "question": "Name the six mark categories in the IALA Maritime Buoyage System.",
+    "answers": [
+      "Lateral marks, isolated danger marks, cardinal marks, safe water marks, special marks, and emergency wreck marking buoys."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 6,
+    "question": "What four features distinguish marks within the IALA system?",
+    "answers": [
+      "Shape, colour, topmark, and light characteristics."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 10,
+    "question": "What are buoys, beacons, and lighthouses used for?",
+    "answers": [
+      "They indicate marked channels or fairways, dangers to navigation, safe water, and places of particular interest. Buoys float and are anchored, beacons are fixed structures, and lighthouses are substantial daymarks carrying signal lights."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 11,
+    "question": "In IALA Region A, what is the buoyage direction and which side is red?",
+    "answers": [
+      "When proceeding in the direction of buoyage, red lateral marks indicate the port side, which is the left side of the channel."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 12,
+    "question": "In IALA Region A, what colour marks the starboard side of a channel when proceeding in the direction of buoyage?",
+    "answers": [
+      "Green lateral marks indicate the starboard side, which is the right side of the channel."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 13,
+    "question": "Describe a port hand lateral mark in Region A.",
+    "answers": [
+      "A port hand mark is red, has a can-shaped topmark if fitted, and shows a red light if fitted."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 14,
+    "question": "Describe a starboard hand lateral mark in Region A.",
+    "answers": [
+      "A starboard hand mark is green, has a cone-shaped topmark if fitted, and shows a green light if fitted."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 15,
+    "question": "What do lateral marks indicate?",
+    "answers": [
+      "They indicate the port and starboard sides of a channel or fairway when proceeding in the direction of buoyage."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 16,
+    "question": "You are entering a harbour in Region A. Which side should red lateral marks be on?",
+    "answers": [
+      "Red marks should be on the port side, left of the channel, when proceeding in the direction of buoyage."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 17,
+    "question": "Compare port hand and starboard hand lateral marks in Region A.",
+    "answers": [
+      "Port hand marks are red with can topmarks and red lights if fitted. Starboard hand marks are green with cone topmarks and green lights if fitted."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 18,
+    "question": "What does an isolated danger mark indicate?",
+    "answers": [
+      "It indicates an isolated danger of limited extent, such as an isolated shoal, rock, or wreck."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 19,
+    "question": "What water condition exists around an isolated danger mark?",
+    "answers": [
+      "There is navigable water all around the mark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 20,
+    "question": "Give examples of dangers marked by an isolated danger mark.",
+    "answers": [
+      "An isolated shoal, rock, or wreck."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 21,
+    "question": "What colours are used on an isolated danger mark?",
+    "answers": [
+      "Black and red."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 22,
+    "question": "What shapes may an isolated danger mark have?",
+    "answers": [
+      "Pillar or spar."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 23,
+    "question": "What is the topmark of an isolated danger mark?",
+    "answers": [
+      "Two black spheres."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 24,
+    "question": "What light is shown by an isolated danger mark when fitted?",
+    "answers": [
+      "White light, group flashing two."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 25,
+    "question": "How is a cardinal mark named?",
+    "answers": [
+      "It is named after the quadrant in which it is placed: North, East, South, or West, bounded by true bearings NW-NE, NE-SE, SE-SW, and SW-NW from the point of interest."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 26,
+    "question": "How should a cardinal mark be passed?",
+    "answers": [
+      "Pass on the named side of the mark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 28,
+    "question": "What colour, shape, topmark, and light colour do cardinal marks generally use?",
+    "answers": [
+      "They use black and yellow colours, pillar or spar shapes, two black cones as topmarks, and white lights when fitted."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 29,
+    "question": "List the main uses of cardinal marks.",
+    "answers": [
+      "They indicate the deepest water is on the named side, the safe side on which to pass a danger, or a feature in a channel such as a bend, junction, bifurcation, or end of a shoal."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 30,
+    "question": "Describe a North cardinal mark.",
+    "answers": [
+      "Black above yellow, with two black cones pointing up. Its white light rhythm is quick or very quick flashing."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 31,
+    "question": "Describe an East cardinal mark.",
+    "answers": [
+      "Black-yellow-black, with two black cones base to base. Its white light rhythm is VQ(3) 5s or Q(3) 10s."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 32,
+    "question": "Describe a South cardinal mark.",
+    "answers": [
+      "Yellow above black, with two black cones pointing down. Its white light rhythm is VQ(6) plus long flash 10s, or Q(6) plus long flash 15s."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 33,
+    "question": "Describe a West cardinal mark.",
+    "answers": [
+      "Yellow-black-yellow, with two black cones point to point. Its white light rhythm is VQ(9) 10s or Q(9) 15s."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 34,
+    "question": "What do two black cones pointing up identify?",
+    "answers": [
+      "A North cardinal mark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 35,
+    "question": "What do two black cones base to base identify?",
+    "answers": [
+      "An East cardinal mark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 36,
+    "question": "What do two black cones pointing down identify?",
+    "answers": [
+      "A South cardinal mark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 37,
+    "question": "What do two black cones point to point identify?",
+    "answers": [
+      "A West cardinal mark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 38,
+    "question": "A danger is marked by a North cardinal mark. Which side should you pass?",
+    "answers": [
+      "Pass to the north side of the mark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 39,
+    "question": "A danger is marked by an East cardinal mark. Which side should you pass?",
+    "answers": [
+      "Pass to the east side of the mark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 40,
+    "question": "A danger is marked by a South cardinal mark. Which side should you pass?",
+    "answers": [
+      "Pass to the south side of the mark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 41,
+    "question": "A danger is marked by a West cardinal mark. Which side should you pass?",
+    "answers": [
+      "Pass to the west side of the mark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 42,
+    "question": "What does a safe water mark indicate?",
+    "answers": [
+      "It indicates navigable water all around the mark, such as the middle of a channel."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 43,
+    "question": "What colours are used on a safe water mark?",
+    "answers": [
+      "Red and white vertical stripes."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 44,
+    "question": "What shapes may a safe water mark have?",
+    "answers": [
+      "Spherical, pillar, or spar."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 45,
+    "question": "What is the topmark of a safe water mark when fitted?",
+    "answers": [
+      "A single red sphere."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 46,
+    "question": "What light colour does a safe water mark show when fitted?",
+    "answers": [
+      "White."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 47,
+    "question": "What light rhythms may be used by a safe water mark?",
+    "answers": [
+      "White isophase, occulting, one long flash every 10 seconds, or Morse A."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 48,
+    "question": "What is the safe water mark example given in the notes?",
+    "answers": [
+      "Sisters Buoy (4812A)."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 49,
+    "question": "How is a safe water mark different from an isolated danger mark?",
+    "answers": [
+      "A safe water mark indicates navigable water all around the mark; an isolated danger mark is erected or moored over an isolated danger such as a rock or wreck."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 50,
+    "question": "What are special marks used to indicate?",
+    "answers": [
+      "They indicate a special area or feature, not a primary navigation danger."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 51,
+    "question": "Give examples of areas or features that may be marked by special marks.",
+    "answers": [
+      "Dumping grounds, recreation areas, military exercise areas, cable routes, and pipeline routes."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 52,
+    "question": "What colour are special marks?",
+    "answers": [
+      "Yellow."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 53,
+    "question": "What shape may a special mark have?",
+    "answers": [
+      "The shape is optional, but it must not conflict with other marks."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 54,
+    "question": "What topmark may be fitted to a special mark?",
+    "answers": [
+      "A single yellow X-shaped topmark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 55,
+    "question": "What light colour is used by a special mark?",
+    "answers": [
+      "Yellow."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 56,
+    "question": "What rhythm may a special mark use?",
+    "answers": [
+      "Any rhythm, provided it does not resemble the white lights of cardinal, isolated danger, or safe water marks."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 57,
+    "question": "How can you distinguish a special mark from other IALA marks?",
+    "answers": [
+      "It is yellow, may have a yellow X topmark, and uses a yellow light; its shape is optional and must not conflict with other marks."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 58,
+    "question": "When was the emergency wreck marking buoy introduced?",
+    "answers": [
+      "It was introduced in 2006."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 59,
+    "question": "What is the purpose of an emergency wreck marking buoy?",
+    "answers": [
+      "It is deployed to mark new dangers and wrecks so collisions and further loss of life, damage, and pollution can be prevented."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 60,
+    "question": "What is a dangerous wreck in the emergency wreck marking buoy notes?",
+    "answers": [
+      "A dangerous wreck is an obstruction in navigable water that poses a hazard to navigation, such as a damaged sinking vessel or a crashed plane in the ocean."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 61,
+    "question": "Why must a dangerous wreck be marked immediately?",
+    "answers": [
+      "So further loss of life, damage, and pollution can be prevented."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 62,
+    "question": "What colours identify an emergency wreck marking buoy?",
+    "answers": [
+      "Blue and yellow stripes."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 63,
+    "question": "What shape and topmark identify an emergency wreck marking buoy?",
+    "answers": [
+      "It is either pillar or spar shaped and has a yellow cross as the topmark."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 64,
+    "question": "What light sequence does an emergency wreck marking buoy show at night?",
+    "answers": [
+      "Alternating 1 second of blue light and 1 second of yellow light, with 0.5 second of darkness in between."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 65,
+    "question": "Name the four Singapore lighthouses listed in the notes with their identifiers.",
+    "answers": [
+      "Bedok Lighthouse (5518B), Raffles Lighthouse (4409A), Sultan Shoal Lighthouse (3814D), and Horsburgh Lighthouse (2419A)."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 66,
+    "question": "What are the key light details for Raffles Lighthouse?",
+    "answers": [
+      "Raffles Lighthouse is 4409A. It shows FL(3) 20s 32m 20M: flashing white group 3, interval 20 seconds, height 32 m, range 20 nm."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 67,
+    "question": "What are the key light details for Sultan Shoal Lighthouse?",
+    "answers": [
+      "Sultan Shoal Lighthouse is 3814D. It shows FL(2) 15s 20m 20M: flashing white group 2, interval 15 seconds, height 20 m, range 20 nm."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 68,
+    "question": "What are the key light details for Bedok Lighthouse?",
+    "answers": [
+      "Bedok Lighthouse is 5518B and is on top of a building. It shows FL 5s 76m 23M: flashing white, interval 5 seconds, height 76 m, range 23 nm."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 69,
+    "question": "What are the key light details for Horsburgh Lighthouse?",
+    "answers": [
+      "Horsburgh Lighthouse is 2419A and is on rocks. It shows FL 10s 31m 20M: flashing white, interval 10 seconds, height 31 m, range 20 nm."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 70,
+    "question": "Which listed Singapore lighthouse is on top of a building?",
+    "answers": [
+      "Bedok Lighthouse."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 71,
+    "question": "Which listed Singapore lighthouse is on rocks?",
+    "answers": [
+      "Horsburgh Lighthouse."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Aids to Navigation",
+    "sourceQuestion": 72,
+    "question": "Which listed Singapore lighthouse has flashing white group 2 every 15 seconds?",
+    "answers": [
+      "Sultan Shoal Lighthouse."
+    ],
+    "correctIndex": 0
   }
 ]

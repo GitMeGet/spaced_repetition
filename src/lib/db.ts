@@ -1,7 +1,7 @@
 import Dexie, { type Table } from 'dexie';
 import { normalizeImageBase64 } from './images';
 import { createNewCard, isDue, reviewCard } from './scheduler';
-import type { ImportCard, McqCard, StudyGrade } from './types';
+import type { CardType, ImportCard, McqCard, StudyGrade } from './types';
 
 export type DefaultSyncSummary = {
   added: number;
@@ -151,16 +151,25 @@ export async function restoreBackup(fileText: string): Promise<number> {
 
 export function normalizeImportCard(card: ImportCard): Omit<McqCard, 'id' | 'due' | 'difficulty' | 'stability' | 'reps' | 'lapses' | 'state' | 'createdAt' | 'updatedAt'> {
   if (!card.question?.trim()) throw new Error('Every card needs question text.');
-  if (!Array.isArray(card.answers) || card.answers.length < 2) throw new Error('Every card needs at least two answers.');
-  if (!Number.isInteger(card.correctIndex) || card.correctIndex < 0 || card.correctIndex >= card.answers.length) {
+  const cardType = normalizeCardType(card);
+  if (!Array.isArray(card.answers)) throw new Error('Every card needs answers.');
+
+  const answers = card.answers.map((answer) => String(answer ?? '').trim());
+  if (cardType === 'reveal') {
+    if (answers.length !== 1 || !answers[0]) throw new Error('Reveal cards need exactly one expected answer.');
+    if (card.correctIndex !== 0) throw new Error('Reveal cards must use correctIndex 0.');
+  } else if (answers.length < 2) {
+    throw new Error('MCQ cards need at least two answers.');
+  } else if (!Number.isInteger(card.correctIndex) || card.correctIndex < 0 || card.correctIndex >= answers.length) {
     throw new Error('correctIndex must point to one of the answers.');
   }
 
   return {
+    cardType: cardType === 'reveal' ? 'reveal' : undefined,
     sourceSet: card.sourceSet,
     sourceQuestion: card.sourceQuestion,
     question: card.question.trim(),
-    answers: card.answers.map((answer) => String(answer ?? '').trim()),
+    answers,
     correctIndex: card.correctIndex,
     imageBase64: normalizeImageBase64(card.imageBase64 ?? card.questionImageBase64 ?? card.image)
   };
@@ -190,6 +199,12 @@ function cardSignature(card: Pick<ImportCard, 'question' | 'answers'>): string {
   return `${card.question.trim()}|${card.answers.map((answer) => String(answer ?? '').trim()).join('|')}`;
 }
 
+function normalizeCardType(card: Pick<ImportCard, 'cardType'>): CardType {
+  if (!card.cardType || card.cardType === 'mcq') return 'mcq';
+  if (card.cardType === 'reveal') return 'reveal';
+  throw new Error('cardType must be mcq or reveal.');
+}
+
 function sourceKey(card: Pick<ImportCard, 'sourceSet' | 'sourceQuestion'>): string {
   return card.sourceSet && card.sourceQuestion ? `${card.sourceSet}|${card.sourceQuestion}` : '';
 }
@@ -199,6 +214,7 @@ function mergeDefaultContent(stored: McqCard, bundled: ReturnType<typeof normali
     ...stored,
     sourceSet: bundled.sourceSet,
     sourceQuestion: bundled.sourceQuestion,
+    cardType: bundled.cardType,
     question: bundled.question,
     answers: bundled.answers,
     correctIndex: bundled.correctIndex,
@@ -208,6 +224,7 @@ function mergeDefaultContent(stored: McqCard, bundled: ReturnType<typeof normali
   const changed =
     stored.sourceSet !== next.sourceSet ||
     stored.sourceQuestion !== next.sourceQuestion ||
+    stored.cardType !== next.cardType ||
     stored.question !== next.question ||
     stored.correctIndex !== next.correctIndex ||
     stored.imageBase64 !== next.imageBase64 ||

@@ -33,10 +33,23 @@ function validateCards(cards, label) {
     if (typeof card.question !== 'string' || card.question.trim() === '') {
       throw new Error(`${row} must include question text.`);
     }
-    if (!Array.isArray(card.answers) || card.answers.length < 2) {
-      throw new Error(`${row} must include at least two answers.`);
+    const cardType = card.cardType ?? 'mcq';
+    if (!['mcq', 'reveal'].includes(cardType)) {
+      throw new Error(`${row} cardType must be mcq or reveal.`);
     }
-    if (!Number.isInteger(card.correctIndex) || card.correctIndex < 0 || card.correctIndex >= card.answers.length) {
+    if (!Array.isArray(card.answers)) {
+      throw new Error(`${row} must include answers.`);
+    }
+    if (cardType === 'reveal') {
+      if (card.answers.length !== 1 || typeof card.answers[0] !== 'string' || card.answers[0].trim() === '') {
+        throw new Error(`${row} reveal cards must include exactly one non-empty answer.`);
+      }
+      if (card.correctIndex !== 0) {
+        throw new Error(`${row} reveal cards must use correctIndex 0.`);
+      }
+    } else if (card.answers.length < 2) {
+      throw new Error(`${row} MCQ cards must include at least two answers.`);
+    } else if (!Number.isInteger(card.correctIndex) || card.correctIndex < 0 || card.correctIndex >= card.answers.length) {
       throw new Error(`${row} must include a valid correctIndex.`);
     }
 

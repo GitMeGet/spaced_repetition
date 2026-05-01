@@ -1,7 +1,9 @@
 export type CardState = 'new' | 'learning' | 'review' | 'relearning';
+export type CardType = 'mcq' | 'reveal';
 
 export type McqCard = {
   id?: number;
+  cardType?: CardType;
   sourceSet?: string;
   sourceQuestion?: number;
   question: string;
@@ -20,6 +22,7 @@ export type McqCard = {
 };
 
 export type ImportCard = {
+  cardType?: CardType;
   sourceSet?: string;
   sourceQuestion?: number;
   question: string;

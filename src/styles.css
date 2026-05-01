@@ -19,6 +19,7 @@ body {
 
 button,
 input,
+select,
 textarea {
   font: inherit;
 }
@@ -84,6 +85,7 @@ nav {
 }
 
 nav button,
+.mode-toggle button,
 .actions button,
 .tool-button,
 .file-picker,
@@ -106,10 +108,41 @@ nav button {
 }
 
 nav button.active,
+.mode-toggle button.active,
 .primary {
   border-color: #185a9d;
   background: #185a9d;
   color: #ffffff;
+}
+
+.mode-toggle {
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  border: 1px solid #d7deea;
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.mode-toggle button {
+  padding: 0 12px;
+}
+
+.source-select {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+}
+
+.source-select select {
+  width: 148px;
+  min-height: 42px;
+  padding: 0 36px 0 12px;
+  border: 1px solid #cfd8e6;
+  border-radius: 8px;
+  background: #fbfcfe;
+  color: #475467;
+  font-weight: 700;
 }
 
 .metrics {
@@ -260,6 +293,25 @@ nav button.active,
   border-color: #c2414b;
   background: #fff0f1;
   color: #8f1f2a;
+}
+
+.reveal-answer {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid #d7deea;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.reveal-answer strong {
+  color: #185a9d;
+}
+
+.reveal-answer p {
+  margin-bottom: 0;
+  white-space: pre-line;
 }
 
 .question-note {
@@ -429,6 +481,7 @@ textarea {
   }
 
   nav,
+  .mode-toggle,
   .metrics,
   .answer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -436,6 +489,16 @@ textarea {
 
   nav {
     display: grid;
+  }
+
+  .mode-toggle {
+    display: grid;
+    width: 100%;
+  }
+
+  .source-select,
+  .source-select select {
+    width: 100%;
   }
 
   .metrics {

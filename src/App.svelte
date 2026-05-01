@@ -1,16 +1,19 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { BarChart3, Check, Download, ImagePlus, Library, RotateCcw, Trash2, Upload } from 'lucide-svelte';
+  import { BarChart3, Check, Download, Eye, ImagePlus, Library, RotateCcw, Trash2, Upload } from 'lucide-svelte';
   import { addCard, deleteCard, exportBackup, getDeck, getDueCards, gradeCard, importCards, restoreBackup, syncDefaultCards, updateCardNote } from './lib/db';
   import { downloadText, downscaleImage, normalizeImageBase64 } from './lib/images';
   import { isDue } from './lib/scheduler';
-  import type { ImportCard, McqCard } from './lib/types';
+  import type { CardType, ImportCard, McqCard, StudyGrade } from './lib/types';
 
   type View = 'study' | 'add' | 'deck';
   type StudyMode = 'new' | 'due' | 'review';
+  type SourceFilter = 'all' | 'test' | 'aids';
+  const sourceFilterStorageKey = 'mcq-fsrs-source-filter';
 
   let view: View = 'study';
   let studyMode: StudyMode = 'new';
+  let sourceFilter: SourceFilter = 'all';
   let cards: McqCard[] = [];
   let dueCards: McqCard[] = [];
   let active: McqCard | undefined;
@@ -21,19 +24,25 @@
   let question = '';
   let answers = ['', '', '', ''];
   let correctIndex = 0;
+  let cardType: CardType = 'mcq';
   let imageBase64 = '';
   let busy = false;
 
-  $: total = cards.length;
-  $: newCount = cards.filter((card) => card.state === 'new').length;
-  $: dueCount = dueCards.filter((card) => card.state !== 'new').length;
-  $: reviewReady = cards.filter((card) => card.state === 'review' && isDue(card)).length;
-  $: accuracy = total ? Math.round((cards.reduce((sum, card) => sum + card.reps - card.lapses, 0) / Math.max(1, cards.reduce((sum, card) => sum + card.reps, 0))) * 100) : 0;
+  $: filteredCards = cards.filter((card) => matchesSourceFilter(card, sourceFilter));
+  $: filteredDueCards = dueCards.filter((card) => matchesSourceFilter(card, sourceFilter));
+  $: total = filteredCards.length;
+  $: newCount = filteredCards.filter((card) => card.state === 'new').length;
+  $: dueCount = filteredDueCards.filter((card) => card.state !== 'new').length;
+  $: reviewReady = filteredCards.filter((card) => card.state === 'review' && isDue(card)).length;
+  $: accuracy = total
+    ? Math.round((filteredCards.reduce((sum, card) => sum + card.reps - card.lapses, 0) / Math.max(1, filteredCards.reduce((sum, card) => sum + card.reps, 0))) * 100)
+    : 0;
   $: hasAnswer = selectedIndex !== undefined;
   $: isCorrect = hasAnswer && active ? selectedIndex === active.correctIndex : false;
-  $: activeQueue = getStudyQueue(studyMode);
+  $: activeQueue = getStudyQueue(studyMode, sourceFilter);
 
   onMount(() => {
+    sourceFilter = readStoredSourceFilter();
     void load(true);
   });
 
@@ -46,18 +55,31 @@
     }
     cards = await getDeck();
     dueCards = await getDueCards();
-    setActive(pickRandom(getStudyQueue(studyMode)));
+    setActive(pickRandom(getStudyQueue(studyMode, sourceFilter)));
   }
 
-  function getStudyQueue(mode: StudyMode): McqCard[] {
-    if (mode === 'new') return cards.filter((card) => card.state === 'new');
-    if (mode === 'review') return cards.filter((card) => card.state === 'review' && isDue(card));
-    return dueCards.filter((card) => card.state !== 'new');
+  function getStudyQueue(mode: StudyMode, filter = sourceFilter): McqCard[] {
+    const sourceCards = cards.filter((card) => matchesSourceFilter(card, filter));
+    const sourceDueCards = dueCards.filter((card) => matchesSourceFilter(card, filter));
+    if (mode === 'new') return sourceCards.filter((card) => card.state === 'new');
+    if (mode === 'review') return sourceCards.filter((card) => card.state === 'review' && isDue(card));
+    return sourceDueCards.filter((card) => card.state !== 'new');
   }
 
   function selectStudyMode(mode: StudyMode) {
     studyMode = mode;
-    setActive(pickRandom(getStudyQueue(mode)));
+    setActive(pickRandom(getStudyQueue(mode, sourceFilter)));
+  }
+
+  function selectSourceFilter(filter: SourceFilter) {
+    sourceFilter = filter;
+    localStorage.setItem(sourceFilterStorageKey, filter);
+    setActive(pickRandom(getStudyQueue(studyMode, filter)));
+  }
+
+  function handleSourceFilterChange(event: Event) {
+    const select = event.currentTarget as HTMLSelectElement;
+    selectSourceFilter(select.value as SourceFilter);
   }
 
   function setActive(card: McqCard | undefined) {
@@ -78,10 +100,43 @@
     return 'Due card';
   }
 
+  function sourceFilterLabel(filter: SourceFilter): string {
+    if (filter === 'test') return 'Test Sets';
+    if (filter === 'aids') return 'Aids to Nav';
+    return 'All';
+  }
+
+  function readStoredSourceFilter(): SourceFilter {
+    const stored = localStorage.getItem(sourceFilterStorageKey);
+    return stored === 'test' || stored === 'aids' || stored === 'all' ? stored : 'all';
+  }
+
+  function matchesSourceFilter(card: McqCard, filter: SourceFilter): boolean {
+    if (filter === 'all') return true;
+    if (filter === 'aids') return card.sourceSet === 'Aids to Navigation';
+    return card.sourceSet?.startsWith('Test Set') ?? false;
+  }
+
+  function getCardType(card: Pick<McqCard, 'cardType'>): CardType {
+    return card.cardType === 'reveal' ? 'reveal' : 'mcq';
+  }
+
+  function selectCardType(nextType: CardType) {
+    cardType = nextType;
+    correctIndex = 0;
+  }
+
   async function submitCard() {
     status = '';
     try {
-      await addCard({ question, answers, correctIndex, imageBase64 });
+      const nextAnswers = cardType === 'reveal' ? [answers[0]] : answers;
+      await addCard({
+        cardType: cardType === 'reveal' ? 'reveal' : undefined,
+        question,
+        answers: nextAnswers,
+        correctIndex: cardType === 'reveal' ? 0 : correctIndex,
+        imageBase64
+      });
       question = '';
       answers = ['', '', '', ''];
       correctIndex = 0;
@@ -94,10 +149,14 @@
   }
 
   async function nextCard() {
+    await gradeActive(isCorrect ? 'good' : 'again');
+  }
+
+  async function gradeActive(grade: StudyGrade) {
     if (!active) return;
     const reviewedCard = { ...active, note: noteDraft.trim() || undefined };
     await saveNote();
-    await gradeCard(reviewedCard, isCorrect ? 'good' : 'again');
+    await gradeCard(reviewedCard, grade);
     await load();
   }
 
@@ -184,6 +243,13 @@
       <button class:active={view === 'deck'} on:click={() => (view = 'deck')} title="Review deck">
         <Library size={18} /> Deck
       </button>
+      <div class="source-select">
+        <select aria-label="Question source" title="Question source" value={sourceFilter} on:change={handleSourceFilterChange}>
+          <option value="all">All</option>
+          <option value="test">Test Sets</option>
+          <option value="aids">Aids to Nav</option>
+        </select>
+      </div>
     </nav>
   </header>
 
@@ -217,8 +283,16 @@
           {#if active.imageBase64}
             <img src={active.imageBase64} alt="" />
           {/if}
-          <p class="eyebrow">{queueLabel(studyMode)} · {activeQueue.length} in queue</p>
+          <p class="eyebrow">{queueLabel(studyMode)} - {sourceFilterLabel(sourceFilter)} - {activeQueue.length} in queue</p>
           <h2>{active.question}</h2>
+          {#if getCardType(active) === 'reveal'}
+            {#if submitted}
+              <div class="reveal-answer" role="status" aria-live="polite">
+                <strong>Answer</strong>
+                <p>{active.answers[0]}</p>
+              </div>
+            {/if}
+          {:else}
           <div class="answers">
             {#each active.answers as option, index}
               <button
@@ -233,27 +307,45 @@
               </button>
             {/each}
           </div>
+          {/if}
           {#if submitted}
-            <div class:ok={isCorrect} class:error={!isCorrect} class="result" role="status" aria-live="polite">
-              <strong>{isCorrect ? 'Correct' : 'Wrong'}</strong>
-              {#if !isCorrect}
-                <span>Answer: {active.answers[active.correctIndex]}</span>
-              {/if}
-            </div>
+            {#if getCardType(active) === 'mcq'}
+              <div class:ok={isCorrect} class:error={!isCorrect} class="result" role="status" aria-live="polite">
+                <strong>{isCorrect ? 'Correct' : 'Wrong'}</strong>
+                {#if !isCorrect}
+                  <span>Answer: {active.answers[active.correctIndex]}</span>
+                {/if}
+              </div>
+            {/if}
             <label class="question-note">
               Notes
               <textarea bind:value={noteDraft} on:blur={saveNote} rows="4" placeholder="Add anything you want to remember about this question"></textarea>
             </label>
           {/if}
           <div class="actions">
-            {#if submitted}
-              <button class="primary" on:click={nextCard}>
-                <Check size={18} /> Next
-              </button>
+            {#if getCardType(active) === 'reveal'}
+              {#if submitted}
+                <button on:click={() => gradeActive('again')}>
+                  <RotateCcw size={18} /> Again
+                </button>
+                <button class="primary" on:click={() => gradeActive('good')}>
+                  <Check size={18} /> Good
+                </button>
+              {:else}
+                <button class="primary" on:click={() => (submitted = true)}>
+                  <Eye size={18} /> Show answer
+                </button>
+              {/if}
             {:else}
-              <button class="primary" disabled={!hasAnswer} on:click={() => (submitted = true)}>
-                <Check size={18} /> Submit
-              </button>
+              {#if submitted}
+                <button class="primary" on:click={nextCard}>
+                  <Check size={18} /> Next
+                </button>
+              {:else}
+                <button class="primary" disabled={!hasAnswer} on:click={() => (submitted = true)}>
+                  <Check size={18} /> Submit
+                </button>
+              {/if}
             {/if}
           </div>
         </article>
@@ -268,22 +360,34 @@
   {:else if view === 'add'}
     <section class="workspace split">
       <form class="editor" on:submit|preventDefault={submitCard}>
+        <div class="mode-toggle" role="group" aria-label="Card type">
+          <button type="button" class:active={cardType === 'mcq'} on:click={() => selectCardType('mcq')}>MCQ</button>
+          <button type="button" class:active={cardType === 'reveal'} on:click={() => selectCardType('reveal')}>Reveal</button>
+        </div>
+
         <label>
           Question text
           <textarea bind:value={question} rows="5" placeholder="Paste markdown or plain text"></textarea>
         </label>
 
-        <div class="answer-grid">
-          {#each answers as answerText, index}
-            <label>
-              Answer {String.fromCharCode(65 + index)}
-              <div class="answer-input">
-                <input type="radio" bind:group={correctIndex} value={index} aria-label={`Mark answer ${index + 1} correct`} />
-                <input bind:value={answers[index]} placeholder="Option text" />
-              </div>
-            </label>
-          {/each}
-        </div>
+        {#if cardType === 'reveal'}
+          <label>
+            Expected answer
+            <textarea bind:value={answers[0]} rows="5" placeholder="Answer shown after reveal"></textarea>
+          </label>
+        {:else}
+          <div class="answer-grid">
+            {#each answers as answerText, index}
+              <label>
+                Answer {String.fromCharCode(65 + index)}
+                <div class="answer-input">
+                  <input type="radio" bind:group={correctIndex} value={index} aria-label={`Mark answer ${index + 1} correct`} />
+                  <input bind:value={answers[index]} placeholder="Option text" />
+                </div>
+              </label>
+            {/each}
+          </div>
+        {/if}
 
         <label class="file-picker">
           <ImagePlus size={18} />
@@ -325,14 +429,14 @@
     </section>
   {:else}
     <section class="workspace deck">
-      {#each cards as card}
+      {#each filteredCards as card}
         <article class="deck-row">
           <div>
             {#if card.imageBase64}
               <img class="thumb" src={card.imageBase64} alt="" />
             {/if}
             <p>{card.question}</p>
-            <span>{card.state} - due {new Date(card.due).toLocaleString()} - reps {card.reps}</span>
+            <span>{card.sourceSet ?? 'Custom'} - {getCardType(card) === 'reveal' ? 'Reveal' : 'MCQ'} - {card.state} - due {new Date(card.due).toLocaleString()} - reps {card.reps}</span>
           </div>
           <button class="icon-button" on:click={() => removeCard(card.id)} title="Delete card">
             <Trash2 size={18} />
