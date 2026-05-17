@@ -103,7 +103,7 @@
   function sourceFilterLabel(filter: SourceFilter): string {
     if (filter === 'test') return 'Test Sets';
     if (filter === 'aids') return 'Aids to Nav';
-    if (filter === 'colreg') return colregDisplayName;
+    if (filter === 'colreg') return 'COLREGs';
     if (filter === 'islands') return 'Islands';
     return 'All';
   }
@@ -133,7 +133,7 @@
   function matchesSourceFilter(card: McqCard, filter: SourceFilter): boolean {
     if (filter === 'all') return true;
     if (filter === 'aids') return card.sourceSet === 'Aids to Navigation';
-    if (filter === 'colreg') return card.sourceSet === colregSourceSet;
+    if (filter === 'colreg') return card.sourceSet?.startsWith('COLREG') ?? false;
     if (filter === 'islands') return card.sourceSet === 'Islands';
     return card.sourceSet?.startsWith('Test Set') ?? false;
   }
@@ -285,7 +285,7 @@
           <option value="all">All</option>
           <option value="test">Test Sets</option>
           <option value="aids">Aids to Nav</option>
-          <option value="colreg">{colregDisplayName}</option>
+          <option value="colreg">COLREGs</option>
           <option value="islands">Islands</option>
         </select>
       </div>

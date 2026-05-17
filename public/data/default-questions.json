@@ -3629,5 +3629,821 @@
     ],
     "correctIndex": 0,
     "imageSrc": "images/colreg-vessels/aground-night.svg"
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 1,
+    "question": "Before deciding who gives way under COLREGs, what three safety checks apply in any visibility?",
+    "answers": [
+      "Keep a proper lookout, proceed at a safe speed, and determine whether risk of collision exists using all available means."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 2,
+    "question": "What is the main test for risk of collision with another vessel?",
+    "answers": [
+      "Risk of collision exists if the compass bearing of the approaching vessel does not appreciably change."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 3,
+    "question": "What kind of action must a give-way vessel take under Rule 8 and Rule 16?",
+    "answers": [
+      "Early, positive, and substantial action in ample time, with a clear change of course or speed."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 4,
+    "question": "What should a vessel generally avoid doing when taking action to avoid collision?",
+    "answers": [
+      "Avoid crossing ahead of another vessel when possible."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 5,
+    "question": "What is the duty of the stand-on vessel?",
+    "answers": [
+      "Keep course and speed, but take action if it becomes apparent that the give-way vessel is not taking appropriate action."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 6,
+    "question": "In a crossing situation, what course alteration should the stand-on vessel generally avoid?",
+    "answers": [
+      "The stand-on vessel should generally avoid altering course to port for a vessel on her own port side."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 7,
+    "question": "What sound signal should you make when in doubt about another vessel's intentions or actions?",
+    "answers": [
+      "Sound at least five short and rapid blasts."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 8,
+    "question": "Which give-way rule has the highest priority when vessels are in sight of one another?",
+    "answers": [
+      "Overtaking: the overtaking vessel keeps clear, regardless of vessel type."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 9,
+    "question": "How do you identify an overtaking situation by relative bearing?",
+    "answers": [
+      "A vessel is overtaking when coming up from more than 22.5 degrees abaft the other vessel's beam, in the arc of the stern light."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 10,
+    "question": "If you are unsure whether you are overtaking another vessel, what should you assume?",
+    "answers": [
+      "Assume you are overtaking and keep clear."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 11,
+    "question": "In the Rule 18 responsibility order, list the vessels from lowest to highest priority.",
+    "answers": [
+      "Seaplane, power-driven vessel, sailing vessel, vessel engaged in fishing, vessel constrained by draught, vessel restricted in ability to manoeuvre, vessel not under command."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 12,
+    "question": "In simple memory form, what is the Rule 18 give-way idea?",
+    "answers": [
+      "The more manoeuvrable vessel gives way to the less manoeuvrable vessel, unless another rule such as overtaking applies."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 13,
+    "question": "For two sailing vessels on different tacks, who gives way?",
+    "answers": [
+      "The vessel with the wind on her port side gives way to the vessel with the wind on her starboard side."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 14,
+    "question": "For two sailing vessels with wind on the same side, who gives way?",
+    "answers": [
+      "The windward vessel gives way to the leeward vessel."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 15,
+    "question": "If you are sailing with wind on your port side and cannot tell which side the other sailing vessel has the wind on, what do you do?",
+    "answers": [
+      "Give way."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 16,
+    "question": "When two power-driven vessels are meeting head-on with risk of collision, what should both do?",
+    "answers": [
+      "Both alter course to starboard so they pass port-to-port."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 17,
+    "question": "What lights or view suggest a power-driven head-on situation at night?",
+    "answers": [
+      "Masthead lights nearly in line, or both sidelights visible."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 18,
+    "question": "When two power-driven vessels are crossing with risk of collision, who gives way?",
+    "answers": [
+      "The vessel that has the other vessel on her own starboard side gives way."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 19,
+    "question": "In a narrow channel, which side should a vessel keep to?",
+    "answers": [
+      "Keep to the starboard side of the channel as far as safe and practicable."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 20,
+    "question": "In a narrow channel, what must sailing vessels and vessels under 20 metres avoid doing?",
+    "answers": [
+      "They must not impede vessels that can safely navigate only within the narrow channel or fairway."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 21,
+    "question": "In a narrow channel, what must a vessel engaged in fishing avoid doing?",
+    "answers": [
+      "It must not impede the passage of any other vessel navigating within the narrow channel or fairway."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 22,
+    "question": "When crossing a traffic separation scheme lane, what angle should you use if practicable?",
+    "answers": [
+      "Cross as nearly as practicable at right angles to the general direction of traffic flow."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 23,
+    "question": "In or near a traffic separation scheme, what must fishing, sailing, and vessels under 20 metres avoid doing?",
+    "answers": [
+      "They must not impede the safe passage of power-driven vessels following a traffic lane."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "cardType": "reveal",
+    "sourceQuestion": 24,
+    "question": "In restricted visibility, if you hear a fog signal forward of your beam, what should you do?",
+    "answers": [
+      "Reduce speed to minimum steerage way, stop if necessary, and navigate with extreme caution until danger is past."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 25,
+    "question": "Two power-driven vessels are crossing with risk of collision. You have the other vessel on your starboard side. What should you do?",
+    "answers": [
+      "Stand on and keep course and speed",
+      "Give way and avoid crossing ahead",
+      "Alter to port to pass ahead",
+      "Sound one prolonged blast and maintain speed"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 26,
+    "question": "Two power-driven vessels are crossing with risk of collision. The other vessel is on your port side. What is your role?",
+    "answers": [
+      "Give-way vessel",
+      "Stand-on vessel, but remain ready to act if needed",
+      "Overtaking vessel",
+      "Vessel not under command"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 27,
+    "question": "Two power-driven vessels meet head-on with risk of collision. Which action is correct?",
+    "answers": [
+      "Both alter course to starboard",
+      "Both alter course to port",
+      "Only the smaller vessel gives way",
+      "The vessel heading north stands on"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 28,
+    "question": "At night you see both sidelights of a power-driven vessel nearly ahead. What situation should you suspect?",
+    "answers": [
+      "Overtaking",
+      "Head-on or nearly head-on",
+      "Anchored vessel",
+      "Vessel aground"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 29,
+    "question": "You are overtaking another vessel and risk of collision exists. Which statement is correct?",
+    "answers": [
+      "The vessel being overtaken must give way",
+      "The overtaking vessel must keep clear",
+      "The power-driven vessel always stands on",
+      "Both vessels must alter to port"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 30,
+    "question": "You are unsure whether your approach counts as overtaking. What should you do?",
+    "answers": [
+      "Assume you are overtaking and keep clear",
+      "Assume it is crossing and stand on",
+      "Sound one short blast only",
+      "Wait until the other vessel changes course"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 31,
+    "question": "A sailing vessel is overtaking a power-driven vessel. Who keeps clear?",
+    "answers": [
+      "The power-driven vessel",
+      "The sailing vessel because it is overtaking",
+      "Whichever vessel is smaller",
+      "Both vessels alter to starboard"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 32,
+    "question": "A power-driven vessel is overtaking a sailing vessel. Who keeps clear?",
+    "answers": [
+      "The power-driven vessel because it is overtaking",
+      "The sailing vessel because power gives way to sail",
+      "The vessel on the port tack",
+      "Neither vessel if speed is safe"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 33,
+    "question": "A power-driven vessel and a sailing vessel are crossing with risk of collision, and neither is overtaking. Who generally gives way?",
+    "answers": [
+      "The sailing vessel",
+      "The power-driven vessel",
+      "The vessel with the other on her port side",
+      "Both must stop immediately"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 34,
+    "question": "A power-driven vessel meets a vessel engaged in fishing with risk of collision, and neither is overtaking. Who gives way under Rule 18?",
+    "answers": [
+      "The fishing vessel",
+      "The power-driven vessel",
+      "The vessel on the starboard side",
+      "Both have equal responsibility only"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 35,
+    "question": "A sailing vessel meets a vessel engaged in fishing with risk of collision, and neither is overtaking. Who gives way?",
+    "answers": [
+      "The sailing vessel",
+      "The fishing vessel",
+      "The vessel with wind on port side",
+      "The vessel making the higher speed"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 36,
+    "question": "A vessel engaged in fishing meets a vessel restricted in her ability to manoeuvre, with risk of collision. Who gives way?",
+    "answers": [
+      "The RAM vessel",
+      "The fishing vessel",
+      "The vessel to port",
+      "The faster vessel only"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 37,
+    "question": "A vessel constrained by draught and a vessel restricted in her ability to manoeuvre are crossing, and neither is overtaking. Who gives way?",
+    "answers": [
+      "The vessel constrained by draught",
+      "The RAM vessel",
+      "Whichever vessel sees the other to starboard",
+      "Both vessels must give way equally"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 38,
+    "question": "A vessel not under command and a power-driven vessel are at risk of collision. Who gives way?",
+    "answers": [
+      "The vessel not under command",
+      "The power-driven vessel",
+      "The vessel with the other on her port side",
+      "The smaller vessel"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 39,
+    "question": "Which vessel is highest in the Rule 18 responsibility order listed in the summary?",
+    "answers": [
+      "Sailing vessel",
+      "Vessel engaged in fishing",
+      "Vessel restricted in ability to manoeuvre",
+      "Vessel not under command"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 40,
+    "question": "Which vessel is lower in the Rule 18 order than a sailing vessel?",
+    "answers": [
+      "Vessel engaged in fishing",
+      "Power-driven vessel",
+      "Vessel restricted in ability to manoeuvre",
+      "Vessel not under command"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 41,
+    "question": "Two sailing vessels approach with risk of collision. Your vessel has wind on port side, and the other has wind on starboard side. Who gives way?",
+    "answers": [
+      "Your vessel gives way",
+      "The other vessel gives way",
+      "The windward vessel always stands on",
+      "Both alter to starboard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 42,
+    "question": "Two sailing vessels have wind on the same side. Your vessel is to windward. What should you do?",
+    "answers": [
+      "Stand on",
+      "Give way to the leeward vessel",
+      "Sound one prolonged blast",
+      "Alter only if the other vessel is power-driven"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 43,
+    "question": "Two sailing vessels have wind on the same side. Your vessel is leeward. What is your role?",
+    "answers": [
+      "Stand-on vessel, while keeping watch and readiness to act",
+      "Give-way vessel",
+      "Overtaking vessel in every case",
+      "Vessel constrained by draught"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 44,
+    "question": "You are sailing with wind on your port side and cannot determine whether the other sailing vessel has wind on port or starboard. What should you do?",
+    "answers": [
+      "Stand on because you are unsure",
+      "Give way",
+      "Alter to port and cross ahead",
+      "Ignore Rule 12 and apply Rule 18 only"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 45,
+    "question": "A sailing vessel is using her engine as well as sails. For give-way decisions, how should she be treated?",
+    "answers": [
+      "As a sailing vessel only",
+      "As a power-driven vessel",
+      "As a vessel not under command",
+      "As a vessel engaged in fishing"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 46,
+    "question": "You are the give-way vessel. Which action best matches Rule 16?",
+    "answers": [
+      "Make an early and substantial alteration to keep well clear",
+      "Maintain course and speed until the last moment",
+      "Alter slightly so the other vessel may not notice",
+      "Always turn to port regardless of situation"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 47,
+    "question": "You are the stand-on vessel and the give-way vessel is not taking appropriate action. What may you do?",
+    "answers": [
+      "Take action to avoid collision",
+      "Maintain course and speed no matter what",
+      "Turn to port in every crossing situation",
+      "Switch off navigation lights"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 48,
+    "question": "You are the stand-on vessel in a crossing situation. Which action should you generally avoid?",
+    "answers": [
+      "Altering course to port for a vessel on your port side",
+      "Keeping course and speed at first",
+      "Taking action if collision cannot be avoided by the give-way vessel alone",
+      "Sounding five short blasts when in doubt"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 49,
+    "question": "You doubt whether the give-way vessel understands the situation. What is the warning signal?",
+    "answers": [
+      "One short blast",
+      "Two short blasts",
+      "Three short blasts",
+      "Five or more short and rapid blasts"
+    ],
+    "correctIndex": 3
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 50,
+    "question": "A power-driven vessel altering course to starboard should sound which manoeuvring signal?",
+    "answers": [
+      "One short blast",
+      "Two short blasts",
+      "Three short blasts",
+      "One prolonged blast"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 51,
+    "question": "A power-driven vessel altering course to port should sound which manoeuvring signal?",
+    "answers": [
+      "One short blast",
+      "Two short blasts",
+      "Three short blasts",
+      "Five short blasts"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 52,
+    "question": "A power-driven vessel operating astern propulsion should sound which manoeuvring signal?",
+    "answers": [
+      "One short blast",
+      "Two short blasts",
+      "Three short blasts",
+      "One prolonged blast"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 53,
+    "question": "In a narrow channel, a vessel nearing a bend where another vessel may be hidden should sound what?",
+    "answers": [
+      "One prolonged blast",
+      "Two short blasts",
+      "Five short blasts only",
+      "Three long blasts"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 54,
+    "question": "You are navigating in a narrow channel. Which side should you keep to as far as safe and practicable?",
+    "answers": [
+      "Port side",
+      "Starboard side",
+      "The centreline at all times",
+      "Whichever side has the stronger current"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 55,
+    "question": "A sailing vessel in a narrow channel would impede a vessel that can navigate safely only inside the channel. What must the sailing vessel do?",
+    "answers": [
+      "Not impede that vessel",
+      "Claim stand-on status under all conditions",
+      "Anchor in the channel",
+      "Cross ahead because sail has priority over power"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 56,
+    "question": "A vessel engaged in fishing is in a narrow channel. What must she avoid?",
+    "answers": [
+      "Impeding other vessels navigating within the channel or fairway",
+      "Showing fishing lights",
+      "Keeping a lookout",
+      "Using sound signals"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 57,
+    "question": "You must cross a traffic lane in a traffic separation scheme. How should you cross if practicable?",
+    "answers": [
+      "At a small angle with the traffic flow",
+      "As nearly as practicable at right angles to traffic flow",
+      "Against the traffic flow",
+      "Inside the separation zone for convenience"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 58,
+    "question": "A vessel under 20 metres is using a traffic separation scheme. What must she avoid?",
+    "answers": [
+      "Impeding safe passage of power-driven vessels following a traffic lane",
+      "Crossing at right angles when necessary",
+      "Keeping clear of the separation line",
+      "Displaying navigation lights"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 59,
+    "question": "In restricted visibility, vessels are not in sight of one another. Which rule set is especially relevant for collision avoidance?",
+    "answers": [
+      "Rule 12 sailing only",
+      "Rule 14 head-on only",
+      "Rule 19 restricted visibility",
+      "Rule 18 responsibility order only"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 60,
+    "question": "In restricted visibility you hear a fog signal forward of your beam. What is the safest immediate response?",
+    "answers": [
+      "Reduce speed to minimum steerage way, stop if necessary, and proceed with caution",
+      "Increase speed to pass before the other vessel arrives",
+      "Turn hard to port immediately",
+      "Assume you are stand-on and maintain speed"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 61,
+    "question": "When using radar in restricted visibility, what alteration should generally be avoided for a vessel forward of the beam, unless overtaking?",
+    "answers": [
+      "Turning to starboard",
+      "Turning to port",
+      "Reducing speed",
+      "Stopping engines"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 62,
+    "question": "When using radar in restricted visibility, what should generally be avoided for a vessel abeam or abaft the beam?",
+    "answers": [
+      "Turning towards that vessel",
+      "Slowing down",
+      "Keeping a lookout",
+      "Sounding the correct fog signal"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 63,
+    "question": "Which statement about COLREGs responsibility is correct?",
+    "answers": [
+      "There is an absolute right of way at sea",
+      "A stand-on vessel has no duty to avoid collision",
+      "There is no exoneration for collision; all vessels must act to avoid danger",
+      "Only the give-way vessel needs a lookout"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 64,
+    "question": "Which factor is relevant when deciding safe speed?",
+    "answers": [
+      "Visibility, traffic density, manoeuvrability, sea state, hazards, and radar limitations",
+      "Only the posted speed limit",
+      "Only whether your vessel is larger",
+      "Only whether you are stand-on"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 65,
+    "question": "What does a constant compass bearing of another approaching vessel suggest?",
+    "answers": [
+      "The other vessel is anchored",
+      "Risk of collision may exist",
+      "There is no risk if your speed is steady",
+      "You are always the stand-on vessel"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 66,
+    "question": "Which action is least consistent with Rule 8 action to avoid collision?",
+    "answers": [
+      "A clear alteration made in ample time",
+      "A substantial speed reduction when appropriate",
+      "A small, late alteration that is hard for the other vessel to detect",
+      "Avoiding crossing ahead where possible"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 67,
+    "question": "Two power-driven vessels are crossing. Vessel A sees Vessel B on her starboard side. Which vessel gives way?",
+    "answers": [
+      "Vessel A",
+      "Vessel B",
+      "Both always give way",
+      "Neither if both are power-driven"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 68,
+    "question": "Two power-driven vessels are crossing. Vessel A sees Vessel B on her port side. Which statement is correct for Vessel A?",
+    "answers": [
+      "A is the give-way vessel",
+      "A is the stand-on vessel initially",
+      "A must always turn to port",
+      "A is overtaking by definition"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 69,
+    "question": "A power-driven vessel and a seaplane are at risk of collision on the water, and neither is overtaking. Which is lower in the Rule 18 order?",
+    "answers": [
+      "Seaplane",
+      "Power-driven vessel",
+      "They are equal in the listed order",
+      "Whichever is moving slower"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 70,
+    "question": "Which situation should be checked before applying the ordinary power crossing rule?",
+    "answers": [
+      "Whether one vessel is overtaking",
+      "Whether both vessels are painted the same colour",
+      "Whether the smaller vessel is faster",
+      "Whether the compass card is illuminated"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 71,
+    "question": "A vessel engaged in fishing is overtaking a power-driven vessel. Who must keep clear?",
+    "answers": [
+      "The fishing vessel, because overtaking overrides the ordinary Rule 18 order",
+      "The power-driven vessel, because power gives way to fishing",
+      "Both vessels must stop",
+      "The vessel with the other on her starboard side"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "COLREGs Collision Rules",
+    "sourceQuestion": 72,
+    "question": "What is the best decision-tree order for vessels in sight with risk of collision?",
+    "answers": [
+      "Check overtaking, then vessel type priority, then head-on/crossing or sailing rules as applicable",
+      "Check vessel size first, then speed, then colour",
+      "Always apply crossing before overtaking",
+      "Always apply Rule 18 before checking if overtaking"
+    ],
+    "correctIndex": 0
   }
 ]
