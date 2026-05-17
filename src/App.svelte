@@ -114,7 +114,8 @@
   function matchesSourceFilter(card: McqCard, filter: SourceFilter): boolean {
     if (filter === 'all') return true;
     if (filter === 'aids') return card.sourceSet === 'Aids to Navigation';
-    return card.sourceSet?.startsWith('Test Set') ?? false;
+    const sourceSet = card.sourceSet ?? '';
+    return sourceSet.startsWith('Test Set') || sourceSet === 'Islands';
   }
 
   function getCardType(card: Pick<McqCard, 'cardType'>): CardType {

@@ -2815,5 +2815,555 @@
     ],
     "correctIndex": 0,
     "answerImageSrc": "images/aiton/singapore-lighthouses.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 1,
+    "question": "Which two prohibited or restricted Tuas locations are shown in this chart section?",
+    "answers": [
+      "Tuas Dangerous Goods Jetty and Tuas Naval Base."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-tuas-naval-goods.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 2,
+    "question": "What are the restrictions around Tuas Dangerous Goods Jetty?",
+    "answers": [
+      "At the jetty head, keep 200 m clear for no entry and 400 m clear for no anchoring."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-tuas-naval-goods.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 3,
+    "question": "What restriction is shown at the Tuas Naval Base ramp?",
+    "answers": [
+      "Within 60 m of the ramp: no entry and no anchoring."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-tuas-naval-goods.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 4,
+    "question": "Which four prohibited or controlled locations are labelled around Pulau Bukom and Sentosa?",
+    "answers": [
+      "Pulau Busing, Pulau Bukom, Pulau Sebarok, and Selat Sengkir."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-busing-bukom-sebarok-sengkir.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 5,
+    "question": "What is Pulau Busing labelled as in the chart?",
+    "answers": [
+      "Pulau Busing is labelled as oil storage."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-busing-bukom-sebarok-sengkir.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 6,
+    "question": "What is Pulau Bukom labelled as in the chart?",
+    "answers": [
+      "Pulau Bukom is labelled as an oil refinery."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-busing-bukom-sebarok-sengkir.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 7,
+    "question": "What is Pulau Sebarok labelled as in the chart?",
+    "answers": [
+      "Pulau Sebarok is labelled as oil and chemical storage."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-busing-bukom-sebarok-sengkir.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 8,
+    "question": "What is Selat Sengkir labelled as in this chart section?",
+    "answers": [
+      "Selat Sengkir is labelled as a PCG Base."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-busing-bukom-sebarok-sengkir.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 9,
+    "question": "Which island with petrochemical facilities is shown between Temasek Fairway and Sinki Fairway?",
+    "answers": [
+      "Jurong Island."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-jurong-island-fairways.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 10,
+    "question": "Which two fairways are labelled near Jurong Island in this picture?",
+    "answers": [
+      "Temasek Fairway and Sinki Fairway."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-jurong-island-fairways.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 11,
+    "question": "What is Jurong Island labelled for in this annex picture?",
+    "answers": [
+      "Jurong Island is labelled for petrochemical facilities."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-jurong-island-fairways.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 12,
+    "question": "Which Southern Islands are grouped together in this prohibited-areas chart section?",
+    "answers": [
+      "Sudong, Panai, and Senai."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-southern-islands-satumu.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 13,
+    "question": "Which lighthouse area is labelled off Pulau Satumu?",
+    "answers": [
+      "Raffles Lighthouse."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-southern-islands-satumu.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 14,
+    "question": "Which fairway is labelled north of the Southern Islands in this picture?",
+    "answers": [
+      "Sinki Fairway."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-southern-islands-satumu.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 15,
+    "question": "Which oil-refinery island is also shown in this Southern Islands chart section?",
+    "answers": [
+      "Pulau Bukom."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-southern-islands-satumu.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 16,
+    "question": "Which three labelled locations are shown near eastern Singapore in this chart section?",
+    "answers": [
+      "Changi Beacon, Bedok Jetty, and Changi Naval Base."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-changi-bedok-small-craft.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 17,
+    "question": "What clearance is indicated around Bedok Jetty?",
+    "answers": [
+      "Keep 30 m away from Bedok Jetty."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-changi-bedok-small-craft.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 18,
+    "question": "Which anchorage is labelled in the Changi and Bedok chart section?",
+    "answers": [
+      "Small Craft Anchorage."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-changi-bedok-small-craft.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 19,
+    "question": "Which two islands are labelled as no-landing MINDEF protected areas?",
+    "answers": [
+      "Pulau Seletar and Pulau Punggol Barat."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-north-east-islands.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 20,
+    "question": "Which wharf and nearby island are labelled in the north-east prohibited-areas picture?",
+    "answers": [
+      "Sembawang Wharves and Pulau Serangoon."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-north-east-islands.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 21,
+    "question": "What restriction applies to Pulau Seletar and Pulau Punggol Barat in this chart?",
+    "answers": [
+      "No landing because they are MINDEF protected areas."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-north-east-islands.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 22,
+    "question": "Which two locations are shown in the Changi and Pulau Ubin chart section?",
+    "answers": [
+      "Pulau Ubin and CAFHI Jetty."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-ubin-cafhi.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 23,
+    "question": "Which jetty is shown south of Pulau Ubin?",
+    "answers": [
+      "CAFHI Jetty."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/prohibited-ubin-cafhi.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 24,
+    "question": "Name the three fairways labelled near Sentosa and the Southern Islands.",
+    "answers": [
+      "West Keppel Fairway, Jong Fairway, and Sisters Fairway."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/fairways-keppel-jong-sisters.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 25,
+    "question": "Which labelled fairway lies closest to Sentosa in this picture?",
+    "answers": [
+      "West Keppel Fairway."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/fairways-keppel-jong-sisters.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 26,
+    "question": "Which prominent beacon is shown near Jurong Island and Sinki Fairway?",
+    "answers": [
+      "Serebut Beacon."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/beacon-serebut.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 27,
+    "question": "Where is Serebut Beacon shown relative to Jurong Island?",
+    "answers": [
+      "It is shown south of Jurong Island, near Sinki Fairway."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/beacon-serebut.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 28,
+    "question": "Which prominent beacon is shown near Changi East?",
+    "answers": [
+      "Changi Beacon."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/beacon-changi.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 29,
+    "question": "Which part of Singapore helps identify the Changi Beacon chart section?",
+    "answers": [
+      "The Changi and East Coast area."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/beacon-changi.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 30,
+    "question": "Name the four prominent beacons shown in the southern chart section.",
+    "answers": [
+      "Cyrene Beacon, Selegie Beacon, Sakijang Beacon, and Sebarok Beacon."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/beacons-southern.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 31,
+    "question": "Which prominent beacon is labelled near Pulau Sebarok?",
+    "answers": [
+      "Sebarok Beacon."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/beacons-southern.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 32,
+    "question": "Which designated water-skiing and wakeboarding site is shown at Tuas?",
+    "answers": [
+      "The designated skiing site at Tuas."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/skiing-tuas.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 33,
+    "question": "How is the designated Tuas skiing site marked in the picture?",
+    "answers": [
+      "It is outlined in red on the chart."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/skiing-tuas.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 34,
+    "question": "Which designated skiing site is labelled in this western Johor Strait picture?",
+    "answers": [
+      "The designated skiing site at Pulau Sarimbun."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/skiing-pulau-sarimbun.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 35,
+    "question": "What nearby place name identifies the Pulau Sarimbun skiing picture?",
+    "answers": [
+      "Pulau Sarimbun."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/skiing-pulau-sarimbun.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 36,
+    "question": "Which designated skiing site is shown near Palawan on Sentosa?",
+    "answers": [
+      "The designated skiing site at Sentosa."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/skiing-sentosa.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 37,
+    "question": "Which nearby Sentosa label helps locate this designated skiing site?",
+    "answers": [
+      "Palawan, near the Sentosa Ferry Terminal area."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/skiing-sentosa.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 38,
+    "question": "Which northern area is used to show multiple designated skiing sites?",
+    "answers": [
+      "The Sembawang, Tanjong Irau, Seletar, and Pulau Punggol Barat area."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/skiing-sembawang-punggol.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 39,
+    "question": "How are the designated skiing sites marked in the Sembawang and Pulau Punggol Barat picture?",
+    "answers": [
+      "They are marked by red outlined boxes/arrows labelled Designated Skiing Sites."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/skiing-sembawang-punggol.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 40,
+    "question": "Which channel or fairway is visible near this designated skiing and wakeboarding area?",
+    "answers": [
+      "Selat Sinki."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/skiing-selat-sinki.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 41,
+    "question": "Which island names help locate the Selat Sinki skiing/wakeboarding picture?",
+    "answers": [
+      "Pulau Busing, Pulau Bukom, Pulau Hantu, Pulau Sudong, and Pulau Semakau are visible around the area."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/skiing-selat-sinki.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 42,
+    "question": "Which lighthouse is shown south-west of Jurong Island?",
+    "answers": [
+      "Sultan Shoal Lighthouse."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/lighthouse-sultan-shoal.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 43,
+    "question": "Which major island is the Sultan Shoal Lighthouse chart section centred near?",
+    "answers": [
+      "Jurong Island."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/lighthouse-sultan-shoal.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 44,
+    "question": "Which lighthouse is shown near the East Coast and Changi area?",
+    "answers": [
+      "Bedok Lighthouse."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/lighthouse-bedok.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 45,
+    "question": "Which nearby area helps identify the Bedok Lighthouse picture?",
+    "answers": [
+      "Changi East and the East Coast area."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/lighthouse-bedok.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 46,
+    "question": "Which lighthouse is shown off Pulau Satumu?",
+    "answers": [
+      "Raffles Lighthouse."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/lighthouse-raffles.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 47,
+    "question": "Which island is associated with Raffles Lighthouse in this chart?",
+    "answers": [
+      "Pulau Satumu."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/lighthouse-raffles.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 48,
+    "question": "Which lighthouse is shown far east of Singapore?",
+    "answers": [
+      "Horsburgh Lighthouse."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/lighthouse-horsburgh.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 49,
+    "question": "What distance label appears with the Horsburgh Lighthouse chart?",
+    "answers": [
+      "20 nautical miles, about 40 km."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/lighthouse-horsburgh.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "Islands",
+    "sourceQuestion": 50,
+    "question": "Which strait is shown around the Horsburgh Lighthouse chart?",
+    "answers": [
+      "Singapore Strait."
+    ],
+    "correctIndex": 0,
+    "answerImageSrc": "images/islands/lighthouse-horsburgh.jpg"
   }
 ]
