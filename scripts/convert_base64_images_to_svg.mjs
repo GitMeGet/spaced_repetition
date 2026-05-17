@@ -5,7 +5,6 @@ import { join } from 'node:path';
 const imageFields = ['imageBase64', 'questionImageBase64', 'image'];
 const assetDir = join('public', 'images', 'questions');
 const targetFiles = [
-  'src/lib/data/default-questions.json',
   ...jsonFilesIn('src/lib/data/sets'),
   'public/data/default-questions.json',
   'public/sample-questions.json'
