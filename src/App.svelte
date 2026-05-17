@@ -9,6 +9,8 @@
   type View = 'study' | 'add' | 'deck';
   type StudyMode = 'new' | 'due' | 'review';
   type SourceFilter = 'all' | 'test' | 'aids' | 'colreg' | 'islands';
+  const colregSourceSet = 'COLREG Vessel Shapes/Lights';
+  const colregDisplayName = 'Vessel Symbols';
   const sourceFilterStorageKey = 'mcq-fsrs-source-filter';
 
   let view: View = 'study';
@@ -101,9 +103,14 @@
   function sourceFilterLabel(filter: SourceFilter): string {
     if (filter === 'test') return 'Test Sets';
     if (filter === 'aids') return 'Aids to Nav';
-    if (filter === 'colreg') return 'COLREG Vessel Shapes/Lights';
+    if (filter === 'colreg') return colregDisplayName;
     if (filter === 'islands') return 'Islands';
     return 'All';
+  }
+
+  function sourceSetLabel(sourceSet?: string): string {
+    if (sourceSet === colregSourceSet) return colregDisplayName;
+    return sourceSet ?? 'Custom';
   }
 
   function readStoredSourceFilter(): SourceFilter {
@@ -126,7 +133,7 @@
   function matchesSourceFilter(card: McqCard, filter: SourceFilter): boolean {
     if (filter === 'all') return true;
     if (filter === 'aids') return card.sourceSet === 'Aids to Navigation';
-    if (filter === 'colreg') return card.sourceSet === 'COLREG Vessel Shapes/Lights';
+    if (filter === 'colreg') return card.sourceSet === colregSourceSet;
     if (filter === 'islands') return card.sourceSet === 'Islands';
     return card.sourceSet?.startsWith('Test Set') ?? false;
   }
@@ -278,7 +285,7 @@
           <option value="all">All</option>
           <option value="test">Test Sets</option>
           <option value="aids">Aids to Nav</option>
-          <option value="colreg">COLREG Vessel Shapes/Lights</option>
+          <option value="colreg">{colregDisplayName}</option>
           <option value="islands">Islands</option>
         </select>
       </div>
@@ -475,7 +482,7 @@
               <img class="thumb" src={answerImageFor(card)} alt="" />
             {/if}
             <p>{card.question}</p>
-            <span>{card.sourceSet ?? 'Custom'} - {getCardType(card) === 'reveal' ? 'Reveal' : 'MCQ'} - {card.state} - due {new Date(card.due).toLocaleString()} - reps {card.reps}</span>
+            <span>{sourceSetLabel(card.sourceSet)} - {getCardType(card) === 'reveal' ? 'Reveal' : 'MCQ'} - {card.state} - due {new Date(card.due).toLocaleString()} - reps {card.reps}</span>
           </div>
           <button class="icon-button" on:click={() => removeCard(card.id)} title="Delete card">
             <Trash2 size={18} />

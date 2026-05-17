@@ -27,6 +27,10 @@ textarea {
   font: inherit;
 }
 
+img {
+  max-width: 100%;
+}
+
 button {
   cursor: pointer;
 }
@@ -80,6 +84,7 @@ h2 {
 
 nav {
   display: flex;
+  min-width: 0;
   gap: 8px;
   padding: 6px;
   border: 1px solid #d7deea;
@@ -107,6 +112,7 @@ nav button,
 }
 
 nav button {
+  min-width: 0;
   padding: 0 12px;
 }
 
@@ -133,12 +139,14 @@ nav button.active,
 
 .source-select {
   display: flex;
+  min-width: 0;
   min-height: 42px;
   align-items: center;
 }
 
 .source-select select {
   width: 148px;
+  min-width: 0;
   min-height: 42px;
   padding: 0 36px 0 12px;
   border: 1px solid #cfd8e6;
@@ -203,6 +211,7 @@ nav button.active,
 }
 
 .workspace {
+  min-width: 0;
   min-height: 430px;
   padding: 18px;
   border: 1px solid #dfe5ee;
@@ -219,6 +228,8 @@ nav button.active,
 
 .question-panel {
   width: min(760px, 100%);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .question-panel > img,
@@ -240,6 +251,7 @@ nav button.active,
 .answers button {
   display: grid;
   grid-template-columns: 34px 1fr;
+  min-width: 0;
   gap: 10px;
   min-height: 58px;
   align-items: center;
@@ -249,6 +261,7 @@ nav button.active,
   background: #f8fafc;
   color: #172033;
   text-align: left;
+  overflow-wrap: anywhere;
 }
 
 .answers span {
@@ -443,6 +456,10 @@ textarea {
   background: #fbfcfe;
 }
 
+.deck-row > div {
+  min-width: 0;
+}
+
 .deck-row p {
   margin-bottom: 5px;
   font-weight: 800;
@@ -477,10 +494,20 @@ textarea {
   color: #197278;
 }
 
+.eyebrow,
+.question-panel h2,
+.deck-row p,
+.deck-row span,
+.reveal-answer p,
+.result {
+  overflow-wrap: anywhere;
+}
+
 @media (max-width: 760px) {
   .shell {
-    width: min(100% - 20px, 1120px);
-    padding: 14px 0 calc(88px + env(safe-area-inset-bottom));
+    width: 100%;
+    max-width: 1120px;
+    padding: 14px 10px calc(88px + env(safe-area-inset-bottom));
   }
 
   .workspace {
@@ -506,11 +533,16 @@ textarea {
 
   nav {
     display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .mode-toggle {
     display: grid;
     width: 100%;
+  }
+
+  .source-select {
+    grid-column: 1 / -1;
   }
 
   .source-select,
