@@ -8,7 +8,7 @@
 
   type View = 'study' | 'add' | 'deck';
   type StudyMode = 'new' | 'due' | 'review';
-  type SourceFilter = 'all' | 'test' | 'aids' | 'colreg';
+  type SourceFilter = 'all' | 'test' | 'aids' | 'colreg' | 'islands';
   const sourceFilterStorageKey = 'mcq-fsrs-source-filter';
 
   let view: View = 'study';
@@ -37,7 +37,7 @@
   $: accuracy = calculateQuestionAccuracy(filteredCards);
   $: hasAnswer = selectedIndex !== undefined;
   $: isCorrect = hasAnswer && active ? selectedIndex === active.correctIndex : false;
-  $: activeQueue = getStudyQueue(studyMode, sourceFilter);
+  $: activeQueue = getStudyQueue(studyMode, sourceFilter, cards, dueCards);
 
   onMount(() => {
     sourceFilter = readStoredSourceFilter();
@@ -56,9 +56,9 @@
     setActive(pickRandom(getStudyQueue(studyMode, sourceFilter)));
   }
 
-  function getStudyQueue(mode: StudyMode, filter = sourceFilter): McqCard[] {
-    const sourceCards = cards.filter((card) => matchesSourceFilter(card, filter));
-    const sourceDueCards = dueCards.filter((card) => matchesSourceFilter(card, filter));
+  function getStudyQueue(mode: StudyMode, filter = sourceFilter, deck = cards, dueDeck = dueCards): McqCard[] {
+    const sourceCards = deck.filter((card) => matchesSourceFilter(card, filter));
+    const sourceDueCards = dueDeck.filter((card) => matchesSourceFilter(card, filter));
     if (mode === 'new') return sourceCards.filter((card) => card.state === 'new');
     if (mode === 'review') return sourceCards.filter((card) => card.state === 'review' && isDue(card));
     return sourceDueCards.filter((card) => card.state !== 'new');
@@ -102,12 +102,13 @@
     if (filter === 'test') return 'Test Sets';
     if (filter === 'aids') return 'Aids to Nav';
     if (filter === 'colreg') return 'COLREG Vessel Shapes/Lights';
+    if (filter === 'islands') return 'Islands';
     return 'All';
   }
 
   function readStoredSourceFilter(): SourceFilter {
     const stored = localStorage.getItem(sourceFilterStorageKey);
-    return stored === 'test' || stored === 'aids' || stored === 'colreg' || stored === 'all' ? stored : 'all';
+    return stored === 'test' || stored === 'aids' || stored === 'colreg' || stored === 'islands' || stored === 'all' ? stored : 'all';
   }
 
   function calculateQuestionAccuracy(cards: McqCard[]): number {
@@ -126,8 +127,8 @@
     if (filter === 'all') return true;
     if (filter === 'aids') return card.sourceSet === 'Aids to Navigation';
     if (filter === 'colreg') return card.sourceSet === 'COLREG Vessel Shapes/Lights';
-    const sourceSet = card.sourceSet ?? '';
-    return sourceSet.startsWith('Test Set') || sourceSet === 'Islands';
+    if (filter === 'islands') return card.sourceSet === 'Islands';
+    return card.sourceSet?.startsWith('Test Set') ?? false;
   }
 
   function getCardType(card: Pick<McqCard, 'cardType'>): CardType {
@@ -278,6 +279,7 @@
           <option value="test">Test Sets</option>
           <option value="aids">Aids to Nav</option>
           <option value="colreg">COLREG Vessel Shapes/Lights</option>
+          <option value="islands">Islands</option>
         </select>
       </div>
     </nav>
