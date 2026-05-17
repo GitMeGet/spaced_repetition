@@ -1,0 +1,83 @@
+{
+  "images/islands/beacon-changi.jpg": [
+    { "x": 39, "y": 2, "width": 41, "height": 8 }
+  ],
+  "images/islands/beacon-serebut.jpg": [
+    { "x": 24, "y": 54, "width": 40, "height": 8 }
+  ],
+  "images/islands/beacons-southern.jpg": [
+    { "x": 8, "y": 23, "width": 42, "height": 8 },
+    { "x": 34, "y": 68, "width": 36, "height": 8 },
+    { "x": 57, "y": 76, "width": 40, "height": 8 },
+    { "x": 60, "y": 89, "width": 37, "height": 8 }
+  ],
+  "images/islands/fairways-keppel-jong-sisters.jpg": [
+    { "x": 3, "y": 29, "width": 38, "height": 8 },
+    { "x": 25, "y": 52, "width": 34, "height": 9 },
+    { "x": 50, "y": 79, "width": 37, "height": 9 }
+  ],
+  "images/islands/lighthouse-bedok.jpg": [
+    { "x": 3, "y": 13, "width": 39, "height": 13 }
+  ],
+  "images/islands/lighthouse-horsburgh.jpg": [
+    { "x": 18, "y": 2, "width": 47, "height": 8 },
+    { "x": 57, "y": 25, "width": 38, "height": 14 }
+  ],
+  "images/islands/lighthouse-raffles.jpg": [
+    { "x": 26, "y": 81, "width": 33, "height": 12 }
+  ],
+  "images/islands/lighthouse-sultan-shoal.jpg": [
+    { "x": 5, "y": 63, "width": 39, "height": 13 }
+  ],
+  "images/islands/prohibited-busing-bukom-sebarok-sengkir.jpg": [
+    { "x": 6, "y": 20, "width": 37, "height": 14 },
+    { "x": 48, "y": 14, "width": 42, "height": 11 },
+    { "x": 45, "y": 43, "width": 34, "height": 11 },
+    { "x": 4, "y": 57, "width": 44, "height": 14 }
+  ],
+  "images/islands/prohibited-changi-bedok-small-craft.jpg": [
+    { "x": 31, "y": 7, "width": 40, "height": 7 },
+    { "x": 20, "y": 23, "width": 33, "height": 12 },
+    { "x": 58, "y": 34, "width": 37, "height": 8 },
+    { "x": 4, "y": 45, "width": 40, "height": 8 }
+  ],
+  "images/islands/prohibited-jurong-island-fairways.jpg": [
+    { "x": 34, "y": 22, "width": 34, "height": 15 },
+    { "x": 22, "y": 58, "width": 31, "height": 7 },
+    { "x": 57, "y": 69, "width": 30, "height": 7 }
+  ],
+  "images/islands/prohibited-north-east-islands.jpg": [
+    { "x": 0, "y": 28, "width": 34, "height": 11 },
+    { "x": 5, "y": 44, "width": 44, "height": 15 },
+    { "x": 17, "y": 62, "width": 45, "height": 15 },
+    { "x": 68, "y": 71, "width": 25, "height": 14 }
+  ],
+  "images/islands/prohibited-southern-islands-satumu.jpg": [
+    { "x": 39, "y": 24, "width": 34, "height": 8 },
+    { "x": 63, "y": 50, "width": 28, "height": 11 },
+    { "x": 6, "y": 64, "width": 46, "height": 12 },
+    { "x": 65, "y": 65, "width": 34, "height": 14 }
+  ],
+  "images/islands/prohibited-tuas-naval-goods.jpg": [
+    { "x": 8, "y": 33, "width": 38, "height": 9 },
+    { "x": 56, "y": 33, "width": 38, "height": 8 },
+    { "x": 0, "y": 63, "width": 55, "height": 11 }
+  ],
+  "images/islands/prohibited-ubin-cafhi.jpg": [
+    { "x": 31, "y": 7, "width": 31, "height": 7 },
+    { "x": 42, "y": 47, "width": 33, "height": 8 }
+  ],
+  "images/islands/skiing-pulau-sarimbun.jpg": [
+    { "x": 18, "y": 63, "width": 21, "height": 13 }
+  ],
+  "images/islands/skiing-selat-sinki.jpg": [],
+  "images/islands/skiing-sembawang-punggol.jpg": [
+    { "x": 5, "y": 57, "width": 19, "height": 8 }
+  ],
+  "images/islands/skiing-sentosa.jpg": [
+    { "x": 61, "y": 44, "width": 33, "height": 12 }
+  ],
+  "images/islands/skiing-tuas.jpg": [
+    { "x": 78, "y": 28, "width": 18, "height": 16 }
+  ]
+}

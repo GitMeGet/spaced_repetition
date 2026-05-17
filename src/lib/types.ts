@@ -1,6 +1,13 @@
 export type CardState = 'new' | 'learning' | 'review' | 'relearning';
 export type CardType = 'mcq' | 'reveal';
 
+export type ImageBlurRegion = {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+};
+
 export type McqCard = {
   id?: number;
   cardType?: CardType;

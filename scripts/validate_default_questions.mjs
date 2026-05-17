@@ -2,11 +2,14 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const canonicalPath = 'public/data/default-questions.json';
+const islandBlurRegionsPath = 'src/lib/island-image-blur-regions.json';
 const publicRoot = 'public';
 
 const canonical = readJson(canonicalPath);
+const islandBlurRegions = readJson(islandBlurRegionsPath);
 
 validateCards(canonical, canonicalPath);
+validateIslandBlurRegions(canonical, islandBlurRegions, islandBlurRegionsPath);
 
 console.log(`Validated ${canonical.length} bundled default questions.`);
 
@@ -75,5 +78,46 @@ function validateBundledAssetPath(value, label) {
   const relativePath = trimmed.replace(/^\/+/, '');
   if (!existsSync(join(publicRoot, relativePath))) {
     throw new Error(`${label} points to a missing bundled asset: ${trimmed}`);
+  }
+}
+
+function validateIslandBlurRegions(cards, regionsByPath, label) {
+  if (!regionsByPath || typeof regionsByPath !== 'object' || Array.isArray(regionsByPath)) {
+    throw new Error(`${label} must contain an object keyed by image path.`);
+  }
+
+  const islandsQuestionImages = new Set(
+    cards
+      .filter((card) => card.sourceSet === 'Islands' && typeof card.imageSrc === 'string' && card.imageSrc.trim() !== '')
+      .map((card) => card.imageSrc.trim().replace(/^\/+/, ''))
+  );
+
+  for (const imageSrc of islandsQuestionImages) {
+    if (!(imageSrc in regionsByPath)) {
+      throw new Error(`${label} is missing blur regions for ${imageSrc}.`);
+    }
+  }
+
+  for (const [imageSrc, regions] of Object.entries(regionsByPath)) {
+    validateBundledAssetPath(imageSrc, `${label} key ${imageSrc}`);
+    if (!Array.isArray(regions)) throw new Error(`${label} ${imageSrc} must be an array.`);
+
+    regions.forEach((region, index) => {
+      const row = `${label} ${imageSrc}[${index}]`;
+      if (!region || typeof region !== 'object' || Array.isArray(region)) {
+        throw new Error(`${row} must be an object.`);
+      }
+      for (const field of ['x', 'y', 'width', 'height']) {
+        if (!Number.isFinite(region[field])) {
+          throw new Error(`${row}.${field} must be a finite number.`);
+        }
+      }
+      if (region.x < 0 || region.y < 0 || region.width <= 0 || region.height <= 0) {
+        throw new Error(`${row} must use non-negative x/y and positive width/height.`);
+      }
+      if (region.x + region.width > 100 || region.y + region.height > 100) {
+        throw new Error(`${row} must stay within 0..100 percent bounds.`);
+      }
+    });
   }
 }

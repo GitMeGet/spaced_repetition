@@ -2,9 +2,10 @@
   import { onMount } from 'svelte';
   import { BarChart3, Check, Download, Eye, ImagePlus, Library, RotateCcw, Trash2, Upload } from 'lucide-svelte';
   import { addCard, deleteCard, exportBackup, getDeck, getDueCards, gradeCard, importCards, restoreBackup, syncDefaultCards, updateCardNote } from './lib/db';
+  import { blurRegionClipPath, getQuestionImageBlurRegions } from './lib/imageBlurRegions';
   import { downloadText, downscaleImage, normalizeImageBase64 } from './lib/images';
   import { isDue } from './lib/scheduler';
-  import type { CardType, ImportCard, McqCard, StudyGrade } from './lib/types';
+  import type { CardType, ImageBlurRegion, ImportCard, McqCard, StudyGrade } from './lib/types';
 
   type View = 'study' | 'add' | 'deck';
   type StudyMode = 'new' | 'due' | 'review';
@@ -144,6 +145,10 @@
 
   function questionImageFor(card: Pick<McqCard, 'imageBase64' | 'imageSrc'>): string | undefined {
     return card.imageBase64 || resolveAssetSrc(card.imageSrc);
+  }
+
+  function questionImageBlurRegionsFor(card: Pick<McqCard, 'sourceSet' | 'imageSrc'>): ImageBlurRegion[] {
+    return getQuestionImageBlurRegions(card);
   }
 
   function answerImageFor(card: Pick<McqCard, 'answerImageSrc'>): string | undefined {
@@ -322,7 +327,20 @@
           <p class="eyebrow">{queueLabel(studyMode)} - {sourceFilterLabel(sourceFilter)} - {activeQueue.length} in queue</p>
           <h2>{active.question}</h2>
           {#if questionImageFor(active)}
-            <img src={questionImageFor(active)} alt="" />
+            {@const questionImage = questionImageFor(active)}
+            {@const blurRegions = questionImageBlurRegionsFor(active)}
+            {#if blurRegions.length > 0}
+              <div class="question-image">
+                <img src={questionImage} alt="" />
+                {#each blurRegions as region}
+                  <span class="question-image-blur" style={`clip-path: ${blurRegionClipPath(region)};`}>
+                    <img src={questionImage} alt="" aria-hidden="true" />
+                  </span>
+                {/each}
+              </div>
+            {:else}
+              <img src={questionImage} alt="" />
+            {/if}
           {/if}
           {#if getCardType(active) === 'reveal'}
             {#if submitted}
