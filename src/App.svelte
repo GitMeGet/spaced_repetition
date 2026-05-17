@@ -34,9 +34,7 @@
   $: newCount = filteredCards.filter((card) => card.state === 'new').length;
   $: dueCount = filteredDueCards.filter((card) => card.state !== 'new').length;
   $: reviewReady = filteredCards.filter((card) => card.state === 'review' && isDue(card)).length;
-  $: accuracy = total
-    ? Math.round((filteredCards.reduce((sum, card) => sum + card.reps - card.lapses, 0) / Math.max(1, filteredCards.reduce((sum, card) => sum + card.reps, 0))) * 100)
-    : 0;
+  $: accuracy = calculateQuestionAccuracy(filteredCards);
   $: hasAnswer = selectedIndex !== undefined;
   $: isCorrect = hasAnswer && active ? selectedIndex === active.correctIndex : false;
   $: activeQueue = getStudyQueue(studyMode, sourceFilter);
@@ -110,6 +108,18 @@
   function readStoredSourceFilter(): SourceFilter {
     const stored = localStorage.getItem(sourceFilterStorageKey);
     return stored === 'test' || stored === 'aids' || stored === 'colreg' || stored === 'all' ? stored : 'all';
+  }
+
+  function calculateQuestionAccuracy(cards: McqCard[]): number {
+    const answeredCards = cards.filter((card) => card.reps > 0);
+    if (answeredCards.length === 0) return 0;
+
+    const questionAccuracy = answeredCards.reduce((sum, card) => {
+      const correctReps = Math.max(0, card.reps - card.lapses);
+      return sum + correctReps / card.reps;
+    }, 0);
+
+    return Math.round((questionAccuracy / answeredCards.length) * 100);
   }
 
   function matchesSourceFilter(card: McqCard, filter: SourceFilter): boolean {
