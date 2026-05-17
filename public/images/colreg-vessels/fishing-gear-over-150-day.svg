@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" role="img" aria-labelledby="title desc">
+  <title id="title">Fishing gear extending more than 150 metres by day</title>
+  <desc id="desc">A fishing vessel showing the fishing day shape plus an additional black cone pointing upward toward extended gear.</desc>
+  <rect width="420" height="300" fill="#eef6ff"/>
+  <rect y="236" width="420" height="64" fill="#bfdbfe"/>
+  <path d="M0 238c48-12 82 12 128 0s82-12 128 0 82 12 164 0v62H0z" fill="#93c5fd" opacity="0.72"/>
+  <line x1="210" y1="62" x2="210" y2="218" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+  <polygon points="155,62 209,62 182,114" fill="#111827"/>
+  <polygon points="182,118 209,170 155,170" fill="#111827"/>
+  <polygon points="270,91 291,141 249,141" fill="#111827"/>
+  <line x1="292" y1="150" x2="360" y2="202" stroke="#334155" stroke-width="4" stroke-dasharray="8 8"/>
+  <path d="M92 218h236l-30 34H132z" fill="#334155"/><path d="M134 252h164" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+</svg>

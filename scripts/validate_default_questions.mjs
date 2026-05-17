@@ -1,6 +1,8 @@
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 
 const canonicalPath = 'public/data/default-questions.json';
+const publicRoot = 'public';
 
 const canonical = readJson(canonicalPath);
 
@@ -56,10 +58,22 @@ function validateCards(cards, label) {
       if (imageField in card && (typeof card[imageField] !== 'string' || card[imageField].trim() === '')) {
         throw new Error(`${row} ${imageField} must be a non-empty string when present.`);
       }
+      if (imageField in card) {
+        validateBundledAssetPath(card[imageField], `${row} ${imageField}`);
+      }
     }
 
     const key = `${card.sourceSet}|${card.sourceQuestion}`;
     if (keys.has(key)) throw new Error(`${label} contains duplicate source key ${key}.`);
     keys.add(key);
+  }
+}
+
+function validateBundledAssetPath(value, label) {
+  const trimmed = String(value ?? '').trim();
+  if (/^(data:|https?:|blob:)/i.test(trimmed)) return;
+  const relativePath = trimmed.replace(/^\/+/, '');
+  if (!existsSync(join(publicRoot, relativePath))) {
+    throw new Error(`${label} points to a missing bundled asset: ${trimmed}`);
   }
 }

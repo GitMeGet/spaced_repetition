@@ -3365,5 +3365,269 @@
     ],
     "correctIndex": 0,
     "answerImageSrc": "images/islands/lighthouse-horsburgh.jpg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 1,
+    "question": "Identify this vessel light arrangement.",
+    "answers": [
+      "Power-driven vessel under 50 m underway at night: one masthead light, sidelights, and stern light."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/power-driven-under-50-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 2,
+    "question": "Identify this vessel light arrangement.",
+    "answers": [
+      "Power-driven vessel 50 m or more underway at night: two masthead lights, sidelights, and stern light."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/power-driven-50-plus-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 3,
+    "question": "Identify this sailing vessel light arrangement.",
+    "answers": [
+      "Sailing vessel underway at night: sidelights and stern light, with no masthead light."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/sailing-vessel-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 4,
+    "question": "Identify this day shape on a sailing vessel.",
+    "answers": [
+      "A sailing vessel proceeding under sail and machinery by day shows a cone with its apex downward."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/sailing-under-power-day.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 5,
+    "question": "Identify this towing vessel light arrangement.",
+    "answers": [
+      "Towing vessel with tow not over 200 m: two masthead lights in a vertical line, sidelights, stern light, and yellow towing light."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/towing-under-200-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 6,
+    "question": "Identify this towing vessel light arrangement.",
+    "answers": [
+      "Towing vessel with tow over 200 m: three masthead lights in a vertical line, sidelights, stern light, and yellow towing light."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/towing-over-200-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 7,
+    "question": "Identify this day shape shown by a vessel or tow.",
+    "answers": [
+      "A tow over 200 m is indicated by a diamond shape where it can best be seen."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/tow-over-200-day-diamond.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 8,
+    "question": "Identify this pushing or towing-alongside light arrangement.",
+    "answers": [
+      "Power-driven vessel pushing ahead or towing alongside at night: two masthead lights in a vertical line plus sidelights and stern light."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/pushing-ahead-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 9,
+    "question": "Identify this fishing vessel day shape.",
+    "answers": [
+      "Fishing vessel by day: two cones with their apexes together."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/fishing-day.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 10,
+    "question": "Identify this fishing vessel light arrangement.",
+    "answers": [
+      "Trawler at night: green over white all-round lights, plus making-way lights when underway."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/trawling-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 11,
+    "question": "Identify this fishing vessel light arrangement.",
+    "answers": [
+      "Fishing vessel other than trawling at night: red over white all-round lights, plus making-way lights when underway."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/fishing-not-trawling-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 12,
+    "question": "Identify this additional fishing day signal.",
+    "answers": [
+      "Fishing gear extending more than 150 m is indicated by an additional cone with its apex upward in the direction of the gear."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/fishing-gear-over-150-day.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 13,
+    "question": "Identify this vessel day shape.",
+    "answers": [
+      "Vessel not under command by day: two black balls in a vertical line."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/not-under-command-day.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 14,
+    "question": "Identify this vessel light arrangement.",
+    "answers": [
+      "Vessel not under command at night: two red all-round lights in a vertical line, plus making-way lights if making way."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/not-under-command-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 15,
+    "question": "Identify this vessel day shape.",
+    "answers": [
+      "Vessel restricted in ability to manoeuvre by day: ball, diamond, ball in a vertical line."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/restricted-ability-day.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 16,
+    "question": "Identify this vessel light arrangement.",
+    "answers": [
+      "Vessel restricted in ability to manoeuvre at night: red, white, red all-round lights in a vertical line."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/restricted-ability-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 17,
+    "question": "Identify this vessel day shape.",
+    "answers": [
+      "Vessel constrained by draught by day: a black cylinder."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/constrained-by-draught-day.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 18,
+    "question": "Identify this vessel light arrangement.",
+    "answers": [
+      "Vessel constrained by draught at night: three red all-round lights in a vertical line, plus power-driven lights when underway."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/constrained-by-draught-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 19,
+    "question": "Identify this vessel light arrangement.",
+    "answers": [
+      "Pilot vessel on pilotage duty at night: white over red all-round lights, plus sidelights and stern light when underway."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/pilot-vessel-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 20,
+    "question": "Identify this anchored vessel day shape.",
+    "answers": [
+      "Anchored vessel by day: one black ball where it can best be seen."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/anchored-under-50-day.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 21,
+    "question": "Identify this anchored vessel light arrangement.",
+    "answers": [
+      "Anchored vessel under 50 m at night: one all-round white light where it can best be seen."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/anchored-under-50-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 22,
+    "question": "Identify this anchored vessel light arrangement.",
+    "answers": [
+      "Anchored vessel 50 m or more at night: two all-round white lights, forward higher than aft, with deck lights as required."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/anchored-50-plus-night.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 23,
+    "question": "Identify this vessel day shape.",
+    "answers": [
+      "Vessel aground by day: three black balls in a vertical line."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/aground-day.svg"
+  },
+  {
+    "cardType": "reveal",
+    "sourceSet": "COLREG Vessel Shapes/Lights",
+    "sourceQuestion": 24,
+    "question": "Identify this vessel light arrangement.",
+    "answers": [
+      "Vessel aground at night: anchor lights plus two red all-round lights in a vertical line."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/aground-night.svg"
   }
 ]

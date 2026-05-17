@@ -8,7 +8,7 @@
 
   type View = 'study' | 'add' | 'deck';
   type StudyMode = 'new' | 'due' | 'review';
-  type SourceFilter = 'all' | 'test' | 'aids';
+  type SourceFilter = 'all' | 'test' | 'aids' | 'colreg';
   const sourceFilterStorageKey = 'mcq-fsrs-source-filter';
 
   let view: View = 'study';
@@ -103,17 +103,19 @@
   function sourceFilterLabel(filter: SourceFilter): string {
     if (filter === 'test') return 'Test Sets';
     if (filter === 'aids') return 'Aids to Nav';
+    if (filter === 'colreg') return 'COLREG Vessel Shapes/Lights';
     return 'All';
   }
 
   function readStoredSourceFilter(): SourceFilter {
     const stored = localStorage.getItem(sourceFilterStorageKey);
-    return stored === 'test' || stored === 'aids' || stored === 'all' ? stored : 'all';
+    return stored === 'test' || stored === 'aids' || stored === 'colreg' || stored === 'all' ? stored : 'all';
   }
 
   function matchesSourceFilter(card: McqCard, filter: SourceFilter): boolean {
     if (filter === 'all') return true;
     if (filter === 'aids') return card.sourceSet === 'Aids to Navigation';
+    if (filter === 'colreg') return card.sourceSet === 'COLREG Vessel Shapes/Lights';
     const sourceSet = card.sourceSet ?? '';
     return sourceSet.startsWith('Test Set') || sourceSet === 'Islands';
   }
@@ -265,6 +267,7 @@
           <option value="all">All</option>
           <option value="test">Test Sets</option>
           <option value="aids">Aids to Nav</option>
+          <option value="colreg">COLREG Vessel Shapes/Lights</option>
         </select>
       </div>
     </nav>
