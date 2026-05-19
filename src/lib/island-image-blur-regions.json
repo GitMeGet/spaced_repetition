@@ -9,18 +9,18 @@
     { "x": 8, "y": 23, "width": 42, "height": 8 },
     { "x": 34, "y": 68, "width": 36, "height": 8 },
     { "x": 57, "y": 76, "width": 40, "height": 8 },
-    { "x": 60, "y": 89, "width": 37, "height": 8 }
+    { "x": 55, "y": 86, "width": 42, "height": 10 }
   ],
   "images/islands/fairways-keppel-jong-sisters.jpg": [
     { "x": 3, "y": 29, "width": 38, "height": 8 },
     { "x": 25, "y": 52, "width": 34, "height": 9 },
-    { "x": 50, "y": 79, "width": 37, "height": 9 }
+    { "x": 46, "y": 79, "width": 42, "height": 9 }
   ],
   "images/islands/lighthouse-bedok.jpg": [
     { "x": 3, "y": 13, "width": 39, "height": 13 }
   ],
   "images/islands/lighthouse-horsburgh.jpg": [
-    { "x": 18, "y": 2, "width": 47, "height": 8 },
+    { "x": 16, "y": 1, "width": 50, "height": 9 },
     { "x": 57, "y": 25, "width": 38, "height": 14 }
   ],
   "images/islands/lighthouse-raffles.jpg": [
@@ -43,8 +43,8 @@
   ],
   "images/islands/prohibited-jurong-island-fairways.jpg": [
     { "x": 34, "y": 22, "width": 34, "height": 15 },
-    { "x": 22, "y": 58, "width": 31, "height": 7 },
-    { "x": 57, "y": 69, "width": 30, "height": 7 }
+    { "x": 21, "y": 53, "width": 32, "height": 8 },
+    { "x": 56, "y": 64, "width": 31, "height": 8 }
   ],
   "images/islands/prohibited-north-east-islands.jpg": [
     { "x": 0, "y": 28, "width": 34, "height": 11 },
@@ -54,9 +54,9 @@
   ],
   "images/islands/prohibited-southern-islands-satumu.jpg": [
     { "x": 39, "y": 24, "width": 34, "height": 8 },
-    { "x": 63, "y": 50, "width": 28, "height": 11 },
+    { "x": 60, "y": 46, "width": 33, "height": 10 },
     { "x": 6, "y": 64, "width": 46, "height": 12 },
-    { "x": 65, "y": 65, "width": 34, "height": 14 }
+    { "x": 62, "y": 57, "width": 37, "height": 14 }
   ],
   "images/islands/prohibited-tuas-naval-goods.jpg": [
     { "x": 8, "y": 33, "width": 38, "height": 9 },
