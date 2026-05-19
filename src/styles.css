@@ -234,7 +234,15 @@ nav button.active,
   max-width: 100%;
 }
 
+.study-capture {
+  width: 100%;
+  min-width: 0;
+  background: #ffffff;
+  color: #142033;
+}
+
 .question-panel > img,
+.study-capture > img,
 .question-image,
 .preview {
   display: block;

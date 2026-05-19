@@ -15,9 +15,10 @@
     "validate:data": "node scripts/validate_default_questions.mjs"
   },
   "dependencies": {
-    "dexie": "^4.0.11",
-    "lucide-svelte": "^0.468.0",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "dexie": "^4.0.11",
+    "html-to-image": "^1.11.13",
+    "lucide-svelte": "^0.468.0",
     "svelte": "^5.15.0",
     "vite": "^6.0.5"
   },

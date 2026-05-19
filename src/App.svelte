@@ -17,6 +17,7 @@
     unhideCard,
     updateCardNote
   } from './lib/db';
+  import { copyElementAsPng, ImageClipboardError } from './lib/capture';
   import { blurRegionClipPath, getQuestionImageBlurRegions } from './lib/imageBlurRegions';
   import { downloadText, downscaleImage, normalizeImageBase64 } from './lib/images';
   import { isDue } from './lib/scheduler';
@@ -40,6 +41,8 @@
   let submitted = false;
   let noteDraft = '';
   let status = '';
+  let questionCaptureElement: HTMLElement | undefined;
+  let copyingStudyContext = false;
   let question = '';
   let answers = ['', '', '', ''];
   let correctIndex = 0;
@@ -315,6 +318,34 @@
     }
   }
 
+  async function copyStudyContextImage() {
+    if (!questionCaptureElement || copyingStudyContext) return;
+    status = 'Preparing question image...';
+    copyingStudyContext = true;
+    try {
+      await copyElementAsPng(questionCaptureElement);
+      status = 'Copied question context as an image. Paste it into your LLM chat.';
+    } catch (error) {
+      status = studyContextCopyErrorMessage(error);
+    } finally {
+      copyingStudyContext = false;
+    }
+  }
+
+  function studyContextCopyErrorMessage(error: unknown): string {
+    if (error instanceof ImageClipboardError) {
+      if (error.code === 'unsupported') {
+        return 'This browser cannot copy PNG images. Try Chrome or Edge on the local app URL.';
+      }
+      if (error.code === 'permission') {
+        return 'Clipboard permission was denied. Allow clipboard access and try again.';
+      }
+      return `Could not copy the question image. If this card uses a remote image, the browser may be blocking capture.${error.message ? ` ${error.message}` : ''}`;
+    }
+
+    return error instanceof Error ? error.message : 'Could not copy the question image.';
+  }
+
   async function removeCard(id: number | undefined) {
     if (!id) return;
     await deleteCard(id);
@@ -418,63 +449,68 @@
     <section class="workspace study">
       {#if active}
         <article class="question-panel">
-          <p class="eyebrow">{queueLabel(studyMode)} - {sourceFilterLabel(sourceFilter)} - {activeQueue.length} in queue</p>
-          <h2>{active.question}</h2>
-          {#if questionImageFor(active)}
-            {@const questionImage = questionImageFor(active)}
-            {@const blurRegions = questionImageBlurRegionsFor(active)}
-            {#if blurRegions.length > 0}
-              <div class="question-image">
+          <div class="study-capture" bind:this={questionCaptureElement}>
+            <p class="eyebrow">{queueLabel(studyMode)} - {sourceFilterLabel(sourceFilter)} - {activeQueue.length} in queue</p>
+            <h2>{active.question}</h2>
+            {#if questionImageFor(active)}
+              {@const questionImage = questionImageFor(active)}
+              {@const blurRegions = questionImageBlurRegionsFor(active)}
+              {#if blurRegions.length > 0}
+                <div class="question-image">
+                  <img src={questionImage} alt="" />
+                  {#each blurRegions as region}
+                    <span class="question-image-blur" style={`clip-path: ${blurRegionClipPath(region)};`}>
+                      <img src={questionImage} alt="" aria-hidden="true" />
+                    </span>
+                  {/each}
+                </div>
+              {:else}
                 <img src={questionImage} alt="" />
-                {#each blurRegions as region}
-                  <span class="question-image-blur" style={`clip-path: ${blurRegionClipPath(region)};`}>
-                    <img src={questionImage} alt="" aria-hidden="true" />
-                  </span>
+              {/if}
+            {/if}
+            {#if getCardType(active) === 'reveal'}
+              {#if submitted}
+                <div class="reveal-answer" role="status" aria-live="polite">
+                  <strong>Answer</strong>
+                  <p>{active.answers[0]}</p>
+                  {#if answerImageFor(active)}
+                    <img src={answerImageFor(active)} alt="" />
+                  {/if}
+                </div>
+              {/if}
+            {:else}
+              <div class="answers">
+                {#each active.answers as option, index}
+                  <button
+                    class:chosen={selectedIndex === index}
+                    class:correct={submitted && index === active.correctIndex}
+                    class:wrong={submitted && selectedIndex === index && index !== active.correctIndex}
+                    disabled={submitted}
+                    on:click={() => (selectedIndex = index)}
+                  >
+                    <span>{String.fromCharCode(65 + index)}</span>
+                    {option}
+                  </button>
                 {/each}
               </div>
-            {:else}
-              <img src={questionImage} alt="" />
             {/if}
-          {/if}
-          {#if getCardType(active) === 'reveal'}
             {#if submitted}
-              <div class="reveal-answer" role="status" aria-live="polite">
-                <strong>Answer</strong>
-                <p>{active.answers[0]}</p>
-                {#if answerImageFor(active)}
-                  <img src={answerImageFor(active)} alt="" />
-                {/if}
-              </div>
+              {#if getCardType(active) === 'mcq'}
+                <div class:ok={isCorrect} class:error={!isCorrect} class="result" role="status" aria-live="polite">
+                  <strong>{isCorrect ? 'Correct' : 'Wrong'}</strong>
+                  {#if !isCorrect}
+                    <span>Answer: {active.answers[active.correctIndex]}</span>
+                  {/if}
+                </div>
+              {/if}
             {/if}
-          {:else}
-          <div class="answers">
-            {#each active.answers as option, index}
-              <button
-                class:chosen={selectedIndex === index}
-                class:correct={submitted && index === active.correctIndex}
-                class:wrong={submitted && selectedIndex === index && index !== active.correctIndex}
-                disabled={submitted}
-                on:click={() => (selectedIndex = index)}
-              >
-                <span>{String.fromCharCode(65 + index)}</span>
-                {option}
-              </button>
-            {/each}
           </div>
-          {/if}
-          {#if submitted}
-            {#if getCardType(active) === 'mcq'}
-              <div class:ok={isCorrect} class:error={!isCorrect} class="result" role="status" aria-live="polite">
-                <strong>{isCorrect ? 'Correct' : 'Wrong'}</strong>
-                {#if !isCorrect}
-                  <span>Answer: {active.answers[active.correctIndex]}</span>
-                {/if}
-              </div>
-            {/if}
-          {/if}
           <div class:submitted={submitted} class="actions">
             <button class="danger" on:click={hideActiveCard}>
               <EyeOff size={18} /> Hide
+            </button>
+            <button on:click={copyStudyContextImage} disabled={copyingStudyContext}>
+              <Copy size={18} /> {copyingStudyContext ? 'Copying...' : 'Copy for LLM'}
             </button>
             {#if getCardType(active) === 'reveal'}
               {#if submitted}
