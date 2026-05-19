@@ -20,13 +20,24 @@ class StudyDatabase extends Dexie {
     this.version(2).stores({
       cards: '++id, due, difficulty, stability, reps, state, sourceSet, sourceQuestion, [sourceSet+sourceQuestion]'
     });
+    this.version(3).stores({
+      cards: '++id, due, difficulty, stability, reps, state, sourceSet, sourceQuestion, [sourceSet+sourceQuestion], hidden, hiddenAt'
+    });
   }
 }
 
 export const db = new StudyDatabase();
 
 export async function getDeck(): Promise<McqCard[]> {
-  return db.cards.orderBy('due').toArray();
+  const cards = await getAllCards();
+  return cards.filter((card) => !card.hidden);
+}
+
+export async function getHiddenCards(): Promise<McqCard[]> {
+  const cards = await db.cards.toArray();
+  return cards
+    .filter((card) => card.hidden)
+    .sort((first, second) => String(second.hiddenAt ?? '').localeCompare(String(first.hiddenAt ?? '')));
 }
 
 export async function syncDefaultCards(): Promise<DefaultSyncSummary> {
@@ -128,14 +139,42 @@ export async function updateCardNote(id: number, note: string): Promise<void> {
   await db.cards.update(id, { note: note.trim(), updatedAt: new Date().toISOString() });
 }
 
+export async function hideCard(id: number): Promise<void> {
+  const now = new Date().toISOString();
+  await db.cards.update(id, { hidden: true, hiddenAt: now, updatedAt: now });
+}
+
+export async function unhideCard(id: number): Promise<void> {
+  await db.cards.update(id, { hidden: false, hiddenAt: undefined, updatedAt: new Date().toISOString() });
+}
+
 export async function deleteCard(id: number): Promise<void> {
   await db.cards.delete(id);
 }
 
 export async function exportBackup(): Promise<string> {
   const exportedAt = new Date().toISOString();
-  const cards = await getDeck();
+  const cards = await getAllCards();
   return JSON.stringify({ exportedAt, app: 'mcq-fsrs-study', version: 1, cards }, null, 2);
+}
+
+export async function exportHiddenQuestionsJson(): Promise<string> {
+  const cards = await getHiddenCards();
+  return JSON.stringify(cards.map(cardToImportCard), null, 2);
+}
+
+export function cardToImportCard(card: McqCard): ImportCard {
+  return {
+    cardType: card.cardType,
+    sourceSet: card.sourceSet,
+    sourceQuestion: card.sourceQuestion,
+    question: card.question,
+    answers: [...card.answers],
+    correctIndex: card.correctIndex,
+    imageBase64: card.imageBase64,
+    imageSrc: card.imageSrc,
+    answerImageSrc: card.answerImageSrc
+  };
 }
 
 export async function restoreBackup(fileText: string): Promise<number> {
@@ -194,9 +233,14 @@ function normalizeStoredCard(card: McqCard): McqCard {
     lapses: Number(card.lapses ?? 0),
     state: card.state || 'new',
     note: String(card.note ?? '').trim() || undefined,
+    ...(card.hidden ? { hidden: true, hiddenAt: card.hiddenAt || now } : {}),
     createdAt: card.createdAt || now,
     updatedAt: card.updatedAt || now
   };
+}
+
+async function getAllCards(): Promise<McqCard[]> {
+  return db.cards.orderBy('due').toArray();
 }
 
 function cardSignature(card: Pick<ImportCard, 'question' | 'answers'>): string {

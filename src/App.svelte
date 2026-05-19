@@ -1,13 +1,28 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { BarChart3, Check, Download, Eye, ImagePlus, Library, RotateCcw, Trash2, Upload } from 'lucide-svelte';
-  import { addCard, deleteCard, exportBackup, getDeck, getDueCards, gradeCard, importCards, restoreBackup, syncDefaultCards, updateCardNote } from './lib/db';
+  import { BarChart3, Check, Copy, Download, Eye, EyeOff, ImagePlus, Library, RotateCcw, Trash2, Upload } from 'lucide-svelte';
+  import {
+    addCard,
+    cardToImportCard,
+    deleteCard,
+    exportBackup,
+    getDeck,
+    getDueCards,
+    getHiddenCards,
+    gradeCard,
+    hideCard,
+    importCards,
+    restoreBackup,
+    syncDefaultCards,
+    unhideCard,
+    updateCardNote
+  } from './lib/db';
   import { blurRegionClipPath, getQuestionImageBlurRegions } from './lib/imageBlurRegions';
   import { downloadText, downscaleImage, normalizeImageBase64 } from './lib/images';
   import { isDue } from './lib/scheduler';
   import type { CardType, ImageBlurRegion, ImportCard, McqCard, StudyGrade } from './lib/types';
 
-  type View = 'study' | 'add' | 'deck';
+  type View = 'study' | 'add' | 'deck' | 'hidden';
   type StudyMode = 'new' | 'due' | 'review';
   type SourceFilter = 'all' | 'test' | 'aids' | 'colreg' | 'islands';
   const colregSourceSet = 'COLREG Vessel Shapes/Lights';
@@ -19,6 +34,7 @@
   let sourceFilter: SourceFilter = 'all';
   let cards: McqCard[] = [];
   let dueCards: McqCard[] = [];
+  let hiddenCards: McqCard[] = [];
   let active: McqCard | undefined;
   let selectedIndex: number | undefined;
   let submitted = false;
@@ -56,6 +72,7 @@
     }
     cards = await getDeck();
     dueCards = await getDueCards();
+    hiddenCards = await getHiddenCards();
     setActive(pickRandom(getStudyQueue(studyMode, sourceFilter)));
   }
 
@@ -262,10 +279,84 @@
     downloadText(`mcq-fsrs-backup-${new Date().toISOString().slice(0, 10)}.json`, await exportBackup());
   }
 
+  async function hideActiveCard() {
+    if (!active?.id) return;
+    status = '';
+    try {
+      await saveNote();
+      await hideCard(active.id);
+      status = 'Question moved to Hidden.';
+      await load();
+    } catch (error) {
+      status = error instanceof Error ? error.message : 'Could not hide question.';
+    }
+  }
+
+  async function restoreHiddenCard(id: number | undefined) {
+    if (!id) return;
+    status = '';
+    try {
+      await unhideCard(id);
+      status = 'Question restored to Study.';
+      await load();
+    } catch (error) {
+      status = error instanceof Error ? error.message : 'Could not restore question.';
+    }
+  }
+
+  async function copyHiddenJson() {
+    status = '';
+    try {
+      const text = hiddenQuestionsJson();
+      await copyText(text);
+      status = `Copied ${hiddenCards.length} hidden ${hiddenCards.length === 1 ? 'question' : 'questions'} as JSON.`;
+    } catch (error) {
+      status = error instanceof Error ? error.message : 'Could not copy hidden questions.';
+    }
+  }
+
   async function removeCard(id: number | undefined) {
     if (!id) return;
     await deleteCard(id);
     await load();
+  }
+
+  async function copyText(text: string): Promise<void> {
+    if (copyWithTextArea(text)) {
+      return;
+    }
+
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+
+    throw new Error('Could not copy to clipboard.');
+  }
+
+  function copyWithTextArea(text: string): boolean {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.setAttribute('readonly', '');
+    textArea.style.position = 'fixed';
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.opacity = '0';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    const copied = document.execCommand('copy');
+    textArea.remove();
+    return copied;
+  }
+
+  function hiddenQuestionsJson(): string {
+    return JSON.stringify(hiddenCards.map(cardToImportCard), null, 2);
+  }
+
+  function hiddenDateLabel(hiddenAt?: string): string {
+    const date = hiddenAt ? new Date(hiddenAt) : undefined;
+    return date && !Number.isNaN(date.getTime()) ? `hidden ${date.toLocaleString()}` : 'hidden';
   }
 </script>
 
@@ -284,6 +375,9 @@
       </button>
       <button class:active={view === 'deck'} on:click={() => (view = 'deck')} title="Review deck">
         <Library size={18} /> Deck
+      </button>
+      <button class:active={view === 'hidden'} on:click={() => (view = 'hidden')} title="Hidden questions">
+        <EyeOff size={18} /> Hidden ({hiddenCards.length})
       </button>
       <div class="source-select">
         <select aria-label="Question source" title="Question source" value={sourceFilter} on:change={handleSourceFilterChange}>
@@ -379,6 +473,9 @@
             {/if}
           {/if}
           <div class:submitted={submitted} class="actions">
+            <button class="danger" on:click={hideActiveCard}>
+              <EyeOff size={18} /> Hide
+            </button>
             {#if getCardType(active) === 'reveal'}
               {#if submitted}
                 <button on:click={() => gradeActive('again')}>
@@ -489,7 +586,7 @@
         </button>
       </aside>
     </section>
-  {:else}
+  {:else if view === 'deck'}
     <section class="workspace deck">
       {#each filteredCards as card}
         <article class="deck-row">
@@ -511,6 +608,41 @@
           <Library size={36} />
           <h2>Your local deck is empty</h2>
           <p>Use Add or import the question set JSON when it is ready.</p>
+        </section>
+      {/each}
+    </section>
+  {:else}
+    <section class="workspace deck hidden-list">
+      <div class="list-toolbar">
+        <div>
+          <h2>Hidden</h2>
+          <p>{hiddenCards.length} {hiddenCards.length === 1 ? 'question' : 'questions'}</p>
+        </div>
+        <button class="copy-button" on:click={copyHiddenJson}>
+          <Copy size={18} /> Copy JSON
+        </button>
+      </div>
+
+      {#each hiddenCards as card}
+        <article class="deck-row hidden-row">
+          <div>
+            {#if questionImageFor(card)}
+              <img class="thumb" src={questionImageFor(card)} alt="" />
+            {:else if answerImageFor(card)}
+              <img class="thumb" src={answerImageFor(card)} alt="" />
+            {/if}
+            <p>{card.question}</p>
+            <span>{sourceSetLabel(card.sourceSet)} - {getCardType(card) === 'reveal' ? 'Reveal' : 'MCQ'} - {hiddenDateLabel(card.hiddenAt)}</span>
+          </div>
+          <button class="row-button" on:click={() => restoreHiddenCard(card.id)} title="Restore question">
+            <RotateCcw size={18} /> Restore
+          </button>
+        </article>
+      {:else}
+        <section class="empty">
+          <EyeOff size={36} />
+          <h2>No hidden questions</h2>
+          <p>Hide low-value or duplicate questions from Study when you find them.</p>
         </section>
       {/each}
     </section>

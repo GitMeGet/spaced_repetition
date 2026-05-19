@@ -20,6 +20,8 @@ export type McqCard = {
   imageSrc?: string;
   answerImageSrc?: string;
   note?: string;
+  hidden?: boolean;
+  hiddenAt?: string;
   due: string;
   difficulty: number;
   stability: number;

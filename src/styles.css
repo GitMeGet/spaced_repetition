@@ -98,7 +98,9 @@ nav button,
 .tool-button,
 .file-picker,
 .wide,
-.icon-button {
+.icon-button,
+.row-button,
+.copy-button {
   display: inline-flex;
   min-height: 42px;
   align-items: center;
@@ -483,6 +485,29 @@ textarea {
   gap: 10px;
 }
 
+.list-toolbar {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.list-toolbar h2 {
+  margin-bottom: 3px;
+}
+
+.list-toolbar p {
+  margin-bottom: 0;
+  color: #667085;
+  font-weight: 700;
+}
+
+.copy-button,
+.row-button {
+  padding: 0 14px;
+}
+
 .deck-row {
   display: grid;
   grid-template-columns: 1fr 44px;
@@ -492,6 +517,10 @@ textarea {
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   background: #fbfcfe;
+}
+
+.hidden-row {
+  grid-template-columns: 1fr auto;
 }
 
 .deck-row > div {
@@ -517,6 +546,11 @@ textarea {
   width: 44px;
   height: 44px;
   color: #a92834;
+}
+
+.row-button {
+  min-width: 108px;
+  color: #185a9d;
 }
 
 .empty {
@@ -571,7 +605,7 @@ textarea {
 
   nav {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .mode-toggle {
@@ -611,6 +645,20 @@ textarea {
   .actions.submitted {
     position: static;
     margin-bottom: 0;
+  }
+
+  .list-toolbar,
+  .hidden-row {
+    grid-template-columns: 1fr;
+  }
+
+  .list-toolbar {
+    display: grid;
+  }
+
+  .copy-button,
+  .row-button {
+    width: 100%;
   }
 
 }
