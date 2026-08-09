@@ -25,7 +25,7 @@
 
   type View = 'study' | 'add' | 'deck' | 'hidden';
   type StudyMode = 'new' | 'due' | 'review';
-  type SourceFilter = 'all' | 'test' | 'aids' | 'colreg' | 'islands';
+  type SourceFilter = 'all' | 'oral' | 'test' | 'aids' | 'colreg' | 'islands';
   const colregSourceSet = 'COLREG Vessel Shapes/Lights';
   const colregDisplayName = 'Vessel Symbols';
   const sourceFilterStorageKey = 'mcq-fsrs-source-filter';
@@ -122,6 +122,7 @@
   }
 
   function sourceFilterLabel(filter: SourceFilter): string {
+    if (filter === 'oral') return 'Oral';
     if (filter === 'test') return 'Test Sets';
     if (filter === 'aids') return 'Aids to Nav';
     if (filter === 'colreg') return 'COLREGs';
@@ -136,7 +137,7 @@
 
   function readStoredSourceFilter(): SourceFilter {
     const stored = localStorage.getItem(sourceFilterStorageKey);
-    return stored === 'test' || stored === 'aids' || stored === 'colreg' || stored === 'islands' || stored === 'all' ? stored : 'all';
+    return stored === 'oral' || stored === 'test' || stored === 'aids' || stored === 'colreg' || stored === 'islands' || stored === 'all' ? stored : 'all';
   }
 
   function calculateQuestionAccuracy(cards: McqCard[]): number {
@@ -153,6 +154,7 @@
 
   function matchesSourceFilter(card: McqCard, filter: SourceFilter): boolean {
     if (filter === 'all') return true;
+    if (filter === 'oral') return card.sourceSet === 'Oral';
     if (filter === 'aids') return card.sourceSet === 'Aids to Navigation';
     if (filter === 'colreg') return card.sourceSet?.startsWith('COLREG') ?? false;
     if (filter === 'islands') return card.sourceSet === 'Islands';
@@ -413,6 +415,7 @@
       <div class="source-select">
         <select aria-label="Question source" title="Question source" value={sourceFilter} on:change={handleSourceFilterChange}>
           <option value="all">All</option>
+          <option value="oral">Oral</option>
           <option value="test">Test Sets</option>
           <option value="aids">Aids to Nav</option>
           <option value="colreg">COLREGs</option>

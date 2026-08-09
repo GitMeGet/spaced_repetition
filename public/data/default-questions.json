@@ -4795,5 +4795,502 @@
       "Always apply Rule 18 before checking if overtaking"
     ],
     "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 1,
+    "cardType": "reveal",
+    "question": "Talk through your standard pre-sea check before getting underway.",
+    "answers": [
+      "Check the boat's overall hull and bilge condition; required safety and operating equipment; fuel, lubricating oil and battery; steering and controls; passengers and lifejackets; weather, tide and intended route; boat licence and documents; then appoint a proper lookout."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 2,
+    "cardType": "reveal",
+    "question": "When leaving a berth, do you start the engine or let go the lines first? Why?",
+    "answers": [
+      "Start and check the engine first while the boat is still secured. Confirm steering, cooling-water flow and controls, then let go only when the boat is ready and the surroundings are clear."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 3,
+    "cardType": "reveal",
+    "question": "Talk through a safe slipping-off or unberthing process.",
+    "answers": [
+      "Brief the crew, start and check the engine, confirm steering and controls, inspect wind, tide, traffic and the escape path, ready the lines and fenders, engage gear only when clear, let go the lines in the planned order, move away slowly under control, and maintain a lookout without striking the jetty."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 4,
+    "cardType": "reveal",
+    "question": "Explain how to wear and use the engine kill switch.",
+    "answers": [
+      "Clip the lanyard securely to the operator's body or lifejacket, not to loose clothing, and connect the other end to the engine stop switch. If the operator leaves the controls or falls overboard, the clip pulls free and stops the engine. Test it before departure and reattach it before restarting."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 5,
+    "cardType": "reveal",
+    "question": "What is the purpose of AIS?",
+    "answers": [
+      "AIS automatically exchanges vessel identity, position, course, speed and related voyage data to improve situational awareness and collision assessment. It assists, but never replaces, a proper visual and auditory lookout, radar or the COLREGs."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 6,
+    "cardType": "reveal",
+    "question": "Talk through your immediate actions for a man overboard.",
+    "answers": [
+      "Shout 'man overboard', throw flotation, appoint someone to point continuously, note the position, reduce speed and manoeuvre back while keeping the casualty in sight. Approach slowly under control with the propeller kept clear, select neutral before the final recovery, recover the person on the safer side, give first aid and call for help if needed."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 7,
+    "cardType": "reveal",
+    "question": "Talk through a controlled berthing approach.",
+    "answers": [
+      "Assess wind, tide, traffic and the berth; brief the crew; prepare fenders and lines; approach at slow controllable speed and a shallow angle; use short applications of ahead, neutral and astern as needed; never use hands or feet to stop the boat; secure the boat only after it is safely alongside."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 8,
+    "cardType": "reveal",
+    "question": "How do you secure a boat's line to a shore cleat?",
+    "answers": [
+      "Take a full turn around the base to hold the load, make figure-of-eight turns over the horns, then finish with a locking turn. Keep fingers clear, control the load, and leave the hitch neat and easy to release."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 9,
+    "cardType": "reveal",
+    "question": "How do you determine whether risk of collision exists?",
+    "answers": [
+      "Take repeated compass bearings. Risk of collision exists when the other vessel's bearing remains steady or changes very little while the range is decreasing. If in doubt, assume risk exists; an appreciable bearing change can still be dangerous at close range or with a very large vessel or tow."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 10,
+    "cardType": "reveal",
+    "question": "At night, what lights indicate a head-on situation between power-driven vessels, and what action do you take?",
+    "answers": [
+      "You see the other vessel's red and green sidelights together and her masthead light or lights nearly ahead. Both vessels are give-way vessels: make an early and substantial alteration to starboard so you pass port-to-port, then check that the action is working."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 11,
+    "cardType": "reveal",
+    "question": "A power-driven vessel is crossing on your starboard bow. What light will you normally see, who gives way, and what should you do?",
+    "answers": [
+      "You normally see her red port sidelight and masthead light or lights. You have the other vessel on your starboard side, so you are the give-way vessel. Take early and substantial action, normally alter to starboard to pass well astern; avoid crossing ahead. Slow or stop if necessary."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 12,
+    "cardType": "reveal",
+    "question": "A power-driven vessel is crossing on your port bow. What light will you normally see, and what should you do?",
+    "answers": [
+      "You normally see her green starboard sidelight and masthead light or lights. You are the stand-on vessel, so initially maintain course and speed, keep a close watch and remain ready to act if the give-way vessel does not take effective action."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 13,
+    "cardType": "reveal",
+    "question": "You are the stand-on vessel, but the give-way vessel is not giving way. What do you do?",
+    "answers": [
+      "First maintain course and speed while monitoring. When it becomes apparent that the give-way vessel is not acting, you may take avoiding action. When collision cannot be avoided by her action alone, you must take the action that best avoids collision: slow, stop or alter course, usually to starboard where safe. In a crossing case, avoid altering to port for a vessel on your own port side if circumstances allow."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 14,
+    "cardType": "reveal",
+    "question": "As the give-way vessel, how should you act?",
+    "answers": [
+      "Take early and substantial action to keep well clear. Make the alteration large enough to be readily apparent, avoid a series of small alterations, pass at a safe distance, and keep checking until the other vessel is finally past and clear."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 15,
+    "cardType": "reveal",
+    "question": "In an overtaking situation at night, what do you see and who has right of way?",
+    "answers": [
+      "From the overtaking sector you normally see only the other vessel's white sternlight, not her sidelights. The overtaking vessel must keep out of the way regardless of vessel type and remains responsible until finally past and clear. If in doubt, assume you are overtaking."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 16,
+    "cardType": "reveal",
+    "question": "Which side may you use to overtake another vessel?",
+    "answers": [
+      "In open water you may overtake on either side if it is safe, but you must keep well clear. In a narrow channel, overtake only when it can be done safely and use the prescribed overtaking signals when the vessel ahead must cooperate."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 17,
+    "cardType": "reveal",
+    "question": "What sound signals request overtaking in a narrow channel?",
+    "answers": [
+      "Two prolonged followed by one short means 'I intend to overtake you on your starboard side.' Two prolonged followed by two short means 'I intend to overtake you on your port side.'"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 18,
+    "cardType": "reveal",
+    "question": "What signal does the vessel being overtaken use to agree in a narrow channel?",
+    "answers": [
+      "One prolonged, one short, one prolonged, one short blast. If in doubt about the proposed manoeuvre, sound at least five short and rapid blasts instead of agreeing."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 19,
+    "cardType": "reveal",
+    "question": "What do one, two and three short blasts mean when vessels are in sight?",
+    "answers": [
+      "One short: I am altering course to starboard. Two short: I am altering course to port. Three short: I am operating astern propulsion."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 20,
+    "cardType": "reveal",
+    "question": "What do five or more short and rapid blasts mean?",
+    "answers": [
+      "It is the danger or doubt signal: 'I do not understand your intentions or doubt that you are taking sufficient action to avoid collision.' Reassess immediately and take safe avoiding action."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 21,
+    "cardType": "reveal",
+    "question": "State the main narrow-channel or fairway rules for a powered pleasure craft.",
+    "answers": [
+      "Keep as near the starboard outer limit as is safe and practicable. Do not impede a vessel that can safely navigate only within the channel. Do not cross if that would impede her, avoid anchoring in the channel if circumstances permit, keep a proper lookout, and sound one prolonged blast near a blind bend."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 22,
+    "cardType": "reveal",
+    "question": "What precautions do you take while transiting a busy fairway?",
+    "answers": [
+      "Plan the transit, keep to the starboard side where applicable, maintain a proper lookout and safe speed, monitor traffic visually and with available radar or AIS, avoid impeding deep-draught or restricted vessels, cross only when safe and as nearly at right angles as practicable, and remain ready for wash, current and sudden traffic movements."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 23,
+    "cardType": "reveal",
+    "question": "Using a chart and the MPA Tide Tables, how do you find the actual water depth at an anchoring position and time?",
+    "answers": [
+      "Read the charted depth, which is measured from chart datum. Find the predicted height of tide for the required place and time in the MPA Tide Tables, interpolating between listed times if necessary. Actual water depth equals charted depth plus height of tide."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 24,
+    "cardType": "reveal",
+    "question": "How do you calculate the anchor cable or rope to let go for the PPCDL assessment?",
+    "answers": [
+      "First calculate actual depth: charted depth plus height of tide. Use a scope of about four times that depth, or the scope specified for the boat and conditions. Example: 5 m charted depth plus 2 m tide gives 7 m water depth, so let go about 28 m. Allow for bow height if instructed."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 25,
+    "cardType": "reveal",
+    "question": "What factors must you consider before dropping anchor?",
+    "answers": [
+      "Choose suitable holding ground such as mud or sand; check charted depth, tide and required scope; allow enough swinging room; check wind, current, weather and forecast; keep clear of fairways, cables, pipelines, wrecks, shoals, prohibited areas, other vessels and the shore; confirm the anchor and cable are ready; and ensure you can monitor the boat's position after anchoring."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 26,
+    "cardType": "reveal",
+    "question": "Identify this port-hand buoy and explain how to navigate past it in IALA Region A.",
+    "answers": [
+      "It is a red port-hand lateral mark, normally can-shaped or carrying a red can topmark, with a red light of any rhythm except the composite group flashing (2+1) used for preferred-channel marks. When entering from seaward, keep it on your port side; when leaving, keep it on your starboard side."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/aiton/stimulus-lateral-port.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 27,
+    "cardType": "reveal",
+    "question": "Identify this red-green-red preferred-channel mark. What does it tell you?",
+    "answers": [
+      "In IALA Region A, red with one broad green band and a red can topmark is a preferred channel to starboard mark. Its light is red composite group flashing Fl(2+1). When entering from seaward, leave the mark to port to follow the preferred channel to starboard; the other channel remains usable if safe."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/aiton/lateral-region-a.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 28,
+    "cardType": "reveal",
+    "question": "Identify this special mark. What colour is its light and how should you navigate near it?",
+    "answers": [
+      "It is a yellow special mark with a yellow X topmark and a yellow light whose rhythm is not easily confused with other marks. It marks a special area or feature such as a cable, pipeline, recreation zone or data buoy. Consult the chart or notice to determine its purpose and pass at a safe distance as directed."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/aiton/stimulus-special-mark.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 29,
+    "cardType": "reveal",
+    "question": "Identify this North cardinal mark. Where is the safe water and what light does it show?",
+    "answers": [
+      "It is a North cardinal mark: black above yellow with both cone topmarks pointing up. Safe water is north of the mark, so pass north. Its white light is continuous quick or very quick flashing, Q or VQ."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/aiton/stimulus-cardinal-north.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 30,
+    "cardType": "reveal",
+    "question": "Identify this South cardinal mark. Where is the danger, where is safe water, and what light does it show?",
+    "answers": [
+      "It is a South cardinal mark: yellow above black with both cone topmarks pointing down. The danger is to the north and safe water is to the south, so pass south. Its white light is VQ(6) plus one long flash every 10 seconds, or Q(6) plus one long flash every 15 seconds."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/aiton/stimulus-cardinal-south.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 31,
+    "cardType": "reveal",
+    "question": "Identify this West cardinal mark. Where is the safe water and what light does it show?",
+    "answers": [
+      "It is a West cardinal mark: yellow-black-yellow with cone topmarks point to point. Safe water is west of the mark, so pass west. Its white light is VQ(9) every 10 seconds or Q(9) every 15 seconds."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/aiton/stimulus-cardinal-west.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 32,
+    "cardType": "reveal",
+    "question": "Identify this isolated danger mark. What does it mean and what light does it show?",
+    "answers": [
+      "It is an isolated danger mark: black with one or more broad red bands and two black sphere topmarks. A danger of limited extent lies under the mark, with navigable water all around it. Its light is white, group flashing two, Fl(2). Keep a safe distance from the marked danger."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/aiton/stimulus-isolated-danger.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 33,
+    "cardType": "reveal",
+    "question": "Identify this emergency wreck-marking buoy and state its light.",
+    "answers": [
+      "It marks a newly discovered danger or wreck not yet shown sufficiently in nautical documents. It has equal blue and yellow vertical stripes, a yellow upright cross topmark, and an alternating blue and yellow light with one second of blue followed by one second of yellow. Keep well clear and consult navigational warnings."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/aiton/stimulus-emergency-wreck.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 34,
+    "cardType": "reveal",
+    "question": "At night you see two all-round red lights vertically and one green sidelight. What vessel is this and what do you do?",
+    "answers": [
+      "It is a vessel not under command, underway and making way; the green sidelight shows you are viewing her starboard side. She cannot manoeuvre as required by the Rules. Keep well clear and take early, substantial avoiding action."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/not-under-command-night.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 35,
+    "cardType": "reveal",
+    "question": "The vessel showing two red lights vertically drops anchor. What anchor lights should you then expect?",
+    "answers": [
+      "If she remains not under command, expect the two all-round red lights plus her anchor light or lights. A vessel under 50 m may show one all-round white anchor light where best seen; a vessel 50 m or more shows a forward all-round white light and a lower all-round white light aft. A vessel 100 m or more must also illuminate her decks."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/anchored-50-plus-night.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 36,
+    "cardType": "reveal",
+    "question": "Identify this vessel constrained by her draught. What are her day and night signals?",
+    "answers": [
+      "By day she may display one black cylinder. At night she may display three all-round red lights in a vertical line, in addition to the normal lights for a power-driven vessel underway. Avoid impeding her safe passage and give her ample sea room."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/constrained-by-draught-night.svg",
+    "answerImageSrc": "images/colreg-vessels/constrained-by-draught-day.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 37,
+    "cardType": "reveal",
+    "question": "A vessel displays three black balls vertically. What is she?",
+    "answers": [
+      "She is aground. Keep clear, determine the safe side from the chart and surrounding navigation marks, and navigate with caution."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/aground-day.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 38,
+    "cardType": "reveal",
+    "question": "What lights does a vessel aground show at night?",
+    "answers": [
+      "She shows the appropriate anchor light or lights plus two all-round red lights in a vertical line. Keep well clear."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/aground-night.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 39,
+    "cardType": "reveal",
+    "question": "How do you identify a pilot vessel engaged on pilotage duty at night?",
+    "answers": [
+      "She shows two all-round lights vertically, white over red. When underway she also shows sidelights and a sternlight; when at anchor she also shows anchor light or lights. Keep a proper lookout and do not assume the lights alone give her automatic right of way."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/pilot-vessel-night.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 40,
+    "cardType": "reveal",
+    "question": "How do the masthead lights distinguish power-driven vessels under 50 m and 50 m or more?",
+    "answers": [
+      "A power-driven vessel under 50 m shows one masthead light, sidelights and a sternlight. A vessel 50 m or more shows a second masthead light abaft and higher than the forward one, plus sidelights and a sternlight."
+    ],
+    "correctIndex": 0,
+    "imageSrc": "images/colreg-vessels/power-driven-50-plus-night.svg",
+    "answerImageSrc": "images/colreg-vessels/power-driven-under-50-night.svg"
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 41,
+    "cardType": "reveal",
+    "question": "What does International Code Flag A (Alpha) mean, and what action do you take?",
+    "answers": [
+      "Flag Alpha is white and blue with a swallowtail. It means 'I have a diver down; keep well clear at slow speed.' Give the vessel and divers a wide berth, reduce speed and avoid creating wash."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 42,
+    "cardType": "reveal",
+    "question": "What does International Code Flag B (Bravo) mean, and what action do you take?",
+    "answers": [
+      "Flag Bravo is solid red with a swallowtail. It means 'I am taking in, discharging or carrying dangerous goods.' Keep well clear, avoid sparks or naked flames, and comply with port directions."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 43,
+    "cardType": "reveal",
+    "question": "What does International Code Flag H (Hotel) mean, and what action do you take?",
+    "answers": [
+      "Flag Hotel is divided vertically white and red. It means 'I have a pilot on board.' Maintain a safe lookout and keep clear where necessary, especially around pilot boarding grounds, but apply the normal COLREG responsibilities."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 44,
+    "cardType": "reveal",
+    "question": "What does International Code Flag Q (Quebec) mean, and what action is expected for the PPCDL oral examination?",
+    "answers": [
+      "Flag Quebec is solid yellow. Internationally it means 'My vessel is healthy and I request free pratique.' For the local PPCDL oral response, do not approach the vessel and keep at least 200 m away."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 45,
+    "cardType": "reveal",
+    "question": "During a heavy downpour or sudden restricted visibility, what actions should you take as the person driving the vessel?",
+    "answers": [
+      "Immediately reduce to a safe speed, keep engines ready for immediate manoeuvre, post and maintain an effective visual and auditory lookout, switch on navigation lights, sound the correct fog signal, use radar and AIS if fitted without relying on them alone, monitor position and nearby hazards, avoid dangerous alterations, and stop or anchor in a safe place if necessary."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 46,
+    "cardType": "reveal",
+    "question": "What fog signal does a power-driven vessel make in restricted visibility?",
+    "answers": [
+      "When making way: one prolonged blast at intervals of not more than two minutes. When underway but stopped and making no way: two prolonged blasts about two seconds apart, also at intervals of not more than two minutes."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 47,
+    "cardType": "reveal",
+    "question": "What fog signal is used by a vessel not under command, restricted in ability to manoeuvre, constrained by draught, sailing, fishing, or towing?",
+    "answers": [
+      "One prolonged followed by two short blasts, at intervals of not more than two minutes."
+    ],
+    "correctIndex": 0
+  },
+  {
+    "sourceSet": "Oral",
+    "sourceQuestion": 48,
+    "cardType": "reveal",
+    "question": "What sound signal should you make when nearing a blind bend in a narrow channel?",
+    "answers": [
+      "Sound one prolonged blast. A vessel approaching from the other side that hears it should answer with one prolonged blast."
+    ],
+    "correctIndex": 0
   }
 ]
