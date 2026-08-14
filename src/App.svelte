@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { BarChart3, Check, Copy, Download, Eye, EyeOff, ImagePlus, Library, RotateCcw, Trash2, Upload } from 'lucide-svelte';
+  import { BarChart3, Check, Copy, Download, Eye, EyeOff, Flag, GitCompareArrows, ImagePlus, Library, MoonStar, RotateCcw, Sun, Trash2, Upload } from 'lucide-svelte';
   import {
     addCard,
     cardToImportCard,
@@ -21,9 +21,17 @@
   import { blurRegionClipPath, getQuestionImageBlurRegions } from './lib/imageBlurRegions';
   import { downloadText, downscaleImage, normalizeImageBase64 } from './lib/images';
   import { isDue } from './lib/scheduler';
+  import {
+    giveWayRuleCards,
+    responsibilityLabels,
+    responsibilityMatrix,
+    responsibilityVessels,
+    signalFlags,
+    vesselSignalCards
+  } from './lib/referenceData';
   import type { CardType, ImageBlurRegion, ImportCard, McqCard, StudyGrade } from './lib/types';
 
-  type View = 'study' | 'add' | 'deck' | 'hidden';
+  type View = 'study' | 'add' | 'deck' | 'hidden' | 'lights' | 'give-way' | 'flags';
   type StudyMode = 'new' | 'due' | 'review';
   type SourceFilter = 'all' | 'oral' | 'test' | 'aids' | 'colreg' | 'islands';
   const colregSourceSet = 'COLREG Vessel Shapes/Lights';
@@ -49,6 +57,7 @@
   let cardType: CardType = 'mcq';
   let imageBase64 = '';
   let busy = false;
+  let nightSignalCards = new Set<string>();
 
   $: filteredCards = cards.filter((card) => matchesSourceFilter(card, sourceFilter));
   $: filteredDueCards = dueCards.filter((card) => matchesSourceFilter(card, sourceFilter));
@@ -284,6 +293,13 @@
     downloadText(`mcq-fsrs-backup-${new Date().toISOString().slice(0, 10)}.json`, await exportBackup());
   }
 
+  function toggleSignalCard(id: string) {
+    const next = new Set(nightSignalCards);
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
+    nightSignalCards = next;
+  }
+
   async function hideActiveCard() {
     if (!active?.id) return;
     status = '';
@@ -409,6 +425,15 @@
       <button class:active={view === 'deck'} on:click={() => (view = 'deck')} title="Review deck">
         <Library size={18} /> Deck
       </button>
+      <button class:active={view === 'lights'} on:click={() => (view = 'lights')} title="Vessel day and night signals">
+        <MoonStar size={18} /> Lights
+      </button>
+      <button class:active={view === 'give-way'} on:click={() => (view = 'give-way')} title="Give-way cheat sheet">
+        <GitCompareArrows size={18} /> Give Way
+      </button>
+      <button class:active={view === 'flags'} on:click={() => (view = 'flags')} title="Signal flags cheat sheet">
+        <Flag size={18} /> Flags
+      </button>
       <button class:active={view === 'hidden'} on:click={() => (view = 'hidden')} title="Hidden questions">
         <EyeOff size={18} /> Hidden ({hiddenCards.length})
       </button>
@@ -425,26 +450,28 @@
     </nav>
   </header>
 
-  <section class="metrics" aria-label="Study queues">
-    <button class:active={studyMode === 'new'} on:click={() => selectStudyMode('new')} title="Study new cards">
-      <span>{newCount}</span>
-      <p>New</p>
-    </button>
-    <button class:active={studyMode === 'due'} on:click={() => selectStudyMode('due')} title="Study due cards">
-      <span>{dueCount}</span>
-      <p>Due now</p>
-    </button>
-    <button class:active={studyMode === 'review'} on:click={() => selectStudyMode('review')} title="Study review cards">
-      <span>{reviewReady}</span>
-      <p>Review</p>
-    </button>
-    <div>
-      <span>{accuracy}%</span>
-      <p>Accuracy</p>
-    </div>
-  </section>
+  {#if view !== 'lights' && view !== 'give-way' && view !== 'flags'}
+    <section class="metrics" aria-label="Study queues">
+      <button class:active={studyMode === 'new'} on:click={() => selectStudyMode('new')} title="Study new cards">
+        <span>{newCount}</span>
+        <p>New</p>
+      </button>
+      <button class:active={studyMode === 'due'} on:click={() => selectStudyMode('due')} title="Study due cards">
+        <span>{dueCount}</span>
+        <p>Due now</p>
+      </button>
+      <button class:active={studyMode === 'review'} on:click={() => selectStudyMode('review')} title="Study review cards">
+        <span>{reviewReady}</span>
+        <p>Review</p>
+      </button>
+      <div>
+        <span>{accuracy}%</span>
+        <p>Accuracy</p>
+      </div>
+    </section>
+  {/if}
 
-  {#if status}
+  {#if status && view !== 'lights' && view !== 'give-way' && view !== 'flags'}
     <p class="status">{status}</p>
   {/if}
 
@@ -624,6 +651,139 @@
           <Download size={18} /> Master backup
         </button>
       </aside>
+    </section>
+  {:else if view === 'lights'}
+    <section class="workspace reference-page">
+      <header class="reference-header">
+        <div>
+          <p class="eyebrow">COLREG quick reference</p>
+          <h2>Vessel day shapes &amp; night lights</h2>
+          <p>Choose any card to switch between its daytime signal and nighttime lights.</p>
+        </div>
+        <div class="reference-hint"><Sun size={18} /> Day <span aria-hidden="true">↔</span> <MoonStar size={18} /> Night</div>
+      </header>
+
+      <div class="signal-grid">
+        {#each vesselSignalCards as card}
+          {@const isNight = nightSignalCards.has(card.id)}
+          <button
+            type="button"
+            class:flipped={isNight}
+            class="signal-card"
+            aria-pressed={isNight}
+            aria-label={`${card.name}. Showing ${isNight ? 'night lights' : 'day shape'}. Activate to show ${isNight ? 'day shape' : 'night lights'}.`}
+            on:click={() => toggleSignalCard(card.id)}
+          >
+            <span class="signal-card-inner">
+              <span class="signal-face signal-day" aria-hidden={isNight}>
+                <span class="signal-title"><strong>{card.name}</strong><span><Sun size={15} /> Day</span></span>
+                <img src={resolveAssetSrc(card.day.imageSrc)} alt="" />
+                <span class="signal-description">{card.day.description}</span>
+                <span class="flip-prompt">Tap to see night lights <span aria-hidden="true">→</span></span>
+              </span>
+              <span class="signal-face signal-night" aria-hidden={!isNight}>
+                <span class="signal-title"><strong>{card.name}</strong><span><MoonStar size={15} /> Night</span></span>
+                <img src={resolveAssetSrc(card.night.imageSrc)} alt="" />
+                <span class="signal-description">{card.night.description}</span>
+                <span class="flip-prompt"><span aria-hidden="true">←</span> Tap to see day shape</span>
+              </span>
+            </span>
+          </button>
+        {/each}
+      </div>
+    </section>
+  {:else if view === 'give-way'}
+    <section class="workspace reference-page give-way-page">
+      <header class="reference-header">
+        <div>
+          <p class="eyebrow">COLREG quick reference</p>
+          <h2>Who gives way?</h2>
+          <p>Read down the left for your vessel, then across to the vessel you meet.</p>
+        </div>
+      </header>
+
+      <div class="rule-order" role="note">
+        <strong>Check in this order</strong>
+        <span>Restricted visibility</span><span>Overtaking</span><span>Special waterway</span><span>Encounter geometry</span><span>Vessel status</span>
+      </div>
+
+      <div class="matrix-legend" aria-label="Matrix key">
+        {#each Object.entries(responsibilityLabels) as [status, item]}
+          <span class={`matrix-status ${status}`}><i aria-hidden="true"></i>{item.label}</span>
+        {/each}
+      </div>
+
+      <!-- svelte-ignore a11y_no_noninteractive_tabindex — the overflow region must be keyboard-scrollable on mobile -->
+      <div class="matrix-scroll" role="region" tabindex="0" aria-label="Give-way responsibility matrix. Scroll horizontally to view all vessels.">
+        <table class="responsibility-matrix">
+          <caption>General vessel responsibilities. Encounter and special-waterway rules may override or qualify this table.</caption>
+          <thead>
+            <tr>
+              <th class="corner-cell" scope="col">Your vessel ↓<br />Other vessel →</th>
+              {#each responsibilityVessels as vessel}
+                <th scope="col" title={vessel.name}>{vessel.shortName}</th>
+              {/each}
+            </tr>
+          </thead>
+          <tbody>
+            {#each responsibilityVessels as ownVessel}
+              <tr>
+                <th scope="row" title={ownVessel.name}>{ownVessel.shortName}</th>
+                {#each responsibilityVessels as otherVessel}
+                  {@const status = responsibilityMatrix[ownVessel.id][otherVessel.id]}
+                  <td title={`${responsibilityLabels[status].label}: ${responsibilityLabels[status].detail}`}>
+                    <span class={`matrix-status ${status}`}><i aria-hidden="true"></i>{responsibilityLabels[status].label}</span>
+                  </td>
+                {/each}
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+
+      <p class="matrix-note"><strong>No vessel has an absolute right of way.</strong> “Stand on” means initially keeping course and speed while staying ready to prevent a collision. CBD entries mean other vessels should avoid impeding safe passage when circumstances permit.</p>
+
+      <div class="rule-card-grid">
+        {#each giveWayRuleCards as item, index}
+          <article class:featured={index === 0} class="rule-card">
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <h3>{item.title}</h3>
+            <p>{item.rule}</p>
+          </article>
+        {/each}
+      </div>
+    </section>
+  {:else if view === 'flags'}
+    <section class="workspace reference-page flags-page">
+      <header class="reference-header">
+        <div>
+          <p class="eyebrow">International Code of Signals</p>
+          <h2>Essential signal flags</h2>
+          <p>Recognise the flag, remember its meaning, then take the safe action shown.</p>
+        </div>
+      </header>
+
+      <div class="flag-grid">
+        {#each signalFlags as flag}
+          <article class="flag-card">
+            <header>
+              <span class="flag-letter">{flag.letter}</span>
+              <div><h3>{flag.phonetic}</h3><p>{flag.memory}</p></div>
+            </header>
+            <img src={resolveAssetSrc(flag.imageSrc)} alt={`International Code flag ${flag.phonetic}`} />
+            {#if flag.emphasis}<strong class="flag-emphasis">{flag.emphasis}</strong>{/if}
+            <section>
+              <h4>Meaning</h4>
+              <p>“{flag.meaning}”</p>
+            </section>
+            <section class="flag-action">
+              <h4>What you should do</h4>
+              <p>{flag.precaution}</p>
+            </section>
+          </article>
+        {/each}
+      </div>
+      <p class="local-note"><strong>Local rule:</strong> The 200 m precaution shown for flag Q applies in Singapore waters while quarantine, customs or immigration clearance is pending.</p>
     </section>
   {:else if view === 'deck'}
     <section class="workspace deck">

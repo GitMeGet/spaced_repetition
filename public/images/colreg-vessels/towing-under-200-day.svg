@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" role="img" aria-labelledby="title desc">
+  <title id="title">Towing vessel with tow up to 200 metres by day</title>
+  <desc id="desc">A towing vessel and tow with no tow-length diamond required.</desc>
+  <rect width="420" height="300" fill="#eef6ff"/><rect y="236" width="420" height="64" fill="#bfdbfe"/><path d="M0 238c48-12 82 12 128 0s82-12 128 0 82 12 164 0v62H0z" fill="#93c5fd" opacity=".72"/>
+  <path d="M42 205h135l-18 36H68z" fill="#334155"/><line x1="177" y1="222" x2="284" y2="222" stroke="#475569" stroke-width="3" stroke-dasharray="8 7"/><path d="M284 211h95l-14 30h-65z" fill="#64748b"/>
+  <text x="210" y="58" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="15" font-weight="700">NO TOW-LENGTH DIAMOND</text>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" role="img" aria-labelledby="title desc">
+  <title id="title">Fishing gear extending over 150 metres at night</title>
+  <desc id="desc">A fishing vessel with an additional all-round white light toward its extended gear.</desc>
+  <rect width="420" height="300" fill="#08111f"/><circle cx="340" cy="48" r="28" fill="#e2e8f0" opacity=".18"/><rect y="236" width="420" height="64" fill="#0f2747"/>
+  <line x1="176" y1="62" x2="176" y2="218" stroke="#94a3b8" stroke-width="5"/><g stroke="#fff" stroke-opacity=".5" stroke-width="2"><circle cx="176" cy="78" r="9" fill="#ef4444"/><circle cx="176" cy="116" r="9" fill="#f8fafc"/><circle cx="304" cy="116" r="9" fill="#f8fafc"/></g>
+  <line x1="220" y1="184" x2="344" y2="128" stroke="#64748b" stroke-width="3" stroke-dasharray="8 7"/><path d="M72 218h220l-28 34H110z" fill="#334155"/>
+</svg>
