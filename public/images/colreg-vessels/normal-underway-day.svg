@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" role="img" aria-labelledby="title desc">
+  <title id="title">Power-driven vessel underway by day</title>
+  <desc id="desc">A power-driven vessel silhouette with no special day shape.</desc>
+  <rect width="420" height="300" fill="#eef6ff"/><circle cx="344" cy="54" r="30" fill="#fde68a"/>
+  <rect y="236" width="420" height="64" fill="#bfdbfe"/><path d="M0 238c48-12 82 12 128 0s82-12 128 0 82 12 164 0v62H0z" fill="#93c5fd" opacity=".72"/>
+  <line x1="210" y1="82" x2="210" y2="218" stroke="#94a3b8" stroke-width="5" stroke-linecap="round"/>
+  <path d="M92 218h236l-30 34H132z" fill="#334155"/><path d="M134 252h164" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+  <text x="210" y="52" text-anchor="middle" fill="#475569" font-family="system-ui,sans-serif" font-size="15" font-weight="700">NO SPECIAL DAY SHAPE</text>
+</svg>
